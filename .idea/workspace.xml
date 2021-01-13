@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4ab46e84-ab3e-4e26-ac9b-d274ec4ea08b" name="Default Changelist" comment="" />
+    <list default="true" id="4ab46e84-ab3e-4e26-ac9b-d274ec4ea08b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Models/Role.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Chapter.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Chapter.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Course.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Course.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Exercise.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Exercise.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/ExerciseResult.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/ExerciseResult.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Group.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Group.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/UserCourseGroup.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/UserCourseGroup.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -12,6 +21,9 @@
     <execution>
       <executable />
     </execution>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -118,6 +130,9 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1msk1x5ScpFXAeG6mDhpvhoD8QD" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -161,7 +176,7 @@
       <updated>1610289474907</updated>
       <workItem from="1610289477015" duration="1828000" />
       <workItem from="1610458996838" duration="2943000" />
-      <workItem from="1610544767619" duration="3615000" />
+      <workItem from="1610544767619" duration="4694000" />
     </task>
     <servers />
   </component>
@@ -173,10 +188,10 @@
       <screen x="0" y="0" width="1280" height="984" />
     </state>
     <state x="420" y="246" key="FileChooserDialogImpl/0.0.1280.984@0.0.1280.984" timestamp="1610459788472" />
-    <state x="444" y="305" key="NewPhpClassDialog" timestamp="1610548116924">
+    <state x="444" y="305" key="NewPhpClassDialog" timestamp="1610548736828">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state x="444" y="305" key="NewPhpClassDialog/0.0.1280.984@0.0.1280.984" timestamp="1610548116924" />
+    <state x="444" y="305" key="NewPhpClassDialog/0.0.1280.984@0.0.1280.984" timestamp="1610548736828" />
     <state x="303" y="211" width="672" height="678" key="search.everywhere.popup" timestamp="1610460676508">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
