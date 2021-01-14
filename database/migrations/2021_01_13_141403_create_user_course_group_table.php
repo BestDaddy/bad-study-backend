@@ -16,8 +16,8 @@ class CreateUserCourseGroupTable extends Migration
         Schema::create('user_course_group', function (Blueprint $table) {
             $table->id();
             $table->foreignId('group_id')
-                ->constrained()
-                ->onDelete('cascade');
+                ->nullable()
+                ->constrained();
             $table->foreignId('course_id')
                 ->constrained()
                 ->onDelete('cascade');
