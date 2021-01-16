@@ -2,20 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4ab46e84-ab3e-4e26-ac9b-d274ec4ea08b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Web/Admin/UsersController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Middleware/Admin.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Providers/SystemServiceProvider.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Services/Users/UsersService.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Services/Users/UsersServiceImpl.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/seeds/UsersSeeder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Web/Admin/CoursesController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Services/Courses/CoursesService.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Services/Courses/CoursesServiceImpl.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/courses/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/users/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/bad-study.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/bad-study.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Web/Admin/UsersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Web/Admin/UsersController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/auth.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_01_13_141403_create_user_course_group_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_01_13_141403_create_user_course_group_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/SystemServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/SystemServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Services/Users/UsersService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/Users/UsersService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Services/Users/UsersServiceImpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/Users/UsersServiceImpl.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/admin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/admin.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -28,6 +31,20 @@
     <execution>
       <executable />
     </execution>
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -134,6 +151,7 @@
       <path value="$PROJECT_DIR$/vendor/opis/closure" />
       <path value="$PROJECT_DIR$/vendor/nikic/php-parser" />
       <path value="$PROJECT_DIR$/vendor/laravel/ui" />
+      <path value="$PROJECT_DIR$/vendor/yajra/laravel-datatables-oracle" />
     </include_path>
   </component>
   <component name="ProjectId" id="1msk1x5ScpFXAeG6mDhpvhoD8QD" />
@@ -149,7 +167,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/database/seeds" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../backend" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -186,7 +204,8 @@
       <workItem from="1610289477015" duration="1828000" />
       <workItem from="1610458996838" duration="2943000" />
       <workItem from="1610544767619" duration="4930000" />
-      <workItem from="1610636849134" duration="2727000" />
+      <workItem from="1610636849134" duration="2957000" />
+      <workItem from="1610805791950" duration="3903000" />
     </task>
     <task id="LOCAL-00001" summary="relationships added. not finished">
       <created>1610549633399</created>
@@ -195,7 +214,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610549633399</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="seeder added. register fixes. SystemServiceProvider added">
+      <created>1610639795770</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1610639795770</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -204,44 +230,45 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="relationships added. not finished" />
-    <option name="LAST_COMMIT_MESSAGE" value="relationships added. not finished" />
+    <MESSAGE value="seeder added. register fixes. SystemServiceProvider added" />
+    <option name="LAST_COMMIT_MESSAGE" value="seeder added. register fixes. SystemServiceProvider added" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="370" y="246" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1610639059143">
+    <state x="370" y="246" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1610808767713">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state x="370" y="246" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1280.984@0.0.1280.984" timestamp="1610639059143" />
-    <state x="265" y="85" key="CommitChangelistDialog2" timestamp="1610549632930">
+    <state x="370" y="246" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1280.984@0.0.1280.984" timestamp="1610808767713" />
+    <state x="265" y="85" key="CommitChangelistDialog2" timestamp="1610639795048">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state x="265" y="85" key="CommitChangelistDialog2/0.0.1280.984@0.0.1280.984" timestamp="1610549632930" />
-    <state x="120" y="79" key="DiffContextDialog" timestamp="1610549612866">
+    <state x="265" y="85" key="CommitChangelistDialog2/0.0.1280.984@0.0.1280.984" timestamp="1610639795048" />
+    <state x="120" y="79" key="DiffContextDialog" timestamp="1610639755339">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state x="120" y="79" key="DiffContextDialog/0.0.1280.984@0.0.1280.984" timestamp="1610549612866" />
-    <state x="420" y="246" key="FileChooserDialogImpl" timestamp="1610636928331">
+    <state x="120" y="79" key="DiffContextDialog/0.0.1280.984@0.0.1280.984" timestamp="1610639755339" />
+    <state x="420" y="246" key="FileChooserDialogImpl" timestamp="1610806029835">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state x="420" y="246" key="FileChooserDialogImpl/0.0.1280.984@0.0.1280.984" timestamp="1610636928331" />
-    <state x="444" y="305" key="NewPhpClassDialog" timestamp="1610638824502">
+    <state x="420" y="246" key="FileChooserDialogImpl/0.0.1280.984@0.0.1280.984" timestamp="1610806029835" />
+    <state x="444" y="305" key="NewPhpClassDialog" timestamp="1610807698151">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state x="444" y="305" key="NewPhpClassDialog/0.0.1280.984@0.0.1280.984" timestamp="1610638824502" />
+    <state x="444" y="305" key="NewPhpClassDialog/0.0.1280.984@0.0.1280.984" timestamp="1610807698151" />
     <state x="475" y="414" key="NewPhpFileDialog" timestamp="1610638195168">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
     <state x="475" y="414" key="NewPhpFileDialog/0.0.1280.984@0.0.1280.984" timestamp="1610638195168" />
-    <state x="232" y="224" key="Vcs.Push.Dialog.v2" timestamp="1610549639443">
+    <state x="232" y="224" key="Vcs.Push.Dialog.v2" timestamp="1610639798806">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state x="232" y="224" key="Vcs.Push.Dialog.v2/0.0.1280.984@0.0.1280.984" timestamp="1610549639443" />
+    <state x="232" y="224" key="Vcs.Push.Dialog.v2/0.0.1280.984@0.0.1280.984" timestamp="1610639798806" />
     <state x="337" y="224" width="606" height="536" key="find.popup" timestamp="1610637504364">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
     <state x="337" y="224" width="606" height="536" key="find.popup/0.0.1280.984@0.0.1280.984" timestamp="1610637504364" />
-    <state x="303" y="211" width="672" height="678" key="search.everywhere.popup" timestamp="1610637518479">
+    <state x="303" y="211" width="672" height="678" key="search.everywhere.popup" timestamp="1610807904534">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state x="303" y="211" width="672" height="678" key="search.everywhere.popup/0.0.1280.984@0.0.1280.984" timestamp="1610637518479" />
+    <state x="303" y="211" width="672" height="678" key="search.everywhere.popup/0.0.1280.984@0.0.1280.984" timestamp="1610807904534" />
   </component>
 </project>

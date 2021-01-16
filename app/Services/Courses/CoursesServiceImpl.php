@@ -1,18 +1,18 @@
 <?php
 
 
-namespace App\Services\Users;
+namespace App\Services\Courses;
 
 
-use App\Models\User;
+use App\Models\Course;
 use Illuminate\Http\Request;
 
-class UsersServiceImpl implements UsersService
+class CoursesServiceImpl implements CoursesService
 {
     public function index(){
         if(request()->ajax())
         {
-            return datatables()->of(User::with('role')->latest()->get())
+            return datatables()->of(Course::latest()->get())
                 ->addColumn('edit', function($data){
                     return  '<button
                          class=" btn btn-primary btn-sm btn-block "
@@ -28,25 +28,9 @@ class UsersServiceImpl implements UsersService
     }
 
     public function store(Request $request){
-        $password = $request->password;
-        if($request->id && !$password){
-            $password = User::findorfail($request->id)->password;
-        }
-        elseif($password)
-            $password = bcrypt($password);
-
-        $user = User::updateOrCreate(['id' => $request->id],[
-            'first_name' => $request->first_name,
-            'last_name' => $request->last_name,
-            'email' =>$request->email,
-            'role_id' => $request->role_id,
-            'password' =>$password,
+        return Course::updateOrCreate(['id' => $request->id],[
+            'name' => $request->name,
+            'description' => $request->description,
         ]);
-
-        return $user;
-    }
-
-    public function getUser($id){
-        return User::findOrFail($id);
     }
 }

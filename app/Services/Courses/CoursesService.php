@@ -1,16 +1,14 @@
 <?php
 
 
-namespace App\Services\Users;
+namespace App\Services\Courses;
 
 
 use Illuminate\Http\Request;
 
-interface UsersService
+interface CoursesService
 {
     public function index();
 
     public function store(Request $request);
-
-    public function getUser($id);
 }

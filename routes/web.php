@@ -26,6 +26,7 @@ Route::group(['namespace' => 'Web'], function () {
     Route::group(['namespace' => 'Admin', 'middleware'=>'admin'], function () {
         Route::resources([
             'users' => 'UsersController',
+            'courses' => 'CoursesController',
         ]);
     });
 

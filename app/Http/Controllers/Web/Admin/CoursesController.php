@@ -3,19 +3,17 @@
 namespace App\Http\Controllers\Web\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Role;
-use App\Services\Users\UsersService;
+use App\Services\Courses\CoursesService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
-class UsersController extends Controller
+class CoursesController extends Controller
 {
+    private $coursesService;
 
-    private $usersService;
-
-    public function __construct(UsersService $usersService)
+    public function __construct(CoursesService $coursesService)
     {
-        $this->usersService = $usersService;
+        $this->coursesService = $coursesService;
     }
     /**
      * Display a listing of the resource.
@@ -25,10 +23,9 @@ class UsersController extends Controller
     public function index()
     {
         if(request()->ajax()){
-            return $this->usersService->index();
+            return $this->coursesService->index();
         }
-        $roles = Role::all();
-        return view('admin.users.index', compact('roles'));
+        return view('admin.courses.index');
     }
 
     /**
@@ -50,18 +47,14 @@ class UsersController extends Controller
     public function store(Request $request)
     {
         $rules = array(
-            'first_name'=> 'required',
-            'email' => 'required',
-            'role_id' => 'required',
+            'name'=> 'required',
         );
         $error = Validator::make($request->all(), $rules);
-
-        if($error->fails()) {
+        if($error->fails())
             return response()->json(['errors' => $error->errors()->all()]);
-        }
 
-        $user = $this->usersService->store($request);
-        return response()->json(['code'=>200, 'message'=>'User saved successfully','data' => $user], 200);
+        $course = $this->coursesService->store($request);
+        return response()->json(['code'=>200, 'message'=>'Course Saved successfully','data' => $course], 200);
     }
 
     /**
@@ -79,11 +72,11 @@ class UsersController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\JsonResponse
+     * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-        return response()->json($this->usersService->getUser($id));
+        //
     }
 
     /**
