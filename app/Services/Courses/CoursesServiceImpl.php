@@ -17,10 +17,10 @@ class CoursesServiceImpl implements CoursesService
                     return  '<button
                          class=" btn btn-primary btn-sm btn-block "
                           data-id="'.$data->id.'"
-                          onclick="editUser(event.target)"><i class="fas fa-edit" data-id="'.$data->id.'"></i> Изменить</button>';
+                          onclick="editCourse(event.target)"><i class="fas fa-edit" data-id="'.$data->id.'"></i> Изменить</button>';
                 })
                 ->addColumn('more', function ($data){
-                    return '<a class="text-decoration-none"  href="users/'.$data->id.'"><button class="btn btn-primary btn-sm btn-block">Подробнее</button></a>';
+                    return '<a class="text-decoration-none"  href="/courses/'.$data->id.'"><button class="btn btn-primary btn-sm btn-block">Подробнее</button></a>';
                 })
                 ->rawColumns(['more', 'edit'])
                 ->make(true);
@@ -32,5 +32,23 @@ class CoursesServiceImpl implements CoursesService
             'name' => $request->name,
             'description' => $request->description,
         ]);
+    }
+
+    public function show($id){
+        if(request()->ajax())
+        {
+            return datatables()->of(Course::findOrFail($id)->chapters()->latest()->get())
+                ->addColumn('edit', function($data){
+                    return  '<button
+                         class=" btn btn-primary btn-sm btn-block "
+                          data-id="'.$data->id.'"
+                          onclick="editChapter(event.target)"><i class="fas fa-edit" data-id="'.$data->id.'"></i> Изменить</button>';
+                })
+                ->addColumn('more', function ($data){
+                    return '<a class="text-decoration-none"  href="/chapters/'.$data->id.'"><button class="btn btn-primary btn-sm btn-block">Подробнее</button></a>';
+                })
+                ->rawColumns(['more', 'edit'])
+                ->make(true);
+        }
     }
 }

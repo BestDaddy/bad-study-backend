@@ -3,6 +3,8 @@
 namespace App\Providers;
 
 
+use App\Services\Courses\ChaptersService;
+use App\Services\Courses\ChaptersServiceImpl;
 use App\Services\Courses\CoursesService;
 use App\Services\Courses\CoursesServiceImpl;
 use App\Services\Users\UsersService;
@@ -30,5 +32,6 @@ class SystemServiceProvider extends ServiceProvider
     {
         $this->app->bind(UsersService::class, UsersServiceImpl::class);
         $this->app->bind(CoursesService::class, CoursesServiceImpl::class);
+        $this->app->bind(ChaptersService::class, ChaptersServiceImpl::class);
     }
 }

@@ -3,30 +3,27 @@
 namespace App\Http\Controllers\Web\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Course;
-use App\Services\Courses\CoursesService;
+use App\Models\Chapter;
+use App\Services\Courses\ChaptersService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
-class CoursesController extends Controller
+class ChaptersController extends Controller
 {
-    private $coursesService;
+    private $chaptersService;
 
-    public function __construct(CoursesService $coursesService)
+    public function __construct(ChaptersService $chaptersService)
     {
-        $this->coursesService = $coursesService;
+        $this->chaptersService = $chaptersService;
     }
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        if(request()->ajax()){
-            return $this->coursesService->index();
-        }
-        return view('admin.courses.index');
+        //
     }
 
     /**
@@ -48,29 +45,27 @@ class CoursesController extends Controller
     public function store(Request $request)
     {
         $rules = array(
+            'course_id' => 'required',
             'name'=> 'required',
+            'order' => 'required'
         );
         $error = Validator::make($request->all(), $rules);
         if($error->fails())
             return response()->json(['errors' => $error->errors()->all()]);
 
-        $course = $this->coursesService->store($request);
-        return response()->json(['code'=>200, 'message'=>'Course Saved successfully','data' => $course], 200);
+        $chapter = $this->chaptersService->store($request);
+        return response()->json(['code'=>200, 'message'=>'Chapter Saved successfully','data' => $chapter], 200);
     }
 
     /**
      * Display the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        if(request()->ajax()){
-            return $this->coursesService->show($id);
-        }
-        $course = Course::findOrFail($id);
-        return view('admin.courses.show', compact('course'));
+        //
     }
 
     /**
@@ -81,7 +76,7 @@ class CoursesController extends Controller
      */
     public function edit($id)
     {
-        return response()->json(Course::findOrFail($id));
+        return response()->json(Chapter::findOrFail($id));
     }
 
     /**

@@ -27,6 +27,7 @@ Route::group(['namespace' => 'Web'], function () {
         Route::resources([
             'users' => 'UsersController',
             'courses' => 'CoursesController',
+            'chapters' => 'ChaptersController',
         ]);
     });
 
