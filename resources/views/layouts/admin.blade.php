@@ -45,7 +45,7 @@
 {{--            <div class="sidebar-brand-icon rotate-n-15">--}}
 {{--                <i class="fas fa-laugh-wink"></i>--}}
 {{--            </div>--}}
-            <div class="sidebar-brand-text mx-3">Tolling System</div>
+            <div class="sidebar-brand-text mx-3">Bad Study</div>
         </a>
 
         <!-- Divider -->
@@ -65,19 +65,26 @@
         <div class="sidebar-heading">
             Interface
         </div>
-{{--        @if(Auth::user()->role_id == 1)--}}
-{{--        <li class="nav-item">--}}
-{{--            <a class="nav-link" href="{{route('roads.index')}}">--}}
-{{--                <i class="fas fa-fw fa-road"></i>--}}
-{{--                <span>Дороги</span></a>--}}
-{{--        </li>--}}
+        @if(Auth::user()->role_id == 1)
+        <li class="nav-item">
+            <a class="nav-link" href="{{route('courses.index')}}">
+                <i class="fas fa-fw fa-book"></i>
+                <span>Курсы</span></a>
+        </li>
 
-{{--        <li class="nav-item">--}}
-{{--            <a class="nav-link" href="{{route('users.index')}}">--}}
-{{--                <i class="fas fa-fw fa-users"></i>--}}
-{{--                <span>Пользователи</span></a>--}}
-{{--        </li>--}}
-{{--        @endif--}}
+        <li class="nav-item">
+            <a class="nav-link" href="{{route('groups.index')}}">
+                <i class="fas fa-fw fa-users"></i>
+                <span>Группы</span></a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="{{route('users.index')}}">
+                <i class="fas fa-fw fa-user"></i>
+                <span>Пользователи</span></a>
+        </li>
+
+        @endif
 {{--        <li class="nav-item">--}}
 {{--            <a class="nav-link" href="{{route('cars.index')}}">--}}
 {{--                <i class="fas fa-fw fa-car"></i>--}}
@@ -212,7 +219,7 @@
         <footer class="sticky-footer bg-white">
             <div class="container my-auto">
                 <div class="copyright text-center my-auto">
-                    <span>Copyright &copy; ELDAR LLP 2021</span>
+                    <span>Copyright &copy; BAD STUDY LLP 2021</span>
                 </div>
             </div>
         </footer>

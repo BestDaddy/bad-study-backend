@@ -28,6 +28,8 @@ Route::group(['namespace' => 'Web'], function () {
             'users' => 'UsersController',
             'courses' => 'CoursesController',
             'chapters' => 'ChaptersController',
+            'exercises' => 'ExercisesController',
+            'groups' => 'GroupsController'
         ]);
     });
 

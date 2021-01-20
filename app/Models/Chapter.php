@@ -13,4 +13,8 @@ class Chapter extends Model
     public function course(){
         return $this->belongsTo(Course::class);
     }
+
+    public function exercises(){
+        return $this->hasMany(Exercise::class)->orderBy('order');
+    }
 }

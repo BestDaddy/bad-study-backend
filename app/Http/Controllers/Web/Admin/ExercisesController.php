@@ -3,19 +3,19 @@
 namespace App\Http\Controllers\Web\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Chapter;
-use App\Services\Courses\ChaptersService;
+use App\Services\Courses\ExercisesService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
-class ChaptersController extends Controller
+class ExercisesController extends Controller
 {
-    private $chaptersService;
+    private $exercisesService;
 
-    public function __construct(ChaptersService $chaptersService)
+    public function __construct(ExercisesService $exercisesService)
     {
-        $this->chaptersService = $chaptersService;
+        $this->exercisesService = $exercisesService;
     }
+
     /**
      * Display a listing of the resource.
      *
@@ -45,42 +45,39 @@ class ChaptersController extends Controller
     public function store(Request $request)
     {
         $rules = array(
-            'course_id' => 'required',
+            'chapter_id' => 'required',
             'name'=> 'required',
+            'content'=> 'required',
             'order' => 'required'
         );
         $error = Validator::make($request->all(), $rules);
         if($error->fails())
             return response()->json(['errors' => $error->errors()->all()]);
 
-        $chapter = $this->chaptersService->store($request);
-        return response()->json(['code'=>200, 'message'=>'Chapter Saved successfully','data' => $chapter], 200);
+        $exercise = $this->exercisesService->store($request);
+        return response()->json(['code'=>200, 'message'=>'Exercise Saved successfully','data' => $exercise], 200);
     }
 
     /**
      * Display the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        $chapter = Chapter::findOrFail($id);
-        if(request()->ajax()){
-            return $this->chaptersService->show($id);
-        }
-        return view('admin.chapters.show', compact('chapter'));
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\JsonResponse
+     * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-        return response()->json(Chapter::findOrFail($id));
+        //
     }
 
     /**

@@ -6,9 +6,7 @@ namespace App\Services\Courses;
 
 use Illuminate\Http\Request;
 
-interface ChaptersService
+interface ExercisesService
 {
     public function store(Request $request);
-
-    public function show($id);
 }

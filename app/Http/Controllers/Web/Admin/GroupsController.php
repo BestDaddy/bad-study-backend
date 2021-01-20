@@ -3,27 +3,29 @@
 namespace App\Http\Controllers\Web\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Chapter;
-use App\Services\Courses\ChaptersService;
+use App\Services\Groups\GroupsService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
-class ChaptersController extends Controller
+class GroupsController extends Controller
 {
-    private $chaptersService;
+    private $groupsService;
 
-    public function __construct(ChaptersService $chaptersService)
+    public function __construct(GroupsService $groupsService)
     {
-        $this->chaptersService = $chaptersService;
+        $this->groupsService = $groupsService;
     }
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function index()
     {
-        //
+        if(request()->ajax()){
+            return $this->groupsService->index();
+        }
+        return view('admin.groups.index');
     }
 
     /**
@@ -45,42 +47,36 @@ class ChaptersController extends Controller
     public function store(Request $request)
     {
         $rules = array(
-            'course_id' => 'required',
             'name'=> 'required',
-            'order' => 'required'
         );
         $error = Validator::make($request->all(), $rules);
         if($error->fails())
             return response()->json(['errors' => $error->errors()->all()]);
 
-        $chapter = $this->chaptersService->store($request);
-        return response()->json(['code'=>200, 'message'=>'Chapter Saved successfully','data' => $chapter], 200);
+        $group = $this->groupsService->store($request);
+        return response()->json(['code'=>200, 'message'=>'Group Saved successfully','data' => $group], 200);
     }
 
     /**
      * Display the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        $chapter = Chapter::findOrFail($id);
-        if(request()->ajax()){
-            return $this->chaptersService->show($id);
-        }
-        return view('admin.chapters.show', compact('chapter'));
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\JsonResponse
+     * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-        return response()->json(Chapter::findOrFail($id));
+        //
     }
 
     /**
