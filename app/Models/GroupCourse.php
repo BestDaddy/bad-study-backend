@@ -9,6 +9,18 @@ class GroupCourse extends Model
     protected $table = 'group_course';
 
     protected $fillable = [
-        'name', 'description', 'chat'
+        'group_id', 'course_id', 'teacher_id'
     ];
+
+    public function group(){
+        return $this->belongsTo(Group::class);
+    }
+
+    public function course(){
+        return $this->belongsTo(Course::class);
+    }
+
+    public function teacher(){
+        return $this->belongsTo(User::class, 'teacher_id');
+    }
 }

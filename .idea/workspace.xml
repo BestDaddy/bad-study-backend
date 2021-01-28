@@ -2,20 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4ab46e84-ab3e-4e26-ac9b-d274ec4ea08b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Web/Admin/ExercisesController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Web/Admin/GroupsController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Services/Courses/ExercisesService.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Services/Courses/ExercisesServiceImpl.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Services/Groups/GroupsService.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Services/Groups/GroupsServiceImpl.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/chapters/show.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/groups/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/groups/show.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Web/Admin/ChaptersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Web/Admin/ChaptersController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Chapter.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Chapter.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/SystemServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/SystemServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Services/Courses/ChaptersService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/Courses/ChaptersService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Services/Courses/ChaptersServiceImpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/Courses/ChaptersServiceImpl.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Web/Admin/GroupsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Web/Admin/GroupsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/GroupCourse.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/GroupCourse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/UserCourseGroup.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/UserCourseGroup.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Services/Groups/GroupsServiceImpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/Groups/GroupsServiceImpl.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/admin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/admin.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
@@ -206,6 +199,11 @@
       <workItem from="1610805791950" duration="3962000" />
       <workItem from="1610900984129" duration="2915000" />
       <workItem from="1611147304290" duration="3276000" />
+      <workItem from="1611156388953" duration="49000" />
+      <workItem from="1611318115195" duration="2055000" />
+      <workItem from="1611320190144" duration="1286000" />
+      <workItem from="1611492443297" duration="2713000" />
+      <workItem from="1611836833983" duration="3850000" />
     </task>
     <task id="LOCAL-00001" summary="relationships added. not finished">
       <created>1610549633399</created>
@@ -235,7 +233,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610903709199</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="exercise group crud">
+      <created>1611156423712</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1611156423712</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -247,25 +252,26 @@
     <MESSAGE value="seeder added. register fixes. SystemServiceProvider added" />
     <MESSAGE value="datatables added. users and course crud" />
     <MESSAGE value="chapters crud" />
-    <option name="LAST_COMMIT_MESSAGE" value="chapters crud" />
+    <MESSAGE value="exercise group crud" />
+    <option name="LAST_COMMIT_MESSAGE" value="exercise group crud" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="370" y="246" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1611150125505">
+    <state x="364" y="160" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1611493325167">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state x="370" y="246" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1280.984@0.0.1280.984" timestamp="1611150125505" />
-    <state x="265" y="85" key="CommitChangelistDialog2" timestamp="1610903708522">
+    <state x="364" y="160" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1280.984@0.0.1280.984" timestamp="1611493325167" />
+    <state x="265" y="85" key="CommitChangelistDialog2" timestamp="1611156421818">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state x="265" y="85" key="CommitChangelistDialog2/0.0.1280.984@0.0.1280.984" timestamp="1610903708522" />
+    <state x="265" y="85" key="CommitChangelistDialog2/0.0.1280.984@0.0.1280.984" timestamp="1611156421818" />
     <state x="120" y="79" key="DiffContextDialog" timestamp="1610903692029">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
     <state x="120" y="79" key="DiffContextDialog/0.0.1280.984@0.0.1280.984" timestamp="1610903692029" />
-    <state x="420" y="246" key="FileChooserDialogImpl" timestamp="1610806029835">
+    <state x="420" y="246" key="FileChooserDialogImpl" timestamp="1611492979269">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state x="420" y="246" key="FileChooserDialogImpl/0.0.1280.984@0.0.1280.984" timestamp="1610806029835" />
+    <state x="420" y="246" key="FileChooserDialogImpl/0.0.1280.984@0.0.1280.984" timestamp="1611492979269" />
     <state x="444" y="305" key="NewPhpClassDialog" timestamp="1611149157612">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
@@ -274,17 +280,17 @@
       <screen x="0" y="0" width="1280" height="984" />
     </state>
     <state x="475" y="414" key="NewPhpFileDialog/0.0.1280.984@0.0.1280.984" timestamp="1610638195168" />
-    <state x="232" y="224" key="Vcs.Push.Dialog.v2" timestamp="1610903712707">
+    <state x="232" y="224" key="Vcs.Push.Dialog.v2" timestamp="1611156426719">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state x="232" y="224" key="Vcs.Push.Dialog.v2/0.0.1280.984@0.0.1280.984" timestamp="1610903712707" />
+    <state x="232" y="224" key="Vcs.Push.Dialog.v2/0.0.1280.984@0.0.1280.984" timestamp="1611156426719" />
     <state x="337" y="224" width="606" height="536" key="find.popup" timestamp="1610637504364">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
     <state x="337" y="224" width="606" height="536" key="find.popup/0.0.1280.984@0.0.1280.984" timestamp="1610637504364" />
-    <state x="303" y="211" width="672" height="678" key="search.everywhere.popup" timestamp="1611150107764">
+    <state x="303" y="211" width="672" height="678" key="search.everywhere.popup" timestamp="1611839864457">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state x="303" y="211" width="672" height="678" key="search.everywhere.popup/0.0.1280.984@0.0.1280.984" timestamp="1611150107764" />
+    <state x="303" y="211" width="672" height="678" key="search.everywhere.popup/0.0.1280.984@0.0.1280.984" timestamp="1611839864457" />
   </component>
 </project>

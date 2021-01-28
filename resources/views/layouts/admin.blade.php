@@ -65,6 +65,7 @@
         <div class="sidebar-heading">
             Interface
         </div>
+        @if(Auth::user())
         @if(Auth::user()->role_id == 1)
         <li class="nav-item">
             <a class="nav-link" href="{{route('courses.index')}}">
@@ -83,7 +84,7 @@
                 <i class="fas fa-fw fa-user"></i>
                 <span>Пользователи</span></a>
         </li>
-
+        @endif
         @endif
 {{--        <li class="nav-item">--}}
 {{--            <a class="nav-link" href="{{route('cars.index')}}">--}}

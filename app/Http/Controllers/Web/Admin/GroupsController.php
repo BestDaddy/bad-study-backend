@@ -3,8 +3,14 @@
 namespace App\Http\Controllers\Web\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Group;
+use App\Models\GroupCourse;
+use App\Models\Role;
+use App\Models\User;
+use App\Models\UserCourseGroup;
 use App\Services\Groups\GroupsService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 
 class GroupsController extends Controller
@@ -61,11 +67,27 @@ class GroupsController extends Controller
      * Display the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function show($id)
     {
-        //
+        $teachers = User::where('role_id', Role::TEACHER_ID)->get();
+        $group = Group::findOrFail($id);
+        if(request()->ajax()){
+            return datatables()->of($group->groupCourses()->with(['course', 'teacher'])->latest()->get())
+                ->addColumn('edit', function($data){
+                    return  '<button
+                         class=" btn btn-primary btn-sm btn-block "
+                          data-id="'.$data->id.'"
+                          onclick="editCourse(event.target)"><i class="fas fa-edit" data-id="'.$data->id.'"></i> Изменить</button>';
+                })
+                ->addColumn('more', function ($data){
+                    return '<a class="text-decoration-none"  href="/groups/'.$data->id.'"><button class="btn btn-primary btn-sm btn-block">Подробнее</button></a>';
+                })
+                ->rawColumns(['more', 'edit'])
+                ->make(true);
+        }
+        return view('admin.groups.show', compact('group', 'teachers'));
     }
 
     /**
@@ -100,5 +122,79 @@ class GroupsController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function getNewCourses($id){
+        return datatables()->of( DB::table("courses")
+            ->select('*')->whereNotIn('courses.id',function($query) use ($id) {
+                $query->select('course_id')->from('group_course')->where('group_course.group_id', $id);
+            })->latest()->get())
+            ->addColumn('add', function ($data){
+                return '<button  id="'.$data->id.'" class="btn btn-primary btn-sm btn-block" data-id="'.$data->id.'"  onclick="addCourse(event.target)"><i class="fas fa-plus" data-id="'.$data->id.'"></i> Добавить</button>';
+            })
+            ->rawColumns(['add'])
+            ->make(true);
+    }
+
+    public function getNewStudents($id){
+        $group_courses = GroupCourse::where('group_id', $id)->get();
+        return datatables()->of( User::where('role_id', Role::STUDENT_ID)->whereNotIn('id',
+                UserCourseGroup::whereIn('course_id', $group_courses->pluck('course_id'))
+                    ->get()->pluck('user_id')
+            )->latest()->get())
+            ->addColumn('add', function ($data){
+                return '<button  id="'.$data->id.'" class="btn btn-primary btn-sm btn-block" data-id="'.$data->id.'"  onclick="addUser(event.target)"><i class="fas fa-plus" data-id="'.$data->id.'"></i> Добавить</button>';
+            })
+            ->rawColumns(['add'])
+            ->make(true);
+    }
+
+    public function getStudents($id){
+        $group = Group::with(['users'])->findOrFail($id);
+        return datatables()->of( $group->users()->distinct()->latest()->get())
+            ->addColumn('delete', function ($data){
+                return '<button  id="'.$data->id.'" class="btn btn-primary btn-sm btn-block" data-id="'.$data->id.'"  onclick="deleteUser(event.target)"><i class="fas fa-trash" data-id="'.$data->id.'"></i> Удалить</button>';
+            })
+            ->rawColumns(['delete'])
+            ->make(true);
+    }
+
+    public function addCourse(Request $request){
+        $rules = array(
+            'course_id' => 'required',
+            'group_id'  => 'required',
+            'teacher_id' => 'required',
+        );
+        $error = Validator::make($request->all(), $rules);
+        if($error->fails())
+            return response()->json(['errors' => $error->errors()->all()]);
+        $group_course = GroupCourse::updateOrCreate(['course_id' => $request->course_id, 'group_id'  => $request->group_id,],
+            [
+                'teacher_id' => $request->teacher_id,
+            ]);
+        return response()->json(['code'=>200, 'message'=>'Group Saved successfully','data' => $group_course], 200);
+    }
+
+    public function adduser(Request $request){
+        $rules = array(
+            'user_id' => 'required',
+            'group_id'  => 'required',
+        );
+        $error = Validator::make($request->all(), $rules);
+        if($error->fails())
+            return response()->json(['errors' => $error->errors()->all()]);
+        $group = Group::with('groupCourses')->findOrFail($request->group_id);
+
+        foreach ($group->groupCourses as $groupCourse){
+            UserCourseGroup::updateOrCreate(['user_id' => $request->user_id, 'course_id'  => $groupCourse->course_id,],
+                [
+                    'group_id' => $request->group_id,
+                ]);
+        }
+//        $group_course = UserCourseGroup::updateOrCreate(['user_id' => $request->user_id, 'group_id'  => $request->group_id,],
+//            [
+//                'teacher_id' => $request->teacher_id,
+//            ]);
+        return response()->json(['code'=>200, 'message'=>'Group Saved successfully'], 200);
     }
 }

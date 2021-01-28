@@ -31,6 +31,11 @@ Route::group(['namespace' => 'Web'], function () {
             'exercises' => 'ExercisesController',
             'groups' => 'GroupsController'
         ]);
-    });
 
+        Route::get('/getNewCourses/{id}', 'GroupsController@getNewCourses')->name('getNewCourses');
+        Route::get('/getNewStudents/{id}', 'GroupsController@getNewStudents')->name('getNewStudents');
+        Route::get('/getStudents/{id}', 'GroupsController@getStudents')->name('getStudents');
+        Route::post('/addCourse', 'GroupsController@addCourse')->name('addCourse');
+        Route::post('/addUser', 'GroupsController@addUser')->name('addUser');
+    });
 });
