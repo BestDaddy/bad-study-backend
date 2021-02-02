@@ -75,16 +75,17 @@ class GroupsController extends Controller
         $group = Group::findOrFail($id);
         if(request()->ajax()){
             return datatables()->of($group->groupCourses()->with(['course', 'teacher'])->latest()->get())
-                ->addColumn('edit', function($data){
+                ->addColumn('delete', function($data){
                     return  '<button
-                         class=" btn btn-primary btn-sm btn-block "
-                          data-id="'.$data->id.'"
-                          onclick="editCourse(event.target)"><i class="fas fa-edit" data-id="'.$data->id.'"></i> Изменить</button>';
+                         class=" btn btn-danger btn-sm btn-block "
+                         data-id="'.$data->course_id.'"
+                         data-course_id="'.$data->course_id.'"
+                         onclick="removeCourse(event.target)"><i class="fas fa-trash"  data-id="'.$data->course_id.'" data-course_id="'.$data->course_id.'"></i> Удалить</button>';
                 })
                 ->addColumn('more', function ($data){
                     return '<a class="text-decoration-none"  href="/groups/'.$data->id.'"><button class="btn btn-primary btn-sm btn-block">Подробнее</button></a>';
                 })
-                ->rawColumns(['more', 'edit'])
+                ->rawColumns(['more', 'delete'])
                 ->make(true);
         }
         return view('admin.groups.show', compact('group', 'teachers'));
@@ -139,7 +140,7 @@ class GroupsController extends Controller
     public function getNewStudents($id){
         $group_courses = GroupCourse::where('group_id', $id)->get();
         return datatables()->of( User::where('role_id', Role::STUDENT_ID)->whereNotIn('id',
-                UserCourseGroup::whereIn('course_id', $group_courses->pluck('course_id'))
+                UserCourseGroup::whereNotNull('group_id')->whereIn('course_id', $group_courses->pluck('course_id'))
                     ->get()->pluck('user_id')
             )->latest()->get())
             ->addColumn('add', function ($data){
@@ -153,7 +154,7 @@ class GroupsController extends Controller
         $group = Group::with(['users'])->findOrFail($id);
         return datatables()->of( $group->users()->distinct()->latest()->get())
             ->addColumn('delete', function ($data){
-                return '<button  id="'.$data->id.'" class="btn btn-primary btn-sm btn-block" data-id="'.$data->id.'"  onclick="deleteUser(event.target)"><i class="fas fa-trash" data-id="'.$data->id.'"></i> Удалить</button>';
+                return '<button  id="'.$data->id.'" class="btn btn-danger btn-sm btn-block" data-id="'.$data->id.'"  onclick="removeUser(event.target)"><i class="fas fa-trash" data-id="'.$data->id.'"></i> Удалить</button>';
             })
             ->rawColumns(['delete'])
             ->make(true);
@@ -165,14 +166,47 @@ class GroupsController extends Controller
             'group_id'  => 'required',
             'teacher_id' => 'required',
         );
+
         $error = Validator::make($request->all(), $rules);
+
         if($error->fails())
             return response()->json(['errors' => $error->errors()->all()]);
+        //add course
         $group_course = GroupCourse::updateOrCreate(['course_id' => $request->course_id, 'group_id'  => $request->group_id,],
             [
                 'teacher_id' => $request->teacher_id,
             ]);
+        //add course for each student
+        $group = Group::with('users')->findOrFail($request->group_id);
+        foreach ($group->users as $user){
+            UserCourseGroup::updateOrCreate(['user_id' => $user->id, 'course_id'  => $request->course_id],
+                [
+                    'group_id' => $request->group_id,
+                ]);
+        }
+
         return response()->json(['code'=>200, 'message'=>'Group Saved successfully','data' => $group_course], 200);
+    }
+
+    public function removeCourse(Request $request){
+        $rules = array(
+            'course_id' => 'required',
+            'group_id'  => 'required',
+        );
+
+        $error = Validator::make($request->all(), $rules);
+
+        if($error->fails())
+            return response()->json(['errors' => $error->errors()->all()]);
+        // remove course
+        GroupCourse::where('group_id', $request->group_id)
+            ->where('course_id', $request->course_id)
+            ->delete();
+        // remove student with the course
+        UserCourseGroup::where('group_id', $request->group_id)
+            ->where('course_id', $request->course_id)
+            ->update(['group_id' => null]);
+        return response()->json(['code'=>200, 'message'=>'Course removed successfully'], 200);
     }
 
     public function adduser(Request $request){
@@ -180,21 +214,39 @@ class GroupsController extends Controller
             'user_id' => 'required',
             'group_id'  => 'required',
         );
+
         $error = Validator::make($request->all(), $rules);
+
         if($error->fails())
             return response()->json(['errors' => $error->errors()->all()]);
+
         $group = Group::with('groupCourses')->findOrFail($request->group_id);
 
         foreach ($group->groupCourses as $groupCourse){
-            UserCourseGroup::updateOrCreate(['user_id' => $request->user_id, 'course_id'  => $groupCourse->course_id,],
+            UserCourseGroup::updateOrCreate(['user_id' => $request->user_id, 'course_id'  => $groupCourse->course_id],
                 [
                     'group_id' => $request->group_id,
                 ]);
         }
-//        $group_course = UserCourseGroup::updateOrCreate(['user_id' => $request->user_id, 'group_id'  => $request->group_id,],
-//            [
-//                'teacher_id' => $request->teacher_id,
-//            ]);
         return response()->json(['code'=>200, 'message'=>'Group Saved successfully'], 200);
+    }
+
+    public function removeUser(Request $request){
+        $rules = array(
+            'user_id' => 'required',
+            'group_id'  => 'required',
+        );
+
+        $error = Validator::make($request->all(), $rules);
+
+        if($error->fails())
+            return response()->json(['errors' => $error->errors()->all()]);
+
+        $group_course = GroupCourse::where('group_id', $request->group_id)->get();
+        UserCourseGroup::whereIn('course_id', $group_course->pluck('course_id'))
+            ->where('user_id', $request->user_id)
+            ->update(['group_id' => null]);
+
+        return response()->json(['code'=>200, 'message'=>'User removed successfully'], 200);
     }
 }

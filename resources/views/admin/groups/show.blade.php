@@ -20,8 +20,9 @@
             <thead>
             <tr>
                 <th width="5%">ID</th>
-                <th width="40%">Название</th>
-                <th width="40%">преподаватель</th>
+                <th width="35%">Название</th>
+                <th width="30%">преподаватель</th>
+                <th width="15%"></th>
                 <th width="15%"></th>
             </tr>
             </thead>
@@ -128,6 +129,7 @@
             </div>
         </div>
     </div>
+
 @endsection
 
 
@@ -142,6 +144,9 @@
         function add3() {
             $('#post-modal-3').modal('show');
         }
+
+
+
         function add() {
             $('#collapseExample').hide();
             $('#staticBackdropLabel').text("Новый курс");
@@ -151,6 +156,41 @@
             $('#order').val('');
             $('#description').val('');
             $('#post-modal').modal('show');
+        }
+
+        function removeCourse(event) {
+            var course_id =  $(event).data("course_id");
+            var group_id = '{{$group->id}}';
+            let _token   = $('meta[name="csrf-token"]').attr('content');
+            $.ajax({
+                url: "{{route('removeCourse')}}",
+                type: "POST",
+                data: {
+                    group_id: group_id,
+                    course_id: course_id,
+                    _token: _token
+                },
+                success: function(response) {
+                    if(response.code == 200) {
+                        $('#student_table').DataTable().ajax.reload();
+                        $('#course_table').DataTable().ajax.reload();
+                        $('#new_course_table').DataTable().ajax.reload();
+                        $('#new_student_table').DataTable().ajax.reload();
+                    } else {
+                        var errors = response.errors;
+                        errorsHtml = '<div class="alert alert-danger"><ul>';
+
+                        $.each( errors, function( key, value ) {
+                            errorsHtml += '<li>'+ value + '</li>'; //showing only the first error.
+                        });
+                        errorsHtml += '</ul></div>';
+
+                        $( '#form-errors' ).html( errorsHtml ); //appending to a <div id="form-errors"></div> inside form
+                    }
+                },
+                error: function(response) {
+                }
+            });
         }
 
         function addCourse(event) {
@@ -175,7 +215,7 @@
                     if(response.code == 200) {
                         $('#new_student_table').DataTable().ajax.reload();
                         $('#student_table').DataTable().ajax.reload();
-                        $('#module_table').DataTable().ajax.reload();
+                        $('#course_table').DataTable().ajax.reload();
                         $('#new_course_table').DataTable().ajax.reload();
                     }else{
                         var errors = response.errors;
@@ -194,6 +234,40 @@
                 }
             });
         }
+
+        function removeUser(event) {
+            var user_id =  $(event).data("id");
+            var group_id = '{{$group->id}}';
+            let _token   = $('meta[name="csrf-token"]').attr('content');
+            $.ajax({
+                url: "{{route('removeUser')}}",
+                type: "POST",
+                data: {
+                    group_id: group_id,
+                    user_id: user_id,
+                    _token: _token
+                },
+                success: function(response) {
+                    if(response.code == 200) {
+                        $('#student_table').DataTable().ajax.reload();
+                        $('#new_student_table').DataTable().ajax.reload();
+                    } else {
+                        var errors = response.errors;
+                        errorsHtml = '<div class="alert alert-danger"><ul>';
+
+                        $.each( errors, function( key, value ) {
+                            errorsHtml += '<li>'+ value + '</li>'; //showing only the first error.
+                        });
+                        errorsHtml += '</ul></div>';
+
+                        $( '#form-errors' ).html( errorsHtml ); //appending to a <div id="form-errors"></div> inside form
+                    }
+                },
+                error: function(response) {
+                }
+            });
+        }
+
         function addUser(event) {
             var user_id =  $(event).data("id");
             var group_id = '{{$group->id}}';
@@ -253,37 +327,6 @@
         });
 
         $(document).ready(function() {
-            $('#new_course_table').DataTable({
-                language: {
-                    "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Russian.json"
-                },
-                processing: true,
-                serverSide: true,
-                iDisplayLength: 25,
-                ajax: {
-                    url:  `{{route('getNewCourses', $group->id)}}`
-                },
-                columns: [
-                    {
-                        data: 'id',
-                        name: 'id',
-                        width:'10%',
-                    },
-                    {
-                        data: 'name',
-                        name: 'name',
-                        width:'65%',
-                    },
-                    {
-                        data: 'add',
-                        name: 'add',
-                        width:'25%',
-                        orderable: false
-                    },
-                ]
-            });
-        });
-        $(document).ready(function() {
 
             $('#student_table').DataTable({
                 language: {
@@ -315,6 +358,39 @@
                 ]
             });
         });
+
+        $(document).ready(function() {
+            $('#new_course_table').DataTable({
+                language: {
+                    "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Russian.json"
+                },
+                processing: true,
+                serverSide: true,
+                iDisplayLength: 25,
+                ajax: {
+                    url:  `{{route('getNewCourses', $group->id)}}`
+                },
+                columns: [
+                    {
+                        data: 'id',
+                        name: 'id',
+                        width:'10%',
+                    },
+                    {
+                        data: 'name',
+                        name: 'name',
+                        width:'65%',
+                    },
+                    {
+                        data: 'add',
+                        name: 'add',
+                        width:'25%',
+                        orderable: false
+                    },
+                ]
+            });
+        });
+
         $(document).ready(function() {
 
             $('#course_table').DataTable({
@@ -338,6 +414,11 @@
                     {
                         data: 'teacher.first_name',
                         name: 'teacher.first_name'
+                    },
+                    {
+                        data: 'delete',
+                        name: 'delete',
+                        orderable: false
                     },
                     {
                         data: 'more',
