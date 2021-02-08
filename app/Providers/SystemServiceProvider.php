@@ -11,6 +11,8 @@ use App\Services\Courses\ExercisesService;
 use App\Services\Courses\ExercisesServiceImpl;
 use App\Services\Groups\GroupsService;
 use App\Services\Groups\GroupsServiceImpl;
+use App\Services\Groups\SchedulesService;
+use App\Services\Groups\SchedulesServiceImpl;
 use App\Services\Users\UsersService;
 use App\Services\Users\UsersServiceImpl;
 use Illuminate\Support\ServiceProvider;
@@ -39,5 +41,7 @@ class SystemServiceProvider extends ServiceProvider
         $this->app->bind(ChaptersService::class, ChaptersServiceImpl::class);
         $this->app->bind(ExercisesService::class, ExercisesServiceImpl::class);
         $this->app->bind(GroupsService::class, GroupsServiceImpl::class);
+        $this->app->bind(SchedulesService::class, SchedulesServiceImpl::class);
+
     }
 }

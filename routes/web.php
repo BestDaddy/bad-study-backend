@@ -29,7 +29,8 @@ Route::group(['namespace' => 'Web'], function () {
             'courses' => 'CoursesController',
             'chapters' => 'ChaptersController',
             'exercises' => 'ExercisesController',
-            'groups' => 'GroupsController'
+            'groups' => 'GroupsController',
+            'groups.courses.schedules' => 'SchedulesController',
         ]);
 
         Route::get('/getNewCourses/{id}', 'GroupsController@getNewCourses')->name('getNewCourses');
@@ -41,5 +42,7 @@ Route::group(['namespace' => 'Web'], function () {
 
         Route::post('/addUser', 'GroupsController@addUser')->name('addUser');
         Route::post('/removeUser', 'GroupsController@removeUser')->name('removeUser');
+
+//        Route::get('/groups/{group_id}/schedules', 'SchedulesController@index');
     });
 });

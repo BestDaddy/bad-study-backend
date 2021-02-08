@@ -23,4 +23,8 @@ class GroupCourse extends Model
     public function teacher(){
         return $this->belongsTo(User::class, 'teacher_id');
     }
+
+    public function schedules(){
+        return $this->hasMany(Schedule::class, 'group_course_id');
+    }
 }

@@ -82,8 +82,8 @@ class GroupsController extends Controller
                          data-course_id="'.$data->course_id.'"
                          onclick="removeCourse(event.target)"><i class="fas fa-trash"  data-id="'.$data->course_id.'" data-course_id="'.$data->course_id.'"></i> Удалить</button>';
                 })
-                ->addColumn('more', function ($data){
-                    return '<a class="text-decoration-none"  href="/groups/'.$data->id.'"><button class="btn btn-primary btn-sm btn-block">Подробнее</button></a>';
+                ->addColumn('more', function ($data) use ($group) {
+                    return '<a class="text-decoration-none"  href="/groups/'.$group->id.'/courses/'. $data->course_id.'/schedules"><button class="btn btn-primary btn-sm btn-block">Подробнее</button></a>';
                 })
                 ->rawColumns(['more', 'delete'])
                 ->make(true);
