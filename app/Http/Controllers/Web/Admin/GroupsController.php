@@ -8,7 +8,9 @@ use App\Models\GroupCourse;
 use App\Models\Role;
 use App\Models\User;
 use App\Models\UserCourseGroup;
+use App\Services\Groups\AttendancesService;
 use App\Services\Groups\GroupsService;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
@@ -16,10 +18,11 @@ use Illuminate\Support\Facades\Validator;
 class GroupsController extends Controller
 {
     private $groupsService;
-
-    public function __construct(GroupsService $groupsService)
+    private $attendanceService;
+    public function __construct(GroupsService $groupsService, AttendancesService $attendanceService)
     {
         $this->groupsService = $groupsService;
+        $this->attendanceService = $attendanceService;
     }
     /**
      * Display a listing of the resource.
@@ -47,8 +50,8 @@ class GroupsController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\JsonResponse
+     * @param Request $request
+     * @return JsonResponse
      */
     public function store(Request $request)
     {
@@ -66,8 +69,9 @@ class GroupsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @throws \Exception
      */
     public function show($id)
     {
@@ -105,7 +109,7 @@ class GroupsController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param Request $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
@@ -227,7 +231,14 @@ class GroupsController extends Controller
                 [
                     'group_id' => $request->group_id,
                 ]);
+            foreach($groupCourse->schedules as $schedule){
+//                $input['user_id'] = $request->user_id;
+                $request['schedule_id'] = $schedule->id;
+                $this->attendanceService->store($request);
+            }
         }
+
+
         return response()->json(['code'=>200, 'message'=>'Group Saved successfully'], 200);
     }
 

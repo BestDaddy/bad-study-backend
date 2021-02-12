@@ -6,12 +6,12 @@
 
 @section('content')
     {{--    {{ Breadcrumbs::render('courses') }}--}}
-    <h2>Все группы :</h2>
+    <h2>Расписание группы : {{$group->name}}</h2>
     <hr>
     <br>
     <div class="row" style="clear: both;">
         <div class="col-12 text-right">
-            <a href="javascript:void(0)" class="btn btn-primary" data-toggle="modal"  onclick="add()"><i class="fas fa-plus-square"></i> Добавить группу</a>
+            <a href="javascript:void(0)" class="btn btn-primary" data-toggle="modal"  onclick="add()"><i class="fas fa-plus-square"></i> Добавить расписание</a>
         </div>
     </div>
     <br>

@@ -7,6 +7,7 @@ use App\Models\Course;
 use App\Models\Group;
 use App\Models\GroupCourse;
 use App\Models\Schedule;
+use App\Services\Groups\AttendancesService;
 use App\Services\Groups\GroupsService;
 use App\Services\Groups\SchedulesService;
 use Illuminate\Http\Request;
@@ -14,10 +15,11 @@ use Illuminate\Http\Request;
 class SchedulesController extends Controller
 {
     private $schedulesService;
-
-    public function __construct(SchedulesService $schedulesService)
+    private $attendanceService;
+    public function __construct(SchedulesService $schedulesService, AttendancesService $attendanceService)
     {
         $this->schedulesService = $schedulesService;
+        $this->attendanceService = $attendanceService;
     }
 
     public function index(Group $group, Course $course){
@@ -42,6 +44,13 @@ class SchedulesController extends Controller
 
     public function store(Group $group, Course $course, Request $request){
         $schedule = $this->schedulesService->store($group, $course, $request);
+
+        foreach ($group->users as $student){
+            $request['schedule_id'] = $schedule->id;
+            $request['user_id'] = $student->id;
+            $this->attendanceService->store($request);
+        }
+
         return response()->json(['code'=>200, 'message'=>'Schedule Saved successfully','data' => $schedule], 200);
     }
 
