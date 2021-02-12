@@ -6,7 +6,7 @@
 
 @section('content')
     {{--    {{ Breadcrumbs::render('courses') }}--}}
-    <h2>Все группы :</h2>
+    <h2>Урок на : {{$schedule->starts_at}}</h2>
     <hr>
     <br>
     <div class="row" style="clear: both;">
@@ -20,8 +20,8 @@
             <thead>
             <tr>
                 <th width="5%">ID</th>
-{{--                <th width="50%">Название</th>--}}
-{{--                <th width="15%"></th>--}}
+                <th width="50%">Студент</th>
+                <th width="15%"></th>
 {{--                <th width="15%"></th>--}}
 {{--                <th width="15%"></th>--}}
             </tr>
@@ -213,14 +213,14 @@
                         data: 'id',
                         name: 'id'
                     },
-                    // {
-                    //     data: 'starts_at',
-                    //     name: 'starts_at'
-                    // },
-                    // {
-                    //     data: 'chapter.name',
-                    //     name: 'chapter.name'
-                    // },
+                    {
+                        data: 'user.first_name',
+                        name: 'user.first_name'
+                    },
+                    {
+                        data: 'value',
+                        name: 'value'
+                    },
                     // {
                     //     data: 'edit',
                     //     name: 'edit',
