@@ -23,6 +23,7 @@
                 <th width="50%">Название</th>
                 <th width="15%"></th>
                 <th width="15%"></th>
+                <th width="15%"></th>
             </tr>
             </thead>
         </table>
@@ -82,9 +83,9 @@
                 </div>
                 <div class="modal-footer">
 
-                    <div class="col-lg-9">
+                    <div class="col-lg-7">
                         <div  class="collapse" id="collapseExample">
-                            <button class="btn btn-danger" onclick="deleteCourse()"><i class="fas fa-trash"></i> Удалить</button>
+                            <button class="btn btn-danger" onclick="deleteSchedule()"><i class="fas fa-trash"></i> Удалить</button>
                         </div>
                     </div>
                     <button class="btn btn-primary" onclick="save()">Сохранить</button>
@@ -98,6 +99,9 @@
 
 @section('scripts')
     <script>
+        String.prototype.splice = function(idx, rem, str) {
+            return this.slice(0, idx) + str + this.slice(idx + Math.abs(rem));
+        };
         function add() {
             $('#collapseExample').hide();
             $('#staticBackdropLabel').text("Новый курс");
@@ -109,45 +113,46 @@
             $('#post-modal').modal('show');
         }
 
-        {{--function deleteCourse() {--}}
-        {{--    var id = $('#group_id').val();--}}
-        {{--    let _url = `courses/${id}`;--}}
+        function deleteSchedule() {
+            var id = $('#schedule_id').val();
+            let _url = `/groups/{{$group->id}}/courses/{{$course->id}}/schedules/${id}`;
 
-        {{--    let _token   = $('meta[name="csrf-token"]').attr('content');--}}
+            let _token   = $('meta[name="csrf-token"]').attr('content');
 
-        {{--    $.ajax({--}}
-        {{--        url: _url,--}}
-        {{--        type: 'DELETE',--}}
-        {{--        data: {--}}
-        {{--            _token: _token--}}
-        {{--        },--}}
-        {{--        success: function(response) {--}}
-        {{--            $('#course_table').DataTable().ajax.reload();--}}
-        {{--            $('#post-modal').modal('hide');--}}
-        {{--        }--}}
-        {{--    });--}}
-        {{--}--}}
+            $.ajax({
+                url: _url,
+                type: 'DELETE',
+                data: {
+                    _token: _token
+                },
+                success: function(response) {
+                    $('#schedule_table').DataTable().ajax.reload();
+                    $('#post-modal').modal('hide');
+                }
+            });
+        }
 
-        {{--function editCourse (event) {--}}
-        {{--    $('#collapseExample').show();--}}
-        {{--    $('#form-errors').html("");--}}
-        {{--    $('#staticBackdropLabel').text("Редактировать курс");--}}
+        function editSchedule (event) {
+            $('#collapseExample').show();
+            $('#form-errors').html("");
+            $('#staticBackdropLabel').text("Редактировать курс");
 
-        {{--    var id  = $(event).data("id");--}}
-        {{--    let _url = `courses/${id}/edit`;--}}
-        {{--    $.ajax({--}}
-        {{--        url: _url,--}}
-        {{--        type: "GET",--}}
-        {{--        success: function(response) {--}}
-        {{--            if(response) {--}}
-        {{--                $("#group_id").val(response.id);--}}
-        {{--                $("#name").val(response.name);--}}
-        {{--                $("#description").val(response.description);--}}
-        {{--                $('#post-modal').modal('show');--}}
-        {{--            }--}}
-        {{--        }--}}
-        {{--    });--}}
-        {{--}--}}
+            var id  = $(event).data("id");
+            let _url = `/groups/{{$group->id}}/courses/{{$course->id}}/schedules/${id}/edit`;
+            $.ajax({
+                url: _url,
+                type: "GET",
+                success: function(response) {
+                    if(response) {
+                        $("#schedule_id").val(response.id);
+                        $("#chapter_id").val(response.chapter_id);
+                        $("#live_url").val(response.live_url);
+                        $("#starts_at").val(response.starts_at.splice(10, -1, "T"));
+                        $('#post-modal').modal('show');
+                    }
+                }
+            });
+        }
         function save() {
             var starts_at = $('#starts_at').val();
             var live_url = $('#live_url').val();
@@ -216,11 +221,11 @@
                         data: 'chapter.name',
                         name: 'chapter.name'
                     },
-                    // {
-                    //     data: 'edit',
-                    //     name: 'edit',
-                    //     orderable: false
-                    // },
+                    {
+                        data: 'edit',
+                        name: 'edit',
+                        orderable: false
+                    },
                     {
                         data: 'more',
                         name: 'more',

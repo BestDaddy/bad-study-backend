@@ -23,40 +23,35 @@ class SchedulesController extends Controller
     public function index(Group $group, Course $course){
         $group_course = GroupCourse::where('group_id', $group->id)
             ->where('course_id', $course->id)
-            ->first();
+            ->firstOrFail();
 
         $chapters = $course->chapters;
         if(request()->ajax()){
-            return datatables()->of($group_course->schedules()->with(['chapter'])->latest()->get())
-                ->addColumn('delete', function($data){
-                    return  '<button
-                         class=" btn btn-danger btn-sm btn-block "
-                         data-id="'.$data->course_id.'"
-                         data-course_id="'.$data->course_id.'"
-                         onclick="removeCourse(event.target)"><i class="fas fa-trash"  data-id="'.$data->course_id.'" data-course_id="'.$data->course_id.'"></i> Удалить</button>';
-                })
-                ->addColumn('more', function ($data) use ($group) {
-                    return '<a class="text-decoration-none"  href="/groups/'.$group->id.'/courses/'. $data->course_id.'/schedules"><button class="btn btn-primary btn-sm btn-block">Подробнее</button></a>';
-                })
-                ->rawColumns(['more', 'delete'])
-                ->make(true);
+           return $this->schedulesService->index($group_course);
         }
         return view('admin.schedules.index', compact('group', 'course', 'chapters'));
     }
 
+    public function show(Group $group, Course $course, $id){
+        $schedule = $this->schedulesService->find($id);
+        if(request()->ajax()){
+            return $this->schedulesService->attendance($schedule);
+        }
+        return view('admin.schedules.show', compact('group', 'course', 'schedule'));
+    }
+
     public function store(Group $group, Course $course, Request $request){
-        $group_course = GroupCourse::where('group_id', $group->id)
-            ->where('course_id', $course->id)
-            ->firstOrFail();
-
-        $schedule = Schedule::updateOrCreate(['id' => $request->id],[
-            'group_id' => $group->id,
-            'chapter_id' => $request->chapter_id,
-            'group_course_id' => $group_course->id,
-            'starts_at' => $request->starts_at,
-            'live_url' => $request->live_url
-
-        ]);
+        $schedule = $this->schedulesService->store($group, $course, $request);
         return response()->json(['code'=>200, 'message'=>'Schedule Saved successfully','data' => $schedule], 200);
     }
+
+    public function edit(Group $group, Course $course, $id){
+        return response()->json($this->schedulesService->find($id));
+
+    }
+
+    public function destroy(Group $group, Course $course, $id){
+        $this->schedulesService->delete($id);
+    }
+
 }

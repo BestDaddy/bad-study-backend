@@ -22,4 +22,8 @@ class Schedule extends Model
     public function groupCourse(){
         return $this->belongsTo(GroupCourse::class, 'group_course_id');
     }
+
+    public function attendance(){
+        return $this->hasMany(Attendance::class);
+    }
 }
