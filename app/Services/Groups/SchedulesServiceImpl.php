@@ -8,6 +8,7 @@ use App\Models\Course;
 use App\Models\Group;
 use App\Models\GroupCourse;
 use App\Models\Schedule;
+use App\Models\User;
 use App\Services\BaseServiceImpl;
 use Illuminate\Http\Request;
 
@@ -51,8 +52,14 @@ class SchedulesServiceImpl extends BaseServiceImpl implements SchedulesService
     }
 
     public function attendance(Schedule $schedule){
+        $group = $schedule->group()->with(['users'])->firstOrFail();
+
         if(request()->ajax()){
-            return datatables()->of($schedule->attendance()->with(['user'])->latest()->get())
+            return datatables()->of($schedule->attendance()
+                ->whereIn('user_id', $group->users->flatten()->pluck('id'))
+                ->with(['user'])
+                ->latest()
+                ->get())
                 ->addColumn('change', function($data){
                     if($data->value){
                         return '
@@ -78,9 +85,19 @@ class SchedulesServiceImpl extends BaseServiceImpl implements SchedulesService
                 ->addColumn('full_name', function($data){
                     return $data->user->first_name . ' ' .  $data->user->last_name;
                 })
-                ->rawColumns(['change', 'full_name'])
+                ->addColumn('results', function ($data){
+                    return '<a class="text-decoration-none"  href="/schedules/'. $data->schedule_id .'/users/'. $data->user_id.'"><button class="btn btn-primary btn-sm btn-block">Ответы</button></a>';
+                })
+                ->rawColumns(['change', 'full_name', 'results'])
                 ->make(true);
         }
+    }
 
+    public function userResults(Schedule $schedule, User $user){
+        if(request()->ajax()){
+            return datatables()->of($user->exerciseResults()->with(['exercise'])->latest()
+                ->get())
+                ->make(true);
+        }
     }
 }

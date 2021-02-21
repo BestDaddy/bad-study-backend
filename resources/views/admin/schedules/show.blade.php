@@ -20,9 +20,9 @@
             <thead>
             <tr>
                 <th width="5%">ID</th>
-                <th width="50%">Студент</th>
+                <th width="65%">Студент</th>
                 <th width="15%">Присутствовал</th>
-{{--                <th width="15%"></th>--}}
+                <th width="15%"></th>
             </tr>
             </thead>
         </table>
@@ -83,11 +83,11 @@
                         name: 'change',
                         orderable: false
                     },
-                    // {
-                    //     data: 'more',
-                    //     name: 'more',
-                    //     orderable: false
-                    // },
+                    {
+                        data: 'results',
+                        name: 'results',
+                        orderable: false
+                    },
                 ]
             });
         });

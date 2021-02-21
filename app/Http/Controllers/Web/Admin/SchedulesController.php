@@ -11,6 +11,7 @@ use App\Services\Groups\AttendancesService;
 use App\Services\Groups\GroupsService;
 use App\Services\Groups\SchedulesService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class SchedulesController extends Controller
 {
@@ -61,6 +62,28 @@ class SchedulesController extends Controller
 
     public function destroy(Group $group, Course $course, $id){
         $this->schedulesService->delete($id);
+    }
+
+    public function userResults($schedule_id, $user_id){
+//        DB::connection()->enableQueryLog();
+        $schedule = $this->schedulesService->findWith(
+            $schedule_id, [
+                'group.users' => function($q) use($user_id) {
+                    $q->where('users.id', $user_id);
+                },
+                'chapter'
+            ]
+        );
+        $user = $schedule->group->users->first();
+        if(!$user){
+            abort(404);
+        }
+        if(request()->ajax()){
+            return $this->schedulesService->userResults($schedule, $user);
+        }
+
+//        dd(DB::getQueryLog());
+        return view('admin.results.index', compact('schedule', 'user'));
     }
 
 }

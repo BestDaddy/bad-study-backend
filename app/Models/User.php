@@ -45,4 +45,12 @@ class User extends Authenticatable
     {
         return $this->role_id == Role::ADMIN_ID;
     }
+
+    public function fullName(){
+        return $this->first_name . ' ' . $this->last_name;
+    }
+
+    public function exerciseResults(){
+        return $this->hasMany(ExerciseResult::class, 'user_id');
+    }
 }

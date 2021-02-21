@@ -44,6 +44,9 @@ Route::group(['namespace' => 'Web'], function () {
         Route::post('/removeUser', 'GroupsController@removeUser')->name('removeUser');
 
         Route::post('/changeAttendance' , 'AttendancesController@changeAttendance')->name('changeAttendance');
+
+        //ExercisesResults
+        Route::get('/schedules/{schedule_id}/users/{user_id}', 'SchedulesController@userResults')->name('userResults');
 //        Route::get('/groups/{group_id}/schedules', 'SchedulesController@index');
     });
 });

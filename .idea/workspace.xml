@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4ab46e84-ab3e-4e26-ac9b-d274ec4ea08b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/results/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Web/Admin/AttendancesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Web/Admin/AttendancesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Services/Groups/AttendancesService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/Groups/AttendancesService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Services/Groups/AttendancesServiceImpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/Groups/AttendancesServiceImpl.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Web/Admin/SchedulesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Web/Admin/SchedulesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Services/Groups/SchedulesService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/Groups/SchedulesService.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Services/Groups/SchedulesServiceImpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/Groups/SchedulesServiceImpl.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/schedules/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/schedules/show.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
@@ -211,7 +212,7 @@
       <workItem from="1613192834031" duration="1238000" />
       <workItem from="1613567603347" duration="644000" />
       <workItem from="1613668084998" duration="2440000" />
-      <workItem from="1613898281438" duration="1690000" />
+      <workItem from="1613898281438" duration="4251000" />
     </task>
     <task id="LOCAL-00001" summary="relationships added. not finished">
       <created>1610549633399</created>
@@ -290,7 +291,14 @@
       <option name="project" value="LOCAL" />
       <updated>1613149024438</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="attendance">
+      <created>1613899999510</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1613899999510</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -309,17 +317,18 @@
     <MESSAGE value="schedule crud. base service added" />
     <MESSAGE value="auto make attendance" />
     <MESSAGE value="fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixes" />
+    <MESSAGE value="attendance" />
+    <option name="LAST_COMMIT_MESSAGE" value="attendance" />
   </component>
   <component name="WindowStateProjectService">
     <state x="364" y="160" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1613898623437">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
     <state x="364" y="160" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1280.984@0.0.1280.984" timestamp="1613898623437" />
-    <state x="265" y="85" key="CommitChangelistDialog2" timestamp="1613149024024">
+    <state x="265" y="85" key="CommitChangelistDialog2" timestamp="1613899998716">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state x="265" y="85" key="CommitChangelistDialog2/0.0.1280.984@0.0.1280.984" timestamp="1613149024024" />
+    <state x="265" y="85" key="CommitChangelistDialog2/0.0.1280.984@0.0.1280.984" timestamp="1613899998716" />
     <state x="120" y="79" key="DiffContextDialog" timestamp="1610903692029">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
@@ -348,9 +357,9 @@
       <screen x="0" y="0" width="1280" height="984" />
     </state>
     <state x="337" y="224" width="606" height="536" key="find.popup/0.0.1280.984@0.0.1280.984" timestamp="1610637504364" />
-    <state x="303" y="211" width="672" height="678" key="search.everywhere.popup" timestamp="1613898756176">
+    <state x="303" y="211" width="672" height="678" key="search.everywhere.popup" timestamp="1613902581010">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state x="303" y="211" width="672" height="678" key="search.everywhere.popup/0.0.1280.984@0.0.1280.984" timestamp="1613898756176" />
+    <state x="303" y="211" width="672" height="678" key="search.everywhere.popup/0.0.1280.984@0.0.1280.984" timestamp="1613902581010" />
   </component>
 </project>
