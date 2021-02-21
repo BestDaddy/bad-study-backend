@@ -24,4 +24,11 @@ class AttendancesServiceImpl extends BaseServiceImpl implements AttendancesServi
             $request->all()
         ]);
     }
+
+    public function changeAttendance(Request $request){
+        $attendance = Attendance::findOrFail($request->id);
+        $attendance->value = $request->value;
+        $attendance->save();
+        return $attendance;
+    }
 }

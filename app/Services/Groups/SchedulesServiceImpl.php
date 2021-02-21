@@ -53,16 +53,32 @@ class SchedulesServiceImpl extends BaseServiceImpl implements SchedulesService
     public function attendance(Schedule $schedule){
         if(request()->ajax()){
             return datatables()->of($schedule->attendance()->with(['user'])->latest()->get())
-//                ->addColumn('edit', function($data){
-//                    return  '<button
-//                         class=" btn btn-primary btn-sm btn-block "
-//                          data-id="'.$data->id.'"
-//                          onclick="editSchedule(event.target)"><i class="fas fa-edit" data-id="'.$data->id.'"></i> Изменить</button>';
-//                })
-//                ->addColumn('more', function ($data) use ($group_course) {
-//                    return '<a class="text-decoration-none"  href="/groups/'.$group_course->group_id.'/courses/'. $data->course_id.'/schedules"><button class="btn btn-primary btn-sm btn-block">Подробнее</button></a>';
-//                })
-//                ->rawColumns(['more', 'edit'])
+                ->addColumn('change', function($data){
+                    if($data->value){
+                        return '
+                        <form>
+                          <input type="checkbox"
+                          data-id="'.$data->id.'"
+                          data-value="0"
+                          value="0"
+                          onclick="changeAttendance(event.target)"
+                          checked>
+                        </form>';
+                    } else {
+                        return '
+                        <form>
+                          <input type="checkbox"
+                          data-id="'.$data->id.'"
+                          data-value="1"
+                          value="1"
+                          onclick="changeAttendance(event.target)">
+                        </form>';
+                    }
+                })
+                ->addColumn('full_name', function($data){
+                    return $data->user->first_name . ' ' .  $data->user->last_name;
+                })
+                ->rawColumns(['change', 'full_name'])
                 ->make(true);
         }
 
