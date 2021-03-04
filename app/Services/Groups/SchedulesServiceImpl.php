@@ -94,9 +94,20 @@ class SchedulesServiceImpl extends BaseServiceImpl implements SchedulesService
     }
 
     public function userResults(Schedule $schedule, User $user){
+        $exercises = $schedule->chapter->exercises;
+
         if(request()->ajax()){
-            return datatables()->of($user->exerciseResults()->with(['exercise'])->latest()
+            return datatables()->of($user->exerciseResults()->with(['exercise'])
+                ->whereIn('exercise_id', $exercises->pluck('id'))
+                ->latest()
                 ->get())
+                ->addColumn('edit', function($data){
+                    return  '<button
+                         class=" btn btn-primary btn-sm btn-block "
+                          data-id="'.$data->id.'"
+                          onclick="editAnswer(event.target)"><i class="fas fa-edit" data-id="'.$data->id.'"></i> Оценить</button>';
+                })
+                ->rawColumns(['edit'])
                 ->make(true);
         }
     }

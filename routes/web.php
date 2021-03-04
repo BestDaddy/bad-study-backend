@@ -31,6 +31,7 @@ Route::group(['namespace' => 'Web'], function () {
             'exercises' => 'ExercisesController',
             'groups' => 'GroupsController',
             'groups.courses.schedules' => 'SchedulesController',
+            'results' => 'ExerciseResultsController'
         ]);
 
         Route::get('/getNewCourses/{id}', 'GroupsController@getNewCourses')->name('getNewCourses');

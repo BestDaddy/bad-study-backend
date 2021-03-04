@@ -10,91 +10,71 @@
     <h2>Урок : {{$schedule->chapter->name}}</h2>
     <hr>
     <br>
-    <div class="row" style="clear: both;">
-        <div class="col-12 text-right">
-            <a href="javascript:void(0)" class="btn btn-primary" data-toggle="modal"  onclick="add()"><i class="fas fa-plus-square"></i> Добавить расписание</a>
-        </div>
-    </div>
     <br>
     <div class="table-responsive">
         <table class="table table-bordered table-striped" id="result_table" width="100%">
             <thead>
             <tr>
                 <th width="5%">ID</th>
-                <th width="50%">Название</th>
-{{--                <th width="15%"></th>--}}
-{{--                <th width="15%"></th>--}}
-{{--                <th width="15%"></th>--}}
+                <th width="50%">Задача</th>
+                <th width="15%">Порядок</th>
+                <th width="15%">Оценка</th>
+                <th width="15%"></th>
             </tr>
             </thead>
         </table>
     </div>
     <br>
     <hr>
-{{--    <div class="modal fade" id="post-modal" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">--}}
-{{--        <div class="modal-dialog modal-lg">--}}
-{{--            <div class="modal-content">--}}
-{{--                <div class="modal-header">--}}
-{{--                    <h5 class="modal-title" id="staticBackdropLabel">Новый курс</h5>--}}
-{{--                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">--}}
-{{--                        <span aria-hidden="true">&times;</span>--}}
-{{--                    </button>--}}
-{{--                </div>--}}
-{{--                <div class="modal-body">--}}
-{{--                    <form name="Form" class="form-horizontal">--}}
-{{--                        <input type="hidden" name="schedule_id" id="schedule_id">--}}
-{{--                        <div class="row">--}}
-{{--                            <div class="col">--}}
-{{--                                <div class="form-group">--}}
-{{--                                    <label for="inputName">Начало урока</label>--}}
-{{--                                    <input type="datetime-local"--}}
-{{--                                           class="form-control"--}}
-{{--                                           id="starts_at"--}}
-{{--                                           name="starts_at" value="2020-09-22T13:25"--}}
-{{--                                           min="2020-09-22T13:25" max="2021-06-14T00:00">--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                            <div class="col">--}}
-{{--                                <div class="form-group">--}}
-{{--                                    <label for="inputName">Глава</label>--}}
-{{--                                    <select class="form-control" name="chapter_id" id="chapter_id">--}}
-{{--                                        @foreach($chapters as $chapter)--}}
-{{--                                            <option value="{{$chapter->id}}">{{$chapter->order}}:  {{$chapter->name}}</option>--}}
-{{--                                        @endforeach--}}
-{{--                                    </select>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                        <div class="form-group">--}}
-{{--                            <label for="inputName">Ссылка</label>--}}
-{{--                            <input type="text"--}}
-{{--                                   class="form-control"--}}
-{{--                                   id="live_url"--}}
-{{--                                   placeholder="Введите ссылку на чат"--}}
-{{--                                   name="live_url">--}}
-{{--                        </div>--}}
-{{--                        <div class="form-group" id="form-errors">--}}
-{{--                            <div class="alert alert-danger">--}}
-{{--                                <ul>--}}
+    <div class="modal fade" id="post-modal" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="student_name">Студент: </h5>
 
-{{--                                </ul>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </form>--}}
-{{--                </div>--}}
-{{--                <div class="modal-footer">--}}
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form name="Form" class="form-horizontal">
+                        <input type="hidden" name="result_id" id="result_id">
+                        <div class="form-group">
+                            <label for="exercise_content" id="exercise_name"></label>
+                            <textarea class="form-control" id="exercise_content" name="exercise_content" readonly></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="value">Ответ</label>
+                            <textarea class="form-control" id="value" name="value" readonly></textarea>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <label for="comment">Коммент</label>
+                                <textarea class="form-control" id="comment" rows="1" name="comment"></textarea>
+                            </div>
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="score">Оценка</label>
+                                    <input class="form-control" type="number" max="100" min="0" name="score" id="score">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group" id="form-errors">
+                            <div class="alert alert-danger">
+                                <ul>
 
-{{--                    <div class="col-lg-7">--}}
-{{--                        <div  class="collapse" id="collapseExample">--}}
-{{--                            <button class="btn btn-danger" onclick="deleteSchedule()"><i class="fas fa-trash"></i> Удалить</button>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                    <button class="btn btn-primary" onclick="save()">Сохранить</button>--}}
-{{--                    <button class="btn btn-secondary" data-dismiss="modal">Закрыть</button>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-{{--    </div>--}}
+                                </ul>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary" onclick="save()">Сохранить</button>
+                    <button class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+                </div>
+            </div>
+        </div>
+    </div>
 @endsection
 
 
@@ -133,71 +113,69 @@
         {{--    });--}}
         {{--}--}}
 
-        {{--function editSchedule (event) {--}}
-        {{--    $('#collapseExample').show();--}}
-        {{--    $('#form-errors').html("");--}}
-        {{--    $('#staticBackdropLabel').text("Редактировать курс");--}}
+        function editAnswer (event) {
+            $('#collapseExample').show();
+            $('#form-errors').html("");
+            var id  = $(event).data("id");
+            let _url = `/results/${id}/edit`;
+            $.ajax({
+                url: _url,
+                type: "GET",
+                success: function(response) {
+                    if(response) {
+                        console.log(response);
+                        $('#student_name').text('Студент: ' + response.user.first_name +' '+ response.user.last_name);
+                        $('#exercise_name').text('Задача: ' + response.exercise.name);
+                        $("#result_id").val(response.id);
+                        $("#value").val(response.value);
+                        $("#score").val(response.score);
+                        $("#comment").val(response.comment);
+                        $("#exercise_content").val(response.exercise.content);
+                        $('#post-modal').modal('show');
+                    }
+                }
+            });
+        }
+        function save() {
+            var result_id = $('#result_id').val();
+            var comment = $('#comment').val();
+            var score = $('#score').val();
+            let _token   = $('meta[name="csrf-token"]').attr('content');
 
-        {{--    var id  = $(event).data("id");--}}
-        {{--    let _url = `/groups/{{$group->id}}/courses/{{$course->id}}/schedules/${id}/edit`;--}}
-        {{--    $.ajax({--}}
-        {{--        url: _url,--}}
-        {{--        type: "GET",--}}
-        {{--        success: function(response) {--}}
-        {{--            if(response) {--}}
-        {{--                $("#schedule_id").val(response.id);--}}
-        {{--                $("#chapter_id").val(response.chapter_id);--}}
-        {{--                $("#live_url").val(response.live_url);--}}
-        {{--                $("#starts_at").val(response.starts_at.splice(10, -1, "T"));--}}
-        {{--                $('#post-modal').modal('show');--}}
-        {{--            }--}}
-        {{--        }--}}
-        {{--    });--}}
-        {{--}--}}
-        {{--function save() {--}}
-        {{--    var starts_at = $('#starts_at').val();--}}
-        {{--    var live_url = $('#live_url').val();--}}
-        {{--    var id = $('#schedule_id').val();--}}
-        {{--    var chapter_id = $('#chapter_id').val();--}}
-        {{--    let _token   = $('meta[name="csrf-token"]').attr('content');--}}
+            $.ajax({
+                url: `/results/${result_id}`,
+                type: "PUT",
+                data: {
+                    // id: result_id,
+                    comment:comment,
+                    score:score,
+                    _token: _token
+                },
+                success: function(response) {
+                    if(response.code == 200) {
+                        $('#name').val('');
+                        $('#description').val('');
+                        $('#result_table').DataTable().ajax.reload();
+                        $('#post-modal').modal('hide');
+                    }
+                    else{
+                        var errors = response.errors;
+                        errorsHtml = '<div class="alert alert-danger"><ul>';
 
-        {{--    $.ajax({--}}
-        {{--        url: "{{ route('groups.courses.schedules.store', [$group, $course]) }}",--}}
-        {{--        type: "POST",--}}
-        {{--        data: {--}}
-        {{--            id: id,--}}
-        {{--            group_id:'{{$group->id}}',--}}
-        {{--            chapter_id:chapter_id,--}}
-        {{--            starts_at: starts_at,--}}
-        {{--            live_url: live_url,--}}
-        {{--            chapter_id: chapter_id,--}}
-        {{--            _token: _token--}}
-        {{--        },--}}
-        {{--        success: function(response) {--}}
-        {{--            if(response.code == 200) {--}}
-        {{--                $('#name').val('');--}}
-        {{--                $('#description').val('');--}}
-        {{--                $('#schedule_table').DataTable().ajax.reload();--}}
-        {{--                $('#post-modal').modal('hide');--}}
-        {{--            }--}}
-        {{--            else{--}}
-        {{--                var errors = response.errors;--}}
-        {{--                errorsHtml = '<div class="alert alert-danger"><ul>';--}}
+                        $.each( errors, function( key, value ) {
+                            errorsHtml += '<li>'+ value + '</li>';
+                        });
+                        errorsHtml += '</ul></div>';
 
-        {{--                $.each( errors, function( key, value ) {--}}
-        {{--                    errorsHtml += '<li>'+ value + '</li>';--}}
-        {{--                });--}}
-        {{--                errorsHtml += '</ul></div>';--}}
+                        $( '#form-errors' ).html( errorsHtml );
 
-        {{--                $( '#form-errors' ).html( errorsHtml );--}}
-
-        {{--            }--}}
-        {{--        },--}}
-        {{--        error: function(response) {--}}
-        {{--            console.log(response.responseJSON.errors);--}}
-        {{--        }--}}
-        {{--    });--}}
-        {{--}--}}
+                    }
+                },
+                error: function(response) {
+                    console.log(response.responseJSON.errors);
+                }
+            });
+        }
         $(document).ready(function() {
 
             $('#result_table').DataTable({
@@ -218,20 +196,20 @@
                         data: 'exercise.name',
                         name: 'exercise.name'
                     },
-                    // {
-                    //     data: 'chapter.name',
-                    //     name: 'chapter.name'
-                    // },
-                    // {
-                    //     data: 'edit',
-                    //     name: 'edit',
-                    //     orderable: false
-                    // },
-                    // {
-                    //     data: 'more',
-                    //     name: 'more',
-                    //     orderable: false
-                    // },
+                    {
+                        data: 'exercise.order',
+                        name: 'exercise.order',
+                    },
+                    {
+                        data: 'score',
+                        name: 'score'
+                    },
+                    {
+                        data: 'edit',
+                        name: 'edit',
+                        orderable: false
+                    },
+
                 ]
             });
         });
