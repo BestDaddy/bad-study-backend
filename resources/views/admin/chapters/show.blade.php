@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-    {{--    {{ Breadcrumbs::render('courses') }}--}}
+    {{ Breadcrumbs::render('chapters.show', $chapter) }}
     <h2>Глава : {{ $chapter->name }}</h2>
     <hr>
     <br>
@@ -123,13 +123,13 @@
             });
         }
 
-        function editChapter (event) {
+        function editExercise (event) {
             $('#collapseExample').show();
             $('#form-errors').html("");
             $('#staticBackdropLabel').text("Редактировать курс");
 
             var id  = $(event).data("id");
-            let _url = `/chapters/${id}/edit`;
+            let _url = `/exercises/${id}/edit`;
             $.ajax({
                 url: _url,
                 type: "GET",

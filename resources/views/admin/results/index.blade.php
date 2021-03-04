@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-    {{--    {{ Breadcrumbs::render('courses') }}--}}
+        {{ Breadcrumbs::render('schedules.user.results', $schedule, $user) }}
     <h2>Ответы студента : {{$user->fullName()}}</h2>
     <h2>Урок : {{$schedule->chapter->name}}</h2>
     <hr>

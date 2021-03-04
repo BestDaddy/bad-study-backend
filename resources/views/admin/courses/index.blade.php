@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-    {{--    {{ Breadcrumbs::render('courses') }}--}}
+        {{ Breadcrumbs::render('courses') }}
     <h2>Все курсы :</h2>
     <hr>
     <br>

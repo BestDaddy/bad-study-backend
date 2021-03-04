@@ -5,10 +5,16 @@ namespace App\Services\Courses;
 
 
 use App\Models\Course;
+use App\Services\BaseServiceImpl;
 use Illuminate\Http\Request;
 
-class CoursesServiceImpl implements CoursesService
+class CoursesServiceImpl extends BaseServiceImpl implements CoursesService
 {
+    public function __construct(Course $model)
+    {
+        parent::__construct($model);
+    }
+
     public function index(){
         if(request()->ajax())
         {

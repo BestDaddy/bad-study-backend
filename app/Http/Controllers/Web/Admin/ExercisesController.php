@@ -73,11 +73,11 @@ class ExercisesController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\JsonResponse
      */
     public function edit($id)
     {
-        //
+        return response()->json($this->exercisesService->find($id));
     }
 
     /**

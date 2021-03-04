@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-    {{--    {{ Breadcrumbs::render('courses') }}--}}
+    {{ Breadcrumbs::render('groups') }}
     <h2>Все группы :</h2>
     <hr>
     <br>

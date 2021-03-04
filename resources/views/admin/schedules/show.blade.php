@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-    {{--    {{ Breadcrumbs::render('courses') }}--}}
+        {{ Breadcrumbs::render('schedules.show', $group, $course, $schedule) }}
     <h2>Урок на : {{$schedule->starts_at}}</h2>
     <hr>
     <br>

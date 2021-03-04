@@ -4,10 +4,16 @@
 namespace App\Services\Groups;
 
 use App\Models\Group;
+use App\Services\BaseServiceImpl;
 use Illuminate\Http\Request;
 
-class GroupsServiceImpl implements GroupsService
+class GroupsServiceImpl extends BaseServiceImpl implements GroupsService
 {
+    public function __construct(Group $model)
+    {
+        parent::__construct($model);
+    }
+
     public function index(){
         if(request()->ajax())
         {

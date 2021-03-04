@@ -6,10 +6,17 @@ namespace App\Services\Courses;
 
 use App\Models\Chapter;
 use App\Models\Course;
+use App\Services\BaseServiceImpl;
 use Illuminate\Http\Request;
 
-class ChaptersServiceImpl implements ChaptersService
+class ChaptersServiceImpl  extends BaseServiceImpl implements ChaptersService
 {
+    public function __construct(Chapter $model)
+    {
+        parent::__construct($model);
+    }
+
+
     public function store(Request $request){
         return Chapter::updateOrCreate(['id' => $request->id],[
             'name' => $request->name,
@@ -27,7 +34,7 @@ class ChaptersServiceImpl implements ChaptersService
                     return  '<button
                          class=" btn btn-primary btn-sm btn-block "
                           data-id="'.$data->id.'"
-                          onclick="editChapter(event.target)"><i class="fas fa-edit" data-id="'.$data->id.'"></i> Изменить</button>';
+                          onclick="editExercise(event.target)"><i class="fas fa-edit" data-id="'.$data->id.'"></i> Изменить</button>';
                 })
                 ->addColumn('more', function ($data){
                     return '<a class="text-decoration-none"  href="/chapters/'.$data->id.'"><button class="btn btn-primary btn-sm btn-block">Подробнее</button></a>';
