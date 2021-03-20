@@ -14,19 +14,32 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+//Route::middleware('auth:api')->get('/user', function (Request $request) {
+//    return $request->user();
+//});
+//
+////Auth::routes();
+//
+//Route::get('/asdf', function (){
+//    return 'asdf';
+//});
 
-Auth::routes();
 
-Route::get('/asdf', function (){
-    return 'asdf';
-});
+
+
+
 Route::group(['namespace' => 'Api'], function () {
-    Route::group(['namespace' => 'Student' , 'middleware'=>'auth'], function () {
+    Route::group(['namespace' => 'Auth'], function () {
+        Route::post(
+            '/login',
+            'AuthController@authenticate'
+        );
+
+    });
+
+    Route::group(['namespace' => 'Student' , 'middleware'=>'jwt'], function () {
         Route::resources([
-            'courses' => 'CoursesController'
+                'courses' => 'CoursesController'
         ]);
 
     });
