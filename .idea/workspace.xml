@@ -2,25 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4ab46e84-ab3e-4e26-ac9b-d274ec4ea08b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/routes/breadcrumbs.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/bad-study.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/bad-study.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/Student/CoursesController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/ApiBaseController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Utils/ResponseUtil.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Web/Admin/ExercisesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Web/Admin/ExercisesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Services/Courses/ChaptersServiceImpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/Courses/ChaptersServiceImpl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Services/Courses/CoursesServiceImpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/Courses/CoursesServiceImpl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Services/Courses/ExercisesServiceImpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/Courses/ExercisesServiceImpl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Services/Groups/GroupsServiceImpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/Groups/GroupsServiceImpl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/chapters/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/chapters/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/courses/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/courses/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/courses/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/courses/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/groups/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/groups/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/groups/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/groups/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/results/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/results/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/schedules/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/schedules/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/schedules/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/schedules/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,7 +32,30 @@
     <option name="HIDDEN_KINDS">
       <set />
     </option>
-    <expand />
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="sql11398879" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="sql11398879" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="sql11398879" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="sql11398879: schema" type="76f4a085:MysqlImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="sql11398879" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="sql11398879: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="users: table" type="285a2a93:MysqlImplModel$Table" />
+      </path>
+    </expand>
     <select />
   </component>
   <component name="Git.Settings">
@@ -169,7 +180,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../backend" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -226,7 +237,15 @@
       <workItem from="1613668084998" duration="2440000" />
       <workItem from="1613898281438" duration="4427000" />
       <workItem from="1614402102971" duration="788000" />
-      <workItem from="1614871978882" duration="4693000" />
+      <workItem from="1614871978882" duration="4903000" />
+      <workItem from="1614943437071" duration="1205000" />
+      <workItem from="1615006991894" duration="652000" />
+      <workItem from="1615187243559" duration="55000" />
+      <workItem from="1615733069832" duration="34000" />
+      <workItem from="1615733243798" duration="2340000" />
+      <workItem from="1615822742795" duration="24000" />
+      <workItem from="1616211913229" duration="1450000" />
+      <workItem from="1616217605803" duration="2105000" />
     </task>
     <task id="LOCAL-00001" summary="relationships added. not finished">
       <created>1610549633399</created>
@@ -326,7 +345,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614874948153</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="breadcrumbs added">
+      <created>1614876883265</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1614876883265</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -348,7 +374,8 @@
     <MESSAGE value="attendance" />
     <MESSAGE value="result show by schedule user" />
     <MESSAGE value="results score added" />
-    <option name="LAST_COMMIT_MESSAGE" value="results score added" />
+    <MESSAGE value="breadcrumbs added" />
+    <option name="LAST_COMMIT_MESSAGE" value="breadcrumbs added" />
   </component>
   <component name="WindowStateProjectService">
     <state x="347" y="81" key="#PHP" timestamp="1614873141302">
@@ -359,45 +386,45 @@
       <screen x="0" y="0" width="1280" height="984" />
     </state>
     <state x="394" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1280.984@0.0.1280.984" timestamp="1614872758870" />
-    <state x="364" y="160" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1614875643747">
+    <state x="364" y="160" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1616219194811">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state x="364" y="160" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1280.984@0.0.1280.984" timestamp="1614875643747" />
-    <state x="265" y="85" key="CommitChangelistDialog2" timestamp="1614874947515">
+    <state x="364" y="160" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1280.984@0.0.1280.984" timestamp="1616219194811" />
+    <state x="265" y="85" key="CommitChangelistDialog2" timestamp="1614876882628">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state x="265" y="85" key="CommitChangelistDialog2/0.0.1280.984@0.0.1280.984" timestamp="1614874947515" />
+    <state x="265" y="85" key="CommitChangelistDialog2/0.0.1280.984@0.0.1280.984" timestamp="1614876882628" />
     <state x="120" y="79" key="DiffContextDialog" timestamp="1610903692029">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
     <state x="120" y="79" key="DiffContextDialog/0.0.1280.984@0.0.1280.984" timestamp="1610903692029" />
-    <state x="420" y="246" key="FileChooserDialogImpl" timestamp="1612792249133">
+    <state x="420" y="246" key="FileChooserDialogImpl" timestamp="1616217945376">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state x="420" y="246" key="FileChooserDialogImpl/0.0.1280.984@0.0.1280.984" timestamp="1612792249133" />
-    <state x="444" y="305" key="NewPhpClassDialog" timestamp="1614872816339">
+    <state x="420" y="246" key="FileChooserDialogImpl/0.0.1280.984@0.0.1280.984" timestamp="1616217945376" />
+    <state x="444" y="305" key="NewPhpClassDialog" timestamp="1616218779948">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state x="444" y="305" key="NewPhpClassDialog/0.0.1280.984@0.0.1280.984" timestamp="1614872816339" />
+    <state x="444" y="305" key="NewPhpClassDialog/0.0.1280.984@0.0.1280.984" timestamp="1616218779948" />
     <state x="475" y="414" key="NewPhpFileDialog" timestamp="1614875554042">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
     <state x="475" y="414" key="NewPhpFileDialog/0.0.1280.984@0.0.1280.984" timestamp="1614875554042" />
-    <state x="232" y="224" key="Vcs.Push.Dialog.v2" timestamp="1614874950323">
+    <state x="232" y="224" key="Vcs.Push.Dialog.v2" timestamp="1614876887679">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state x="232" y="224" key="Vcs.Push.Dialog.v2/0.0.1280.984@0.0.1280.984" timestamp="1614874950323" />
-    <state x="449" y="408" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1613149015986">
+    <state x="232" y="224" key="Vcs.Push.Dialog.v2/0.0.1280.984@0.0.1280.984" timestamp="1614876887679" />
+    <state x="449" y="408" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1615822754769">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state x="449" y="408" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.984@0.0.1280.984" timestamp="1613149015986" />
+    <state x="449" y="408" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.984@0.0.1280.984" timestamp="1615822754769" />
     <state x="337" y="224" width="606" height="536" key="find.popup" timestamp="1610637504364">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
     <state x="337" y="224" width="606" height="536" key="find.popup/0.0.1280.984@0.0.1280.984" timestamp="1610637504364" />
-    <state x="303" y="211" width="672" height="678" key="search.everywhere.popup" timestamp="1614876722167">
+    <state x="303" y="211" width="672" height="678" key="search.everywhere.popup" timestamp="1616219208947">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state x="303" y="211" width="672" height="678" key="search.everywhere.popup/0.0.1280.984@0.0.1280.984" timestamp="1614876722167" />
+    <state x="303" y="211" width="672" height="678" key="search.everywhere.popup/0.0.1280.984@0.0.1280.984" timestamp="1616219208947" />
   </component>
 </project>

@@ -53,4 +53,8 @@ class User extends Authenticatable
     public function exerciseResults(){
         return $this->hasMany(ExerciseResult::class, 'user_id');
     }
+
+    public function courses(){
+        return $this->belongsToMany(Course::class, 'user_course_group');
+    }
 }

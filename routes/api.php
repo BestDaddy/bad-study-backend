@@ -17,3 +17,19 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Auth::routes();
+
+Route::get('/asdf', function (){
+    return 'asdf';
+});
+Route::group(['namespace' => 'Api'], function () {
+    Route::group(['namespace' => 'Student' , 'middleware'=>'auth'], function () {
+        Route::resources([
+            'courses' => 'CoursesController'
+        ]);
+
+    });
+
+});
+
