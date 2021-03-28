@@ -7,7 +7,7 @@ namespace App\Http\Controllers\Api\Auth;
 use App\Exceptions\ApiServiceException;
 use App\Http\Controllers\ApiBaseController;
 use App\Http\Requests\Api\Auth\LoginApiRequest;
-use App\Http\Resource\UserResource;
+use App\Http\Resources\UserResource;
 use App\Models\User;
 
 class AuthController extends ApiBaseController

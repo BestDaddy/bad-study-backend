@@ -11,29 +11,14 @@ class User extends Authenticatable implements JWTSubject
 {
     use Notifiable;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
     protected $fillable = [
         'first_name', 'last_name', 'email', 'password', 'role_id'
     ];
 
-    /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
-     */
     protected $hidden = [
         'password', 'remember_token',
     ];
 
-    /**
-     * The attributes that should be cast to native types.
-     *
-     * @var array
-     */
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
@@ -56,7 +41,15 @@ class User extends Authenticatable implements JWTSubject
     }
 
     public function courses(){
-        return $this->belongsToMany(Course::class, 'user_course_group');
+        return $this->belongsToMany(Course::class, 'user_course_group')->withPivot('score', 'status');
+    }
+
+    public function userCourseGroups(){
+        return $this->hasMany(UserCourseGroup::class);
+    }
+
+    public function userCourseGroup(){
+        return $this->hasOne(UserCourseGroup::class);
     }
 
     public function getJWTIdentifier()

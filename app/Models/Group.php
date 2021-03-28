@@ -18,7 +18,15 @@ class Group extends Model
         return $this->hasMany(GroupCourse::class);
     }
 
+    public function groupCourse(){
+        return $this->hasOne(GroupCourse::class);
+    }
+
     public function users(){
         return $this->belongsToMany(User::class, 'user_course_group');
+    }
+
+    public function schedules(){
+        return $this->hasManyThrough(Schedule::class, GroupCourse::class);
     }
 }

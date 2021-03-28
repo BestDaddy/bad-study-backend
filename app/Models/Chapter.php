@@ -17,4 +17,12 @@ class Chapter extends Model
     public function exercises(){
         return $this->hasMany(Exercise::class)->orderBy('order');
     }
+
+    public function schedules(){
+        return $this->hasMany(Schedule::class);
+    }
+
+    public function schedule(){
+        return $this->hasOne(Schedule::class);
+    }
 }

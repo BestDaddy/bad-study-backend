@@ -23,7 +23,11 @@ class Schedule extends Model
         return $this->belongsTo(GroupCourse::class, 'group_course_id');
     }
 
-    public function attendance(){
+    public function attendances(){
         return $this->hasMany(Attendance::class);
+    }
+
+    public function attendance(){
+        return $this->hasOne(Attendance::class);
     }
 }
