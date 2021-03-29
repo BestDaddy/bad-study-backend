@@ -4,19 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4ab46e84-ab3e-4e26-ac9b-d274ec4ea08b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Resources/ChapterResource.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Resources/CourseResource.php" afterDir="false" />
+    <list default="true" id="4ab46e84-ab3e-4e26-ac9b-d274ec4ea08b" name="Default Changelist" comment="course show api">
+      <change afterPath="$PROJECT_DIR$/public/Build/UnityLoader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Build/ZVA_WEB.data.unityweb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Build/ZVA_WEB.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Build/ZVA_WEB.wasm.code.unityweb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Build/ZVA_WEB.wasm.framework.unityweb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/TemplateData/UnityProgress.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/TemplateData/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/TemplateData/fullscreen.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/TemplateData/progressEmpty.Dark.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/TemplateData/progressEmpty.Light.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/TemplateData/progressFull.Dark.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/TemplateData/progressFull.Light.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/TemplateData/progressLogo.Dark.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/TemplateData/progressLogo.Light.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/TemplateData/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/TemplateData/webgl-logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/Auth/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/Auth/AuthController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/Student/CoursesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/Student/CoursesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Resource/UserResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/UserResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Chapter.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Chapter.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Group.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Group.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Schedule.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Schedule.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/admin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/admin.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -200,7 +210,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -211,14 +221,16 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\bad-study\app\Http\Requests\Api\Auth" />
-      <recent name="C:\xampp\htdocs\bad-study\app\Models" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\User\PhpstormProjects\bad-study-backend\public" />
       <recent name="C:\xampp\htdocs\bad-study\database\seeds" />
       <recent name="C:\xampp\htdocs\bad-study\resources\views\layouts" />
       <recent name="C:\xampp\htdocs\bad-study\public" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\User\PhpstormProjects\bad-study-backend\resources\views" />
+      <recent name="C:\xampp\htdocs\bad-study\app\Http\Requests\Api\Auth" />
+      <recent name="C:\xampp\htdocs\bad-study\app\Models" />
     </key>
   </component>
   <component name="RunManager">
@@ -272,7 +284,10 @@
       <workItem from="1616217605803" duration="5810000" />
       <workItem from="1616611771330" duration="1834000" />
       <workItem from="1616943455998" duration="723000" />
-      <workItem from="1616951121124" duration="3733000" />
+      <workItem from="1616951121124" duration="4153000" />
+      <workItem from="1617024501459" duration="596000" />
+      <workItem from="1617025154194" duration="93000" />
+      <workItem from="1617025632547" duration="5181000" />
     </task>
     <task id="LOCAL-00001" summary="relationships added. not finished">
       <created>1610549633399</created>
@@ -393,7 +408,14 @@
       <option name="project" value="LOCAL" />
       <updated>1616223124889</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="course show api">
+      <created>1616955093053</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1616955093053</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -430,6 +452,7 @@
     <MESSAGE value="breadcrumbs added" />
     <MESSAGE value="student part start" />
     <MESSAGE value="jwt token added. login page&#10;my courses index" />
-    <option name="LAST_COMMIT_MESSAGE" value="jwt token added. login page&#10;my courses index" />
+    <MESSAGE value="course show api" />
+    <option name="LAST_COMMIT_MESSAGE" value="course show api" />
   </component>
 </project>

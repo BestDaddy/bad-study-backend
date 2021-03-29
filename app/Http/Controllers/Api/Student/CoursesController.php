@@ -6,7 +6,7 @@ namespace App\Http\Controllers\Api\Student;
 
 use App\Http\Controllers\ApiBaseController;
 use App\Http\Resources\CourseResource;
-use App\Models\Course;
+
 use App\Services\Courses\CoursesService;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -28,7 +28,7 @@ class CoursesController extends ApiBaseController
     }
 
     public function show($id){
-//        DB::connection()->enabel
+//        DB::connection()->enableQueryLog();
         $user = Auth::user();
 
         $user_course_group = $user->userCourseGroup()
@@ -44,6 +44,7 @@ class CoursesController extends ApiBaseController
                 $q->where('user_id', $user_course_group->user_id);
             },
         ]);
+//        dd(DB::getQueryLog());  //5
         return $this->successResponse(CourseResource::make($course));
     }
 }

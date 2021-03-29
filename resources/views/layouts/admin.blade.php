@@ -28,7 +28,7 @@
 
     <!-- Custom styles for this page -->
     <link rel="stylesheet" href="{{ URL::asset('vendor/datatables/dataTables.bootstrap4.min.css') }}" />
-
+    @yield('header')
 
 </head>
 
