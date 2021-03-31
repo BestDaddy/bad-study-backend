@@ -120,6 +120,7 @@
 
 
 @section('scripts')
+    <script src="http://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js" defer ></script>
     <script>
         function add() {
             $('#form-errors').html("");
