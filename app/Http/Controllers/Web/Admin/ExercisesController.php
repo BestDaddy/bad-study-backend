@@ -77,7 +77,7 @@ class ExercisesController extends Controller
      */
     public function edit($id)
     {
-        return response()->json($this->exercisesService->find($id));
+        return response()->json($this->exercisesService->findWith($id, ['attachments']));
     }
 
     /**

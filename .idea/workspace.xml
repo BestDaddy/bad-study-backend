@@ -4,17 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4ab46e84-ab3e-4e26-ac9b-d274ec4ea08b" name="Default Changelist" comment="test">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Web/Support/AttachmentsController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Attachment.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Services/Supports/AttachmentService.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Services/Supports/AttachmentServiceImpl.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2021_03_30_143210_create_attachments_table.php" afterDir="false" />
+    <list default="true" id="4ab46e84-ab3e-4e26-ac9b-d274ec4ea08b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/SystemServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/SystemServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Web/Admin/ExercisesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Web/Admin/ExercisesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Exercise.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Exercise.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/chapters/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/chapters/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/users/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/users/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -277,7 +271,7 @@
       <workItem from="1617025154194" duration="93000" />
       <workItem from="1617025632547" duration="5745000" />
       <workItem from="1617113199003" duration="9310000" />
-      <workItem from="1617194844206" duration="4581000" />
+      <workItem from="1617194844206" duration="7673000" />
     </task>
     <task id="LOCAL-00001" summary="relationships added. not finished">
       <created>1610549633399</created>
@@ -447,7 +441,14 @@
       <option name="project" value="LOCAL" />
       <updated>1617198236540</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="file upload alpha">
+      <created>1617200217806</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1617200217806</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -487,6 +488,7 @@
     <MESSAGE value="course show api" />
     <MESSAGE value="test lab added" />
     <MESSAGE value="test" />
-    <option name="LAST_COMMIT_MESSAGE" value="test" />
+    <MESSAGE value="file upload alpha" />
+    <option name="LAST_COMMIT_MESSAGE" value="file upload alpha" />
   </component>
 </project>

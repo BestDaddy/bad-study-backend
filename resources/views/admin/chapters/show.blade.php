@@ -43,7 +43,7 @@
                     <form id="upload_form" name="Form" class="form-horizontal">
                         {{ csrf_field() }}
                         <input type="hidden" name="exercise_id" id="exercise_id">
-                        <input type="hidden" name="model_type" id="model_type" value="exercise">
+{{--                        <input type="hidden" name="model_type" id="model_type" value="exercise">--}}
                         <div class="form-group">
                             <label for="inputName">Название</label>
                             <input type="text"
@@ -69,11 +69,13 @@
                                    placeholder="Введите Порядок">
                         </div>
                         <div class="form-group">
-                            <label for="file">Файл</label>
-                            <input type="file" class="form-control"
+                            <input type="file"
                                    id="file"
                                    name="file">
-                            <input type="submit" name="upload" id="upload" class="btn btn-primary" value="Upload">
+{{--                            <input  type="submit" name="upload" id="upload" class="btn btn-primary" value="Upload">--}}
+                        </div>
+                        <div class="form-group" id="form-files">
+
                         </div>
                         <div class="form-group" id="form-errors">
                             <div class="alert alert-danger">
@@ -91,7 +93,7 @@
                             <button class="btn btn-danger" onclick="deleteChapter()"><i class="fas fa-trash"></i> Удалить</button>
                         </div>
                     </div>
-{{--                    <button class="btn btn-primary" onclick="uploadFile()">dadw</button>--}}
+                    <button class="btn btn-primary" onclick="addFile()">Upload</button>
                     <button class="btn btn-primary" onclick="save()">Сохранить</button>
                     <button class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
                 </div>
@@ -108,80 +110,39 @@
             $('#staticBackdropLabel').text("Новый курс");
             $('#form-errors').html("");
             $('#exercise_id').val('');
+            $( '#form-files' ).html( '' );
             $('#name').val('');
             $('#order').val('');
             $('#exercise_content').val('');
             $('#post-modal').modal('show');
         }
 
-        // $(document).ready(function(){
-        //     // $("#file").on('change',function(){
-        //     //     save(() =>uploadFile(() =>editExercise(event)));
-        //     // });
-        //     const fileInput = document.getElementById('file_upload');
-        //     fileInput.onchange = () => {
-        //         const selectedFile = fileInput.files[0];
-        //         console.log(selectedFile);
-        //     }
-        // });
-
-        function saveFile(){
-
+        function addFile(){
+            save(() => uploadFile(() => editExercise(event)));
         }
-        $(document).ready(function(){
 
-            $('#upload_form').on('submit', function(event){
-                event.preventDefault();
+        function uploadFile(callback){
+            // $('#upload_form').on('submit', function(event){
+                let myForm = document.getElementById('upload_form');
+            //     // event.preventDefault();
+                let formData = new FormData(myForm);
+                formData.append('model_type', 'exercise');
+                formData.append('model_id', $('#exercise_id').val());
                 $.ajax({
                     url:"{{route('attachments.store')}}",
                     method:"POST",
-                    data:new FormData(this),
+                    data: formData,
                     dataType:'JSON',
                     contentType: false,
                     cache: false,
                     processData: false,
                     success:function(data)
                     {
-                        $('#message').css('display', 'block');
-                        $('#message').html(data.message);
-                        $('#message').addClass(data.class_name);
-                        $('#uploaded_image').html(data.uploaded_image);
+                        $('#file').val('')
+                        callback();
                     }
                 })
-            });
-
-        });
-
-        function uploadFile(e){
-            e.preventDefault();
-
-            // callback();
-            let formData = new FormData(this);
-            console.log(formData);
-            var id = $('#exercise_id').val();
-            let _url = `{{route('attachments.store')}}`;
-            let _token   = $('meta[name="csrf-token"]').attr('content');
-            $.ajax({
-                url: _url,
-                type: "POST",
-                data: {
-                    file: fileInput.files[0],
-                    model_id: id,
-                    model_type: 'exercise',
-                    _token: _token
-                },
-                success: function(response) {
-                    console.log('2')
-                    if(response.code == 200) {
-                        console.log('file uploaded!');
-                        // $('#post-modal').modal('hide');
-
-                    }
-                },
-                error: function(response) {
-                    $('#nameError').text(response.responseJSON.errors.name);
-                }
-            });
+            // });
         }
 
         function deleteChapter() {
@@ -224,13 +185,23 @@
                         $("#name").val(response.name);
                         $("#exercise_content").val(response.content);
                         $("#order").val(response.order);
+                        if(response.attachments.length > 0){
+                            var files = response.attachments;
+                            fileHtml = '<label>Вложенные файлы</label>';
+                            fileHtml += '<ul>';
+                            $.each( files, function(i) {
+                                fileHtml += '<li><a href="/download/'+ files[i].id + '">'+ files[i].name + '</a></li>';
+                            });
+                            fileHtml += '</ul>';
+
+                            $( '#form-files' ).html( fileHtml );
+                        }
                         $('#post-modal').modal('show');
                     }
                 }
             });
         }
         function save(callback) {
-            console.log('1')
             var name = $('#name').val();
             var content = $('#exercise_content').val();
             var id = $('#exercise_id').val();
