@@ -4,28 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4ab46e84-ab3e-4e26-ac9b-d274ec4ea08b" name="Default Changelist" comment="course show api">
-      <change afterPath="$PROJECT_DIR$/public/Build/UnityLoader.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Build/ZVA_WEB.data.unityweb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Build/ZVA_WEB.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Build/ZVA_WEB.wasm.code.unityweb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Build/ZVA_WEB.wasm.framework.unityweb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/TemplateData/UnityProgress.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/TemplateData/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/TemplateData/fullscreen.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/TemplateData/progressEmpty.Dark.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/TemplateData/progressEmpty.Light.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/TemplateData/progressFull.Dark.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/TemplateData/progressFull.Light.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/TemplateData/progressLogo.Dark.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/TemplateData/progressLogo.Light.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/TemplateData/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/TemplateData/webgl-logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/index.blade.php" afterDir="false" />
+    <list default="true" id="4ab46e84-ab3e-4e26-ac9b-d274ec4ea08b" name="Default Changelist" comment="test">
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Web/Support/AttachmentsController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Attachment.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Services/Supports/AttachmentService.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Services/Supports/AttachmentServiceImpl.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_03_30_143210_create_attachments_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/Student/CoursesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/Student/CoursesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/admin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/admin.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/SystemServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/SystemServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/chapters/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/chapters/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/users/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/users/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -210,7 +198,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../backend" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -287,7 +275,9 @@
       <workItem from="1616951121124" duration="4153000" />
       <workItem from="1617024501459" duration="596000" />
       <workItem from="1617025154194" duration="93000" />
-      <workItem from="1617025632547" duration="5181000" />
+      <workItem from="1617025632547" duration="5745000" />
+      <workItem from="1617113199003" duration="9310000" />
+      <workItem from="1617194844206" duration="4581000" />
     </task>
     <task id="LOCAL-00001" summary="relationships added. not finished">
       <created>1610549633399</created>
@@ -415,7 +405,49 @@
       <option name="project" value="LOCAL" />
       <updated>1616955093053</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="test lab added">
+      <created>1617031443863</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1617031443863</updated>
+    </task>
+    <task id="LOCAL-00020" summary="test">
+      <created>1617196804459</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1617196804459</updated>
+    </task>
+    <task id="LOCAL-00021" summary="test">
+      <created>1617197110453</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1617197110453</updated>
+    </task>
+    <task id="LOCAL-00022" summary="test">
+      <created>1617197260321</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1617197260321</updated>
+    </task>
+    <task id="LOCAL-00023" summary="test">
+      <created>1617197789614</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1617197789614</updated>
+    </task>
+    <task id="LOCAL-00024" summary="test">
+      <created>1617198236540</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1617198236540</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -453,6 +485,8 @@
     <MESSAGE value="student part start" />
     <MESSAGE value="jwt token added. login page&#10;my courses index" />
     <MESSAGE value="course show api" />
-    <option name="LAST_COMMIT_MESSAGE" value="course show api" />
+    <MESSAGE value="test lab added" />
+    <MESSAGE value="test" />
+    <option name="LAST_COMMIT_MESSAGE" value="test" />
   </component>
 </project>

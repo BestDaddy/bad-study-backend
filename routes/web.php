@@ -50,4 +50,10 @@ Route::group(['namespace' => 'Web'], function () {
         Route::get('/schedules/{schedule_id}/users/{user_id}', 'SchedulesController@userResults')->name('userResults');
 //        Route::get('/groups/{group_id}/schedules', 'SchedulesController@index');
     });
+
+    Route::group(['namespace' => 'Support', 'middleware'=>'auth'], function () {
+        Route::resources([
+            'attachments' => 'AttachmentsController',
+        ]);
+    });
 });

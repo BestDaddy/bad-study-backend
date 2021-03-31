@@ -19,6 +19,8 @@ use App\Services\Groups\GroupsService;
 use App\Services\Groups\GroupsServiceImpl;
 use App\Services\Groups\SchedulesService;
 use App\Services\Groups\SchedulesServiceImpl;
+use App\Services\Supports\AttachmentService;
+use App\Services\Supports\AttachmentServiceImpl;
 use App\Services\Users\UsersService;
 use App\Services\Users\UsersServiceImpl;
 use Illuminate\Support\ServiceProvider;
@@ -51,6 +53,7 @@ class SystemServiceProvider extends ServiceProvider
         $this->app->bind(BaseService::class, BaseServiceImpl::class);
         $this->app->bind(AttendancesService::class, AttendancesServiceImpl::class);
         $this->app->bind(ExerciseResultsService::class, ExerciseResultsServiceImpl::class);
+        $this->app->bind(AttachmentService::class, AttachmentServiceImpl::class);
 
     }
 }

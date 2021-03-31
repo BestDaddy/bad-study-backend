@@ -40,8 +40,10 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form name="Form" class="form-horizontal">
-                        <input type="hidden" name="chapter_id" id="chapter_id">
+                    <form id="upload_form" name="Form" class="form-horizontal">
+                        {{ csrf_field() }}
+                        <input type="hidden" name="exercise_id" id="exercise_id">
+                        <input type="hidden" name="model_type" id="model_type" value="exercise">
                         <div class="form-group">
                             <label for="inputName">Название</label>
                             <input type="text"
@@ -66,6 +68,13 @@
                                    name="order"
                                    placeholder="Введите Порядок">
                         </div>
+                        <div class="form-group">
+                            <label for="file">Файл</label>
+                            <input type="file" class="form-control"
+                                   id="file"
+                                   name="file">
+                            <input type="submit" name="upload" id="upload" class="btn btn-primary" value="Upload">
+                        </div>
                         <div class="form-group" id="form-errors">
                             <div class="alert alert-danger">
                                 <ul>
@@ -82,6 +91,7 @@
                             <button class="btn btn-danger" onclick="deleteChapter()"><i class="fas fa-trash"></i> Удалить</button>
                         </div>
                     </div>
+{{--                    <button class="btn btn-primary" onclick="uploadFile()">dadw</button>--}}
                     <button class="btn btn-primary" onclick="save()">Сохранить</button>
                     <button class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
                 </div>
@@ -97,15 +107,85 @@
             $('#collapseExample').hide();
             $('#staticBackdropLabel').text("Новый курс");
             $('#form-errors').html("");
-            $('#chapter_id').val('');
+            $('#exercise_id').val('');
             $('#name').val('');
             $('#order').val('');
             $('#exercise_content').val('');
             $('#post-modal').modal('show');
         }
 
+        // $(document).ready(function(){
+        //     // $("#file").on('change',function(){
+        //     //     save(() =>uploadFile(() =>editExercise(event)));
+        //     // });
+        //     const fileInput = document.getElementById('file_upload');
+        //     fileInput.onchange = () => {
+        //         const selectedFile = fileInput.files[0];
+        //         console.log(selectedFile);
+        //     }
+        // });
+
+        function saveFile(){
+
+        }
+        $(document).ready(function(){
+
+            $('#upload_form').on('submit', function(event){
+                event.preventDefault();
+                $.ajax({
+                    url:"{{route('attachments.store')}}",
+                    method:"POST",
+                    data:new FormData(this),
+                    dataType:'JSON',
+                    contentType: false,
+                    cache: false,
+                    processData: false,
+                    success:function(data)
+                    {
+                        $('#message').css('display', 'block');
+                        $('#message').html(data.message);
+                        $('#message').addClass(data.class_name);
+                        $('#uploaded_image').html(data.uploaded_image);
+                    }
+                })
+            });
+
+        });
+
+        function uploadFile(e){
+            e.preventDefault();
+
+            // callback();
+            let formData = new FormData(this);
+            console.log(formData);
+            var id = $('#exercise_id').val();
+            let _url = `{{route('attachments.store')}}`;
+            let _token   = $('meta[name="csrf-token"]').attr('content');
+            $.ajax({
+                url: _url,
+                type: "POST",
+                data: {
+                    file: fileInput.files[0],
+                    model_id: id,
+                    model_type: 'exercise',
+                    _token: _token
+                },
+                success: function(response) {
+                    console.log('2')
+                    if(response.code == 200) {
+                        console.log('file uploaded!');
+                        // $('#post-modal').modal('hide');
+
+                    }
+                },
+                error: function(response) {
+                    $('#nameError').text(response.responseJSON.errors.name);
+                }
+            });
+        }
+
         function deleteChapter() {
-            var id = $('#chapter_id').val();
+            var id = $('#exercise_id').val();
             let _url = `chapters/${id}`;
 
             let _token   = $('meta[name="csrf-token"]').attr('content');
@@ -124,18 +204,23 @@
         }
 
         function editExercise (event) {
+            console.log('3')
             $('#collapseExample').show();
             $('#form-errors').html("");
             $('#staticBackdropLabel').text("Редактировать курс");
-
             var id  = $(event).data("id");
+            if(!id){
+                console.log(id);
+                id = $("#exercise_id").val();
+            }
+
             let _url = `/exercises/${id}/edit`;
             $.ajax({
                 url: _url,
                 type: "GET",
                 success: function(response) {
                     if(response) {
-                        $("#chapter_id").val(response.id);
+                        $("#exercise_id").val(response.id);
                         $("#name").val(response.name);
                         $("#exercise_content").val(response.content);
                         $("#order").val(response.order);
@@ -144,10 +229,11 @@
                 }
             });
         }
-        function save() {
+        function save(callback) {
+            console.log('1')
             var name = $('#name').val();
             var content = $('#exercise_content').val();
-            var id = $('#chapter_id').val();
+            var id = $('#exercise_id').val();
             var order = $('#order').val();
             var chapter_id = '{{$chapter->id}}';
             let _token   = $('meta[name="csrf-token"]').attr('content');
@@ -165,10 +251,11 @@
                 },
                 success: function(response) {
                     if(response.code == 200) {
-                        $('#name').val('');
-                        $('#content').val('');
+                        $('#exercise_id').val(response.data.id);
+                        console.log('id ' + response.data.id);
                         $('#exercise_table').DataTable().ajax.reload();
-                        $('#post-modal').modal('hide');
+                        callback();
+                        // $('#post-modal').modal('hide');
                     }
                     else{
                         var errors = response.errors;
