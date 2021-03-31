@@ -120,8 +120,7 @@
 
 
 @section('scripts')
-{{--    <script src="http://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js" defer ></script>--}}
-    <script>
+   <script>
         function add() {
             $('#form-errors').html("");
             $('#user_id').val('');
@@ -252,16 +251,6 @@
                 serverSide: true,
                 ajax: {
                     url: "{{ route('users.index') }}",
-                    contentType: "application/json; charset=utf-8",
-                    dataType: 'json',
-                    dataFilter: function(reps) {
-                        console.log(reps);
-                        return reps;
-                    },
-                    error:function(err){
-                        console.log(err);
-                    }
-
                 },
                 columns: [
                     {
