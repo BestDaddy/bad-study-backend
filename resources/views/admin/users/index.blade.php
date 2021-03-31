@@ -248,7 +248,7 @@
                     "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Russian.json"
                 },
                 processing: true,
-                serverSide: true,
+                // serverSide: true,
                 ajax: {
                     url: "{{ route('users.index') }}",
                 },
