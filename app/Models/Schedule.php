@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Events\ScheduleCreated;
 use Illuminate\Database\Eloquent\Model;
 
 class Schedule extends Model
@@ -10,6 +11,9 @@ class Schedule extends Model
         'group_id', 'chapter_id', 'group_course_id', 'live_url', 'starts_at'
     ];
 
+    protected $dispatchesEvents = [
+        'created' => ScheduleCreated::class
+    ];
 
     public function group(){
         return $this->belongsTo(Group::class);

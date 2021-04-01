@@ -8,16 +8,19 @@ use App\Http\Controllers\ApiBaseController;
 use App\Http\Resources\CourseResource;
 
 use App\Services\Courses\CoursesService;
+use App\Services\Groups\SchedulesService;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class CoursesController extends ApiBaseController
 {
     private $coursesService;
+    private $schedulesService;
 
-    public function __construct(CoursesService $coursesService)
+    public function __construct(CoursesService $coursesService, SchedulesService $schedulesService)
     {
         $this->coursesService = $coursesService;
+        $this->schedulesService = $schedulesService;
     }
 
     public function index(){
@@ -46,5 +49,17 @@ class CoursesController extends ApiBaseController
         ]);
 //        dd(DB::getQueryLog());  //5
         return $this->successResponse(CourseResource::make($course));
+    }
+
+    public function scheduleShow($id){
+        $user = Auth::user();
+        $schedule = $this->schedulesService->findWith($id, [
+            'chapter.course',
+            'attendance' => function($q) use($user) {
+                $q->where('user_id', $user);
+            }
+        ]);
+
+        return $this->successResponse($schedule);
     }
 }

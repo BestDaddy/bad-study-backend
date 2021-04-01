@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Listeners\SyncScheduleCreated;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
@@ -18,7 +19,14 @@ class EventServiceProvider extends ServiceProvider
         Registered::class => [
             SendEmailVerificationNotification::class,
         ],
+        'App\Events\ScheduleCreated' => [
+            'App\Listeners\SyncScheduleCreated'
+        ],
     ];
+
+//    protected $subscribe = [
+//        SyncScheduleCreated::class,
+//    ];
 
     /**
      * Register any events for your application.

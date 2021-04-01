@@ -42,6 +42,8 @@ Route::group(['namespace' => 'Api'], function () {
                 'courses' => 'CoursesController'
         ]);
 
+        Route::get('/schedules/{id}', 'CoursesController@scheduleShow');
+
     });
 
 });

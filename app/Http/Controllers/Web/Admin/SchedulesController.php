@@ -46,11 +46,11 @@ class SchedulesController extends Controller
     public function store(Group $group, Course $course, Request $request){
         $schedule = $this->schedulesService->store($group, $course, $request);
 
-        foreach ($group->users as $student){
-            $request['schedule_id'] = $schedule->id;
-            $request['user_id'] = $student->id;
-            $this->attendanceService->store($request);
-        }
+//        foreach ($group->users as $student){
+//            $request['schedule_id'] = $schedule->id;
+//            $request['user_id'] = $student->id;
+//            $this->attendanceService->store($request);
+//        }
 
         return response()->json(['code'=>200, 'message'=>'Schedule Saved successfully','data' => $schedule], 200);
     }

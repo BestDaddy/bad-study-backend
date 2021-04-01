@@ -5,12 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4ab46e84-ab3e-4e26-ac9b-d274ec4ea08b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/exercises/show.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Events/ScheduleCreated.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Listeners/SyncScheduleCreated.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Web/Admin/ExercisesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Web/Admin/ExercisesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Web/Support/AttachmentsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Web/Support/AttachmentsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Services/Courses/ChaptersServiceImpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/Courses/ChaptersServiceImpl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/breadcrumbs.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/breadcrumbs.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/Student/CoursesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/Student/CoursesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Web/Admin/SchedulesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Web/Admin/SchedulesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Schedule.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Schedule.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/EventServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/EventServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Services/Groups/SchedulesServiceImpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/Groups/SchedulesServiceImpl.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -275,7 +279,7 @@
       <workItem from="1617113199003" duration="9310000" />
       <workItem from="1617194844206" duration="8522000" />
       <workItem from="1617211404021" duration="2966000" />
-      <workItem from="1617288852715" duration="3675000" />
+      <workItem from="1617288852715" duration="6173000" />
     </task>
     <task id="LOCAL-00001" summary="relationships added. not finished">
       <created>1610549633399</created>
@@ -466,7 +470,14 @@
       <option name="project" value="LOCAL" />
       <updated>1617290898644</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="file upload beta">
+      <created>1617294043690</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1617294043690</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -509,6 +520,7 @@
     <MESSAGE value="file upload alpha" />
     <MESSAGE value="file upload alpha 0.2" />
     <MESSAGE value="file upload alpha finished" />
-    <option name="LAST_COMMIT_MESSAGE" value="file upload alpha finished" />
+    <MESSAGE value="file upload beta" />
+    <option name="LAST_COMMIT_MESSAGE" value="file upload beta" />
   </component>
 </project>
