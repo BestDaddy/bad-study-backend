@@ -63,23 +63,17 @@ class AttachmentServiceImpl extends BaseServiceImpl implements AttachmentService
 
     public function storeFile($file, $folder)
     {
-        $filename =  uniqid().'.'.File::extension($file->getClientOriginalName());
-        $fullpath = $this->main_dir.'/'.strtolower($folder).'/'.$filename;
+        $filename =  $file->getClientOriginalName();
+        Storage::disk('public_build')->put($filename,  File::get($file));
+        return 'Build/'. $filename;
 
-        Storage::disk('public')->put($fullpath,  File::get($file));
-        $path = Storage::url($fullpath);
-        $path = str_replace('attachments','app/public/attachments', $path);
-        return $path;
-//        $file_path =  uniqid(). $file->getClientOriginalExtension();
-//        $full_path = $file->move($folder, $file_path);
-//        return $full_path;
 
     }
 
     public function download($id){
         $attachment = Attachment::findOrFail($id);
         $path = $attachment->path;
-        $path = str_replace('/storage/','', $path);
-        return response()->download(storage_path("{$path}"));
+//        $path = str_replace('/storage/','', $path);
+        return response()->download(public_path("{$path}"));
     }
 }

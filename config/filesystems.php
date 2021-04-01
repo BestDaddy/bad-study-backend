@@ -63,6 +63,10 @@ return [
             'bucket' => env('AWS_BUCKET'),
             'endpoint' => env('AWS_URL'),
         ],
+        'public_build' => [
+            'driver' => 'local',
+            'root'   => public_path() . '/Build',
+        ],
 
     ],
 

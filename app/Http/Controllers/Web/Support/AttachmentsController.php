@@ -64,4 +64,9 @@ class AttachmentsController extends Controller
         return response()->json($response);
     }
 
+    public function download($id)
+    {
+        return $this->attachmentService->download($id);
+    }
+
 }

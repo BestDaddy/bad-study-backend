@@ -55,5 +55,6 @@ Route::group(['namespace' => 'Web'], function () {
         Route::resources([
             'attachments' => 'AttachmentsController',
         ]);
+        Route::get('/download/{id}', 'AttachmentsController@download');
     });
 });
