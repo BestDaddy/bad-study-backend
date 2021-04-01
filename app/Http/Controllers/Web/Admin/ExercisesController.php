@@ -62,11 +62,12 @@ class ExercisesController extends Controller
      * Display the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\Response|\Illuminate\View\View
      */
     public function show($id)
     {
-        //
+        $exercise = $this->exercisesService->find($id);
+        return view('admin.exercises.show', compact('exercise'));
     }
 
     /**

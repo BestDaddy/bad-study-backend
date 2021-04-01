@@ -4,14 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4ab46e84-ab3e-4e26-ac9b-d274ec4ea08b" name="Default Changelist" comment="file upload alpha 0.2">
-      <change afterPath="$PROJECT_DIR$/public/Build/The Hound.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Build/oiu.jpg.jpg" afterDir="false" />
+    <list default="true" id="4ab46e84-ab3e-4e26-ac9b-d274ec4ea08b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/exercises/show.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Web/Admin/ExercisesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Web/Admin/ExercisesController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Web/Support/AttachmentsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Web/Support/AttachmentsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Services/Supports/AttachmentServiceImpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/Supports/AttachmentServiceImpl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/filesystems.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/filesystems.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Services/Courses/ChaptersServiceImpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/Courses/ChaptersServiceImpl.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/breadcrumbs.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/breadcrumbs.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -276,7 +275,7 @@
       <workItem from="1617113199003" duration="9310000" />
       <workItem from="1617194844206" duration="8522000" />
       <workItem from="1617211404021" duration="2966000" />
-      <workItem from="1617288852715" duration="1904000" />
+      <workItem from="1617288852715" duration="3675000" />
     </task>
     <task id="LOCAL-00001" summary="relationships added. not finished">
       <created>1610549633399</created>
@@ -460,7 +459,14 @@
       <option name="project" value="LOCAL" />
       <updated>1617203852533</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="file upload alpha finished">
+      <created>1617290898644</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1617290898644</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -502,6 +508,7 @@
     <MESSAGE value="test" />
     <MESSAGE value="file upload alpha" />
     <MESSAGE value="file upload alpha 0.2" />
-    <option name="LAST_COMMIT_MESSAGE" value="file upload alpha 0.2" />
+    <MESSAGE value="file upload alpha finished" />
+    <option name="LAST_COMMIT_MESSAGE" value="file upload alpha finished" />
   </component>
 </project>

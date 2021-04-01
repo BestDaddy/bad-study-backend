@@ -37,7 +37,7 @@ class ChaptersServiceImpl  extends BaseServiceImpl implements ChaptersService
                           onclick="editExercise(event.target)"><i class="fas fa-edit" data-id="'.$data->id.'"></i> Изменить</button>';
                 })
                 ->addColumn('more', function ($data){
-                    return '<a class="text-decoration-none"  href="/chapters/'.$data->id.'"><button class="btn btn-primary btn-sm btn-block">Подробнее</button></a>';
+                    return '<a class="text-decoration-none"  href="/exercises/'.$data->id.'"><button class="btn btn-primary btn-sm btn-block">Подробнее</button></a>';
                 })
                 ->rawColumns(['more', 'edit'])
                 ->make(true);

@@ -40,13 +40,13 @@ class AttachmentsController extends Controller
         $model_name = $model_params['model'];
 
         // расширения
-        $extensions = isset($model_params['extensions'])
-            ? implode(",", $model_params['extensions'])
-            : self::COMMON_EXTENSIONS;
-
-        $request->validate([
-            'file' => 'mimes:' . $extensions,
-        ]);
+//        $extensions = isset($model_params['extensions'])
+//            ? implode(",", $model_params['extensions'])
+//            : self::COMMON_EXTENSIONS;
+//
+//        $request->validate([
+//            'file' => 'mimes:' . $extensions,
+//        ]);
 
         $data = $this->attachmentService->save(
             $model_id,
