@@ -14,4 +14,19 @@ class Course extends Model
         return $this->hasMany(Chapter::class)->orderBy('order');
     }
 
+    public function userCourseGroup(){
+        return $this->hasOne(UserCourseGroup::class);
+    }
+
+    public function userCourseGroups(){
+        return $this->hasMany(UserCourseGroup::class);
+    }
+
+    public function groupCourses(){
+        return $this->hasMany(GroupCourse::class);
+    }
+
+    public function groupCourse(){
+        return $this->hasOne(GroupCourse::class);
+    }
 }

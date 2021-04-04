@@ -6,6 +6,7 @@ namespace App\Services\Groups;
 
 use App\Models\Attendance;
 use App\Models\ExerciseResult;
+use App\Models\UserCourseGroup;
 use App\Services\BaseServiceImpl;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -49,5 +50,27 @@ class AttendancesServiceImpl extends BaseServiceImpl implements AttendancesServi
             'score' => intval($score),
             'status' => Attendance::STATUS_PASSED
         ]);
+    }
+
+    public function totalRecount(UserCourseGroup $userCourseGroup){
+        $userCourseGroup->load([
+            'course.groupCourse' => function($q) use($userCourseGroup){
+                $q->where('group_id', $userCourseGroup->group_id);
+            },
+            'course.groupCourse.schedules.attendance' => function($q) use($userCourseGroup){
+                $q->where('user_id', $userCourseGroup->user_id);
+            },
+            'course.chapters'
+            ]);
+
+        $schedules = data_get($userCourseGroup, 'course.groupCourse.schedules');
+        $scores = $schedules->pluck('attendance')->sum('score');
+
+        $score = $scores  / count($schedules);
+
+        $userCourseGroup->update([
+            'score' => intval($score)
+        ]);
+
     }
 }

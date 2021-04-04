@@ -4,6 +4,7 @@
 namespace App\Services\Groups;
 
 
+use App\Models\UserCourseGroup;
 use Illuminate\Http\Request;
 
 interface AttendancesService
@@ -13,4 +14,6 @@ interface AttendancesService
     public function changeAttendance(Request $request);
 
     public function recountScore($id);
+
+    public function totalRecount(UserCourseGroup $userCourseGroup);
 }

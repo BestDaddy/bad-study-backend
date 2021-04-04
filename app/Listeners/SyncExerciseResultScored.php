@@ -29,12 +29,19 @@ class SyncExerciseResultScored implements ShouldQueue
             'attendance' => function($q)use($event){
                 $q->where('user_id', data_get($event, 'exercise_result.user_id'));
             },
-//            'chapter.course',
+            'chapter.course.userCourseGroup' => function($q)use($event){
+                $q->where('user_id', data_get($event, 'exercise_result.user_id'));
+            },
         ]);
 
         $attendance = $schedule->attendance;
         if($attendance)
             $this->attendancesService->recountScore($attendance->id);
+
+        $user_course_group = data_get($schedule, 'chapter.course.userCourseGroup');
+
+        if($user_course_group)
+            $this->attendancesService->totalRecount($user_course_group);
 
     }
 }
