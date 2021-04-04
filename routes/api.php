@@ -44,6 +44,8 @@ Route::group(['namespace' => 'Api'], function () {
 
         Route::get('/schedules/{id}', 'CoursesController@scheduleShow');
 
+        Route::post('/exercises', 'CoursesController@exerciseResultStore');
+
     });
 
 });

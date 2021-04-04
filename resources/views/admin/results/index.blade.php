@@ -147,6 +147,7 @@
                 type: "PUT",
                 data: {
                     // id: result_id,
+                    schedule_id: {{$schedule->id}},
                     comment:comment,
                     score:score,
                     _token: _token

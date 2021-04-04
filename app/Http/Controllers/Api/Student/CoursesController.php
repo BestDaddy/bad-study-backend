@@ -5,10 +5,12 @@ namespace App\Http\Controllers\Api\Student;
 
 
 use App\Http\Controllers\ApiBaseController;
+use App\Http\Requests\Api\Course\ExerciseResultStoreApiRequest;
 use App\Http\Resources\CourseResource;
 
 use App\Http\Resources\ScheduleResource;
 use App\Services\Courses\CoursesService;
+use App\Services\Courses\ExerciseResultsService;
 use App\Services\Groups\SchedulesService;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
@@ -18,9 +20,11 @@ class CoursesController extends ApiBaseController
 {
     private $coursesService;
     private $schedulesService;
+    private $exerciseResultsService;
 
-    public function __construct(CoursesService $coursesService, SchedulesService $schedulesService)
+    public function __construct(ExerciseResultsService $exerciseResultsService, CoursesService $coursesService, SchedulesService $schedulesService)
     {
+        $this->exerciseResultsService = $exerciseResultsService;
         $this->coursesService = $coursesService;
         $this->schedulesService = $schedulesService;
     }
@@ -78,5 +82,10 @@ class CoursesController extends ApiBaseController
         ]);
 
         return $this->successResponse(ScheduleResource::make($schedule));
+    }
+
+    public function exerciseResultStore(ExerciseResultStoreApiRequest $request){
+        $execise_result = $this->exerciseResultsService->store($request);
+        return $this->successResponse($execise_result);
     }
 }

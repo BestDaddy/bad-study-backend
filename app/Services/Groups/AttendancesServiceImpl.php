@@ -5,6 +5,7 @@ namespace App\Services\Groups;
 
 
 use App\Models\Attendance;
+use App\Models\ExerciseResult;
 use App\Services\BaseServiceImpl;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -30,5 +31,24 @@ class AttendancesServiceImpl extends BaseServiceImpl implements AttendancesServi
         $attendance->value = $request->value;
         $attendance->save();
         return $attendance;
+    }
+
+    public function recountScore($id){
+        $attendance = $this->findWith($id, ['schedule.chapter.exercises']);
+
+        $exercise_results = ExerciseResult::whereIn(
+            'exercise_id',
+            $attendance->schedule->chapter->exercises->pluck('id')
+            )
+            ->where('user_id', $attendance->user_id)
+            ->get();
+
+        $score = $exercise_results->sum('score') / count($attendance->schedule->chapter->exercises);
+        $status = Attendance::STATUS_PASSED;
+
+        $this->update($id, [
+            'score' => $score,
+            'status' => $status
+        ]);
     }
 }

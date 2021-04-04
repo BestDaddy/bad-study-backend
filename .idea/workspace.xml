@@ -5,13 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4ab46e84-ab3e-4e26-ac9b-d274ec4ea08b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Resources/AttendanceResource.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Resources/ExerciseResource.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Resources/ScheduleResource.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Events/ExerciseResultScored.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Requests/Api/Course/ExerciseResultStoreApiRequest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Listeners/SyncExerciseResultScored.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/Student/CoursesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/Student/CoursesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Resources/ChapterResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/ChapterResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Attendance.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Attendance.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Web/Admin/ExerciseResultsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Web/Admin/ExerciseResultsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/EventServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/EventServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Services/Courses/ExerciseResultsServiceImpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/Courses/ExerciseResultsServiceImpl.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Services/Groups/AttendancesService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/Groups/AttendancesService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Services/Groups/AttendancesServiceImpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/Groups/AttendancesServiceImpl.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/results/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/results/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -203,6 +208,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -279,7 +285,7 @@
       <workItem from="1617288852715" duration="6229000" />
       <workItem from="1617447780507" duration="1198000" />
       <workItem from="1617453218806" duration="839000" />
-      <workItem from="1617516903982" duration="2280000" />
+      <workItem from="1617516903982" duration="6178000" />
     </task>
     <task id="LOCAL-00001" summary="relationships added. not finished">
       <created>1610549633399</created>
@@ -491,7 +497,14 @@
       <option name="project" value="LOCAL" />
       <updated>1617453460788</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="api courses show. schedule show added">
+      <created>1617519449509</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1617519449509</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -511,7 +524,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="relationships added. not finished" />
     <MESSAGE value="seeder added. register fixes. SystemServiceProvider added" />
     <MESSAGE value="datatables added. users and course crud" />
     <MESSAGE value="chapters crud" />
@@ -536,6 +548,7 @@
     <MESSAGE value="file upload alpha finished" />
     <MESSAGE value="file upload beta" />
     <MESSAGE value="event create attendance" />
-    <option name="LAST_COMMIT_MESSAGE" value="event create attendance" />
+    <MESSAGE value="api courses show. schedule show added" />
+    <option name="LAST_COMMIT_MESSAGE" value="api courses show. schedule show added" />
   </component>
 </project>

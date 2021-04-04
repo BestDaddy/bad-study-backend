@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers\Web\Admin;
 
+use App\Events\ExerciseResultScored;
 use App\Http\Controllers\Controller;
+use App\Models\ExerciseResult;
 use App\Services\Courses\ExerciseResultsService;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -60,7 +62,7 @@ class ExerciseResultsController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Database\Eloquent\Builder|\Illuminate\Database\Eloquent\Builder[]|\Illuminate\Database\Eloquent\Collection|\Illuminate\Database\Eloquent\Model|\Illuminate\Http\Response
      */
     public function edit($id)
     {
@@ -78,6 +80,9 @@ class ExerciseResultsController extends Controller
     {
         $request['checked_at'] = Carbon::now();
         $result =  $this->exerciseResultsService->update($id, $request->all());
+
+        event(new ExerciseResultScored($result, $request->schedule_id));
+
         return response()->json(['code'=>200, 'message'=>'Result Scored successfully','data' => $result], 200);
     }
 

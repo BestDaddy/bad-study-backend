@@ -17,6 +17,12 @@ class ExerciseResultsServiceImpl extends BaseServiceImpl implements ExerciseResu
 
     public function store(Request $request)
     {
-        return ExerciseResult::update(['id' => $request->id],[]);
+        return ExerciseResult::updateOrCreate(
+            [
+                'user_id' => $request->user_id,
+                'exercise_id' => $request->exercise_id
+            ],
+            $request->all()
+        );
     }
 }

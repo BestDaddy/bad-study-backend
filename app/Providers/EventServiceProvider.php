@@ -22,6 +22,9 @@ class EventServiceProvider extends ServiceProvider
         'App\Events\ScheduleCreated' => [
             'App\Listeners\SyncScheduleCreated'
         ],
+        'App\Events\ExerciseResultScored' => [
+            'App\Listeners\SyncExerciseResultScored'
+        ],
     ];
 
 //    protected $subscribe = [

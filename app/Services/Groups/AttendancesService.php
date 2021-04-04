@@ -11,4 +11,6 @@ interface AttendancesService
     public function store(Request $request);
 
     public function changeAttendance(Request $request);
+
+    public function recountScore($id);
 }
