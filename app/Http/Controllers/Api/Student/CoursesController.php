@@ -7,8 +7,10 @@ namespace App\Http\Controllers\Api\Student;
 use App\Http\Controllers\ApiBaseController;
 use App\Http\Resources\CourseResource;
 
+use App\Http\Resources\ScheduleResource;
 use App\Services\Courses\CoursesService;
 use App\Services\Groups\SchedulesService;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
@@ -47,8 +49,19 @@ class CoursesController extends ApiBaseController
                 $q->where('user_id', $user_course_group->user_id);
             },
         ]);
+
+
+
+        $result = [
+            'course' => CourseResource::make($course),
+            'total_passed' => count($course->chapters->pluck('schedule')->filter(function ($item)  {
+                return (data_get($item, 'starts_at') < Carbon::now());
+            })),
+            'total_schedules' => count($course->chapters),
+            'total_score' => $user_course_group->score,
+        ];
 //        dd(DB::getQueryLog());  //5
-        return $this->successResponse(CourseResource::make($course));
+        return $this->successResponse($result);
     }
 
     public function scheduleShow($id){
@@ -56,10 +69,14 @@ class CoursesController extends ApiBaseController
         $schedule = $this->schedulesService->findWith($id, [
             'chapter.course',
             'attendance' => function($q) use($user) {
-                $q->where('user_id', $user);
+                $q->where('user_id', $user->id);
+            },
+            'chapter.exercises.attachments',
+            'chapter.exercises.result' => function ($q) use ($user) {
+                $q->where('user_id', $user->id);
             }
         ]);
 
-        return $this->successResponse($schedule);
+        return $this->successResponse(ScheduleResource::make($schedule));
     }
 }

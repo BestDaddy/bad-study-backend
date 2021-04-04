@@ -5,7 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4ab46e84-ab3e-4e26-ac9b-d274ec4ea08b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Http/Resources/AttendanceResource.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Resources/ExerciseResource.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Resources/ScheduleResource.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/Student/CoursesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/Student/CoursesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Resources/ChapterResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/ChapterResource.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Attendance.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Attendance.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -189,7 +195,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../backend" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -272,6 +278,8 @@
       <workItem from="1617211404021" duration="2966000" />
       <workItem from="1617288852715" duration="6229000" />
       <workItem from="1617447780507" duration="1198000" />
+      <workItem from="1617453218806" duration="839000" />
+      <workItem from="1617516903982" duration="2280000" />
     </task>
     <task id="LOCAL-00001" summary="relationships added. not finished">
       <created>1610549633399</created>
@@ -476,7 +484,14 @@
       <option name="project" value="LOCAL" />
       <updated>1617296588999</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="event create attendance">
+      <created>1617453460788</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1617453460788</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
