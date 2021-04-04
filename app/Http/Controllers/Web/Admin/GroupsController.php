@@ -232,14 +232,13 @@ class GroupsController extends Controller
                     'group_id' => $request->group_id,
                 ]);
             foreach($groupCourse->schedules as $schedule){
-//                $input['user_id'] = $request->user_id;
                 $request['schedule_id'] = $schedule->id;
                 $this->attendanceService->store($request);
             }
         }
 
 
-        return response()->json(['code'=>200, 'message'=>'Group Saved successfully'], 200);
+        return response()->json(['code'=>200, 'message'=>'User Saved successfully'], 200);
     }
 
     public function removeUser(Request $request){

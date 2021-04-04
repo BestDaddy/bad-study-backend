@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4ab46e84-ab3e-4e26-ac9b-d274ec4ea08b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/Services/Groups/AttendancesServiceImpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/Groups/AttendancesServiceImpl.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Web/Admin/GroupsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Web/Admin/GroupsController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -274,7 +274,7 @@
       <workItem from="1617288852715" duration="6229000" />
       <workItem from="1617447780507" duration="1198000" />
       <workItem from="1617453218806" duration="839000" />
-      <workItem from="1617516903982" duration="6479000" />
+      <workItem from="1617516903982" duration="6842000" />
     </task>
     <task id="LOCAL-00001" summary="relationships added. not finished">
       <created>1610549633399</created>
@@ -500,7 +500,14 @@
       <option name="project" value="LOCAL" />
       <updated>1617523376839</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="fix">
+      <created>1617523742439</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1617523742439</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -520,7 +527,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="datatables added. users and course crud" />
     <MESSAGE value="chapters crud" />
     <MESSAGE value="exercise group crud" />
     <MESSAGE value="add course/user to group" />
@@ -545,6 +551,7 @@
     <MESSAGE value="event create attendance" />
     <MESSAGE value="api courses show. schedule show added" />
     <MESSAGE value="event exercise Result scored" />
-    <option name="LAST_COMMIT_MESSAGE" value="event exercise Result scored" />
+    <MESSAGE value="fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix" />
   </component>
 </project>
