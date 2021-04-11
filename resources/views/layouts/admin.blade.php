@@ -13,9 +13,10 @@
 
     <title>SB Admin 2</title>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script>
+    <script src="{{asset('vendor/jquery/jquery.min.js')}}"></script>
+{{--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>--}}
+{{--    <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>--}}
+{{--    <script src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script>--}}
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
     <!-- Custom fonts for this template -->
@@ -264,7 +265,7 @@
 @yield('scripts')
 <!-- Bootstrap core JavaScript-->
 <!-- Bootstrap core JavaScript-->
-<script src="{{asset('vendor/jquery/jquery.min.js')}}"></script>
+
 <script src="{{asset('vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 
 
@@ -282,7 +283,7 @@
 
 
 <!-- Page level custom scripts -->
-<script src="{{asset('js/demo/datatables-demo.js')}}"></script>
+{{--<script src="{{asset('js/demo/datatables-demo.js')}}"></script>--}}
 
 
 </body>
