@@ -1,5 +1,5 @@
 @extends('layouts.admin')
 
 @section('content')
-DOROVA INET! asdf
+DOROVA INET! asdf wat?
 @endsection
