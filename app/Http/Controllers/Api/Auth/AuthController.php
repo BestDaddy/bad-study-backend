@@ -15,17 +15,16 @@ class AuthController extends ApiBaseController
 {
     public function authenticate(LoginApiRequest $request)
     {
-//        $cred = collect($request)->only(['phone', 'email'])->toArray();
-//        $user = User::with('role')
-//            ->where('email', $request->email)
-//            ->first();
+        $user = User::with('role')
+            ->where('email', $request->email)
+            ->first();
 
-//        if (empty($user)) {
-//            throw new ApiServiceException(400, false,
-//                [
-//                    'message' => 'Пользователь не зарегистрирован',
-//                ]);
-//        }
+        if (empty($user)) {
+            throw new ApiServiceException(400, false,
+                [
+                    'message' => 'Пользователь не зарегистрирован',
+                ]);
+        }
         $credentials = request(['email', 'password']);
 
         if (!($token = $this->guard()->attempt($credentials))) {
@@ -37,7 +36,7 @@ class AuthController extends ApiBaseController
 
         return [
             'token' => $token,
-//            'user' => new UserResource($user),
+            'user' => new UserResource($user),
             'expires_in' => $this->guard()->factory()->getTTL() * 60 * 12
         ];
 
