@@ -60,7 +60,6 @@ class AttendancesServiceImpl extends BaseServiceImpl implements AttendancesServi
             'course.groupCourse.schedules.attendance' => function($q) use($userCourseGroup){
                 $q->where('user_id', $userCourseGroup->user_id);
             },
-            'course.chapters'
             ]);
 
         $schedules = data_get($userCourseGroup, 'course.groupCourse.schedules');

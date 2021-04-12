@@ -30,11 +30,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(['namespace' => 'Api'], function () {
     Route::group(['namespace' => 'Auth'], function () {
-        Route::post(
-            '/login',
-            'AuthController@authenticate'
-        );
+        Route::post('/login', 'AuthController@authenticate');
 
+        Route::post('/logout', 'AuthController@logout')->middleware('jwt');
+
+        Route::get('/me', 'AuthController@me')->middleware('jwt');
     });
 
     Route::group(['namespace' => 'Student' , 'middleware'=>'jwt'], function () {
