@@ -25,6 +25,6 @@ class GroupCourse extends Model
     }
 
     public function schedules(){
-        return $this->hasMany(Schedule::class, 'group_course_id');
+        return $this->hasMany(Schedule::class, 'group_course_id')->orderBy('starts_at');
     }
 }

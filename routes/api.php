@@ -38,9 +38,9 @@ Route::group(['namespace' => 'Api'], function () {
     });
 
     Route::group(['namespace' => 'Student' , 'middleware'=>'jwt'], function () {
-        Route::resources([
-                'courses' => 'CoursesController'
-        ]);
+        Route::get('/courses', 'CoursesController@index');
+
+        Route::get('/courses/{id}', 'CoursesController@show');
 
         Route::get('/schedules/{id}', 'CoursesController@scheduleShow');
 

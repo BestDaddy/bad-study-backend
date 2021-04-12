@@ -9,6 +9,7 @@ use App\Http\Requests\Api\Course\ExerciseResultStoreApiRequest;
 use App\Http\Resources\CourseResource;
 
 use App\Http\Resources\ScheduleResource;
+use App\Models\GroupCourse;
 use App\Services\Courses\CoursesService;
 use App\Services\Courses\ExerciseResultsService;
 use App\Services\Groups\SchedulesService;
@@ -46,25 +47,25 @@ class CoursesController extends ApiBaseController
             ->firstOrFail();
 
         $course = $this->coursesService->findWith($id, [
-            'chapters.schedule' => function($q) use($user_course_group){
+            'groupCourse' => function($q) use($user_course_group){
                 $q->where('group_id', $user_course_group->group_id);
             },
-            'chapters.schedule.attendance' => function($q) use($user_course_group){
+            'groupCourse.schedules.chapter',
+            'groupCourse.schedules.attendance' => function($q) use($user_course_group){
                 $q->where('user_id', $user_course_group->user_id);
             },
         ]);
 
-
-
         $result = [
             'course' => CourseResource::make($course),
-            'total_passed' => count($course->chapters->pluck('schedule')->filter(function ($item)  {
+            'schedules' => ScheduleResource::collection($course->groupCourse->schedules),
+            'total_passed' => count($course->groupCourse->schedules->filter(function ($item)  {
                 return (data_get($item, 'starts_at') < Carbon::now());
             })),
-            'total_schedules' => count($course->chapters),
+            'total_schedules' => count($course->groupCourse->schedules),
             'total_score' => $user_course_group->score,
         ];
-//        dd(DB::getQueryLog());  //5
+//        dd(DB::getQueryLog());  //6
         return $this->successResponse($result);
     }
 
