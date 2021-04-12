@@ -26,8 +26,9 @@ class AuthController extends ApiBaseController
 //                    'message' => 'Пользователь не зарегистрирован',
 //                ]);
 //        }
+        $credentials = request(['email', 'password']);
 
-        if (!($token = $this->guard()->attempt($request->toArray()))) {
+        if (!($token = $this->guard()->attempt($credentials))) {
             throw new ApiServiceException(400, false,
                 [
                     'message' => 'Неверный пароль или номер телефона',
