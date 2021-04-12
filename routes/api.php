@@ -20,31 +20,34 @@ use Illuminate\Support\Facades\Route;
 //
 ////Auth::routes();
 //
-//Route::get('/asdf', function (){
-//    return 'asdf';
-//});
-
-
-
 
 
 Route::group(['namespace' => 'Api'], function () {
     Route::group(['namespace' => 'Auth'], function () {
+
         Route::post('/login', 'AuthController@authenticate');
 
         Route::post('/logout', 'AuthController@logout')->middleware('jwt');
 
         Route::get('/me', 'AuthController@me')->middleware('jwt');
+
     });
 
     Route::group(['namespace' => 'Student' , 'middleware'=>'jwt'], function () {
-        Route::get('/courses', 'CoursesController@index');
+
+        Route::get('/courses', 'CoursesController@index');  // all available courses
 
         Route::get('/courses/{id}', 'CoursesController@show');
 
         Route::get('/schedules/{id}', 'CoursesController@scheduleShow');
 
-        Route::post('/exercises', 'CoursesController@exerciseResultStore');
+        Route::get('/exercises', 'ExercisesController@index'); // all available exercises
+
+        Route::get('/exercises/{id}', 'ExercisesController@show');
+
+        Route::post('/exercises/results', 'ExercisesController@exerciseResultStore');  // store answer of student
+
+        Route::get('/exercises/results', 'ExercisesController@indexExerciseResult');
 
     });
 

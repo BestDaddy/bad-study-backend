@@ -18,7 +18,7 @@ class ExerciseResource extends JsonResource
             'order' => $this->order,
             'result' => $this->when(
                 $this->relationLoaded('result'),
-                $this->result
+                ExerciseResultResource::make($this->result)
             ),
             'attachments' => $this->when(
                 $this->relationLoaded('attachments'),

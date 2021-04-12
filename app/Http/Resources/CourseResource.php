@@ -21,7 +21,10 @@ class CourseResource extends JsonResource
             'chapters' => $this->when(
                 $this->relationLoaded('chapters'),
                 ChapterResource::collection($this->chapters)
-            )
+            ),
+            'exercises' => $this->when($this->relationLoaded('exercises'),
+                ExerciseResource::collection($this->exercises)
+            ),
         ];
     }
 }

@@ -29,4 +29,8 @@ class Course extends Model
     public function groupCourse(){
         return $this->hasOne(GroupCourse::class);
     }
+
+    public function exercises(){
+        return $this->hasManyThrough(Exercise::class, Chapter::class);
+    }
 }

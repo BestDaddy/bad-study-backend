@@ -85,8 +85,8 @@ class CoursesController extends ApiBaseController
         return $this->successResponse(ScheduleResource::make($schedule));
     }
 
-    public function exerciseResultStore(ExerciseResultStoreApiRequest $request){
-        $execise_result = $this->exerciseResultsService->store($request);
-        return $this->successResponse($execise_result);
-    }
+//    public function exerciseResultStore(ExerciseResultStoreApiRequest $request){
+//        $execise_result = $this->exerciseResultsService->store($request);
+//        return $this->successResponse($execise_result);
+//    }
 }
