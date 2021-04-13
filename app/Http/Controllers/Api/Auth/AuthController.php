@@ -7,7 +7,9 @@ namespace App\Http\Controllers\Api\Auth;
 use App\Exceptions\ApiServiceException;
 use App\Http\Controllers\ApiBaseController;
 use App\Http\Requests\Api\Auth\LoginApiRequest;
+use App\Http\Requests\Api\Auth\RegisterApiRequest;
 use App\Http\Resources\UserResource;
+use App\Models\Role;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
@@ -30,7 +32,7 @@ class AuthController extends ApiBaseController
         if (!($token = $this->guard()->attempt($credentials))) {
             throw new ApiServiceException(400, false,
                 [
-                    'message' => 'Неверный пароль или номер телефона',
+                    'message' => 'Неверный пароль или почта',
                 ]);
         }
 
@@ -40,12 +42,6 @@ class AuthController extends ApiBaseController
             'expires_in' => $this->guard()->factory()->getTTL() * 60 * 12
         ];
 
-//
-//        return $this->successResponse(
-//            $this->authService->login(
-//                $request->only(['phone', 'password', 'email'])
-//            )
-//        );
     }
 
     public function me(){
@@ -63,6 +59,23 @@ class AuthController extends ApiBaseController
         return $this->successResponse(
             ['message' => 'Successfully logged out']
         );
+    }
+
+    public function register(RegisterApiRequest $request){
+        $user = User::create([
+            'first_name' => $request->first_name,
+            'last_name' => $request->last_name,
+            'email' => $request->email,
+            'password' =>bcrypt($request->password),
+            'role_id' => Role::STUDENT_ID,
+        ]);
+
+        return $this->successResponse([
+            [
+                'message' => 'Successfully registered',
+                'user' => UserResource::make($user)
+            ]
+        ]);
     }
 
     public function guard()
