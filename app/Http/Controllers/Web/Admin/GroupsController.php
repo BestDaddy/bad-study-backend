@@ -213,7 +213,7 @@ class GroupsController extends Controller
         return response()->json(['code'=>200, 'message'=>'Course removed successfully'], 200);
     }
 
-    public function adduser(Request $request){
+    public function addUser(Request $request){
         $rules = array(
             'user_id' => 'required',
             'group_id'  => 'required',
@@ -224,19 +224,7 @@ class GroupsController extends Controller
         if($error->fails())
             return response()->json(['errors' => $error->errors()->all()]);
 
-        $group = Group::with('groupCourses')->findOrFail($request->group_id);
-
-        foreach ($group->groupCourses as $groupCourse){
-            UserCourseGroup::updateOrCreate(['user_id' => $request->user_id, 'course_id'  => $groupCourse->course_id],
-                [
-                    'group_id' => $request->group_id,
-                ]);
-            foreach($groupCourse->schedules as $schedule){
-                $request['schedule_id'] = $schedule->id;
-                $this->attendanceService->store($request);
-            }
-        }
-
+        $this->groupsService->addUser($request);
 
         return response()->json(['code'=>200, 'message'=>'User Saved successfully'], 200);
     }

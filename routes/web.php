@@ -33,6 +33,8 @@ Route::group(['namespace' => 'Web'], function () {
             'groups.courses.schedules' => 'SchedulesController',
             'results' => 'ExerciseResultsController'
         ]);
+        Route::get('/import/users/create', 'UsersController@importPage')->name('import.users.index');
+        Route::post('/import/users', 'UsersController@import')->name('import.users');
 
         Route::get('/getNewCourses/{id}', 'GroupsController@getNewCourses')->name('getNewCourses');
         Route::get('/getNewStudents/{id}', 'GroupsController@getNewStudents')->name('getNewStudents');

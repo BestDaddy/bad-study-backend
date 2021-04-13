@@ -4,13 +4,17 @@
 namespace App\Services\Groups;
 
 use App\Models\Group;
+use App\Models\UserCourseGroup;
 use App\Services\BaseServiceImpl;
 use Illuminate\Http\Request;
 
 class GroupsServiceImpl extends BaseServiceImpl implements GroupsService
 {
-    public function __construct(Group $model)
+    private $attendanceService;
+
+    public function __construct(Group $model, AttendancesService $attendanceService)
     {
+        $this->attendanceService = $attendanceService;
         parent::__construct($model);
     }
 
@@ -38,5 +42,20 @@ class GroupsServiceImpl extends BaseServiceImpl implements GroupsService
             'description' => $request->description,
             'chat' => $request->chat,
         ]);
+    }
+
+    public function addUser(Request $request){
+        $group = Group::with('groupCourses')->findOrFail($request->group_id);
+
+        foreach ($group->groupCourses as $groupCourse){
+            UserCourseGroup::updateOrCreate(['user_id' => $request->user_id, 'course_id'  => $groupCourse->course_id],
+                [
+                    'group_id' => $request->group_id,
+                ]);
+            foreach($groupCourse->schedules as $schedule){
+                $request['schedule_id'] = $schedule->id;
+                $this->attendanceService->store($request);
+            }
+        }
     }
 }

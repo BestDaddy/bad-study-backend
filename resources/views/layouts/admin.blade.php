@@ -101,7 +101,11 @@
             </a>
             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
-
+                    <a class="collapse-item" href="{{route('import.users.index')}}">Импорт</a>
+{{--                    <a class="nav-link"  href="{{route('import.users')}}">--}}
+{{--                        <i class="fas fa-fw fa-file-import"></i>--}}
+{{--                        <span>Import users</span>--}}
+{{--                    </a>--}}
                 </div>
             </div>
         </li>
