@@ -7,6 +7,7 @@ namespace App\Services\Courses;
 use App\Models\Course;
 use App\Services\BaseServiceImpl;
 use Illuminate\Http\Request;
+use Yajra\DataTables\Facades\DataTables;
 
 class CoursesServiceImpl extends BaseServiceImpl implements CoursesService
 {
@@ -18,7 +19,7 @@ class CoursesServiceImpl extends BaseServiceImpl implements CoursesService
     public function index(){
         if(request()->ajax())
         {
-            return datatables()->of(Course::latest()->get())
+            return Datatables::of(Course::latest()->get())
                 ->addColumn('edit', function($data){
                     return  '<button
                          class=" btn btn-primary btn-sm btn-block "
