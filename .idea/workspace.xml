@@ -5,21 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4ab46e84-ab3e-4e26-ac9b-d274ec4ea08b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Imports/UsersImport.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/users/import.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/framework/laravel-excel/laravel-excel-PO7thVaydFXW0rDBsdaB9wAsYcL7Nzb3.tmp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/framework/laravel-excel/laravel-excel-PQCf60sSm66Y2dSeWDKezfAVyQfRa8rJ.tmp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/bad-study.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/bad-study.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Web/Admin/GroupsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Web/Admin/GroupsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Web/Admin/UsersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Web/Admin/UsersController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Services/Groups/GroupsService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/Groups/GroupsService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Services/Groups/GroupsServiceImpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/Groups/GroupsServiceImpl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/admin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/admin.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -212,7 +198,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../backend" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -304,13 +290,7 @@
       <workItem from="1618230070655" duration="1862000" />
       <workItem from="1618235024547" duration="5729000" />
       <workItem from="1618320350395" duration="4420000" />
-    </task>
-    <task id="LOCAL-00001" summary="relationships added. not finished">
-      <created>1610549633399</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1610549633399</updated>
+      <workItem from="1618929919050" duration="1432000" />
     </task>
     <task id="LOCAL-00002" summary="seeder added. register fixes. SystemServiceProvider added">
       <created>1610639795770</created>
@@ -641,7 +621,21 @@
       <option name="project" value="LOCAL" />
       <updated>1618321561734</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="php info">
+      <created>1618762342016</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1618762342016</updated>
+    </task>
+    <task id="LOCAL-00050" summary="php info remove">
+      <created>1618763430301</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1618763430301</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -661,8 +655,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="schedule show create" />
-    <MESSAGE value="schedule crud. base service added" />
     <MESSAGE value="auto make attendance" />
     <MESSAGE value="fixes" />
     <MESSAGE value="attendance" />
@@ -686,6 +678,8 @@
     <MESSAGE value="logout me api added" />
     <MESSAGE value="fix" />
     <MESSAGE value="register api" />
-    <option name="LAST_COMMIT_MESSAGE" value="register api" />
+    <MESSAGE value="php info" />
+    <MESSAGE value="php info remove" />
+    <option name="LAST_COMMIT_MESSAGE" value="php info remove" />
   </component>
 </project>
