@@ -24,7 +24,7 @@ class CreateUserCourseGroupTable extends Migration
             $table->foreignId('user_id')
                 ->constrained()
                 ->onDelete('cascade');
-            $table->unsignedSmallInteger('score')->default(0);
+            $table->unsignedDouble('score')->default(0);
             $table->unsignedSmallInteger('status')->default(0);
             $table->timestamps();
         });

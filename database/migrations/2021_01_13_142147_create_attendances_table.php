@@ -21,7 +21,7 @@ class CreateAttendancesTable extends Migration
             $table->foreignId('schedule_id')
                 ->constrained()
                 ->onDelete('cascade');
-            $table->unsignedSmallInteger('score')->default(0);
+            $table->unsignedDouble('score')->default(0);
             $table->unsignedSmallInteger('value')->default(0);
             $table->unsignedSmallInteger('status')->default(0);
             $table->timestamps();

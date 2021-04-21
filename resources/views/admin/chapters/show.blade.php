@@ -107,7 +107,7 @@
     <script>
         function add() {
             $('#collapseExample').hide();
-            $('#staticBackdropLabel').text("Новый курс");
+            $('#staticBackdropLabel').text("Новое задание");
             $('#form-errors').html("");
             $('#exercise_id').val('');
             $( '#form-files' ).html( '' );
@@ -170,7 +170,7 @@
             console.log('3')
             $('#collapseExample').show();
             $('#form-errors').html("");
-            $('#staticBackdropLabel').text("Редактировать курс");
+            $('#staticBackdropLabel').text("Редактировать задание");
             var id  = $(event).data("id");
             if(!id){
                 console.log(id);
@@ -254,6 +254,7 @@
                 language: {
                     "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Russian.json"
                 },
+                order: [[ 2, "asc" ]],
                 processing: true,
                 serverSide: true,
                 ajax: {

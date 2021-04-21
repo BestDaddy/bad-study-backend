@@ -11,7 +11,7 @@
     <br>
     <div class="row" style="clear: both;">
         <div class="col-12 text-right">
-            <a href="javascript:void(0)" class="btn btn-primary" data-toggle="modal"  onclick="add()"><i class="fas fa-plus-square"></i> Добавить курс</a>
+            <a href="javascript:void(0)" class="btn btn-primary" data-toggle="modal"  onclick="add()"><i class="fas fa-plus-square"></i> Добавить главу</a>
         </div>
     </div>
     <br>
@@ -34,7 +34,7 @@
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel">Новый курс</h5>
+                    <h5 class="modal-title" id="staticBackdropLabel">Новая глава</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -95,7 +95,7 @@
     <script>
         function add() {
             $('#collapseExample').hide();
-            $('#staticBackdropLabel').text("Новый курс");
+            $('#staticBackdropLabel').text("Новая глава");
             $('#form-errors').html("");
             $('#chapter_id').val('');
             $('#name').val('');
@@ -126,7 +126,7 @@
         function editChapter (event) {
             $('#collapseExample').show();
             $('#form-errors').html("");
-            $('#staticBackdropLabel').text("Редактировать курс");
+            $('#staticBackdropLabel').text("Редактировать главу");
 
             var id  = $(event).data("id");
             let _url = `/chapters/${id}/edit`;
@@ -194,6 +194,7 @@
                 language: {
                     "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Russian.json"
                 },
+                order: [[ 2, "asc" ]],
                 processing: true,
                 serverSide: true,
                 ajax: {

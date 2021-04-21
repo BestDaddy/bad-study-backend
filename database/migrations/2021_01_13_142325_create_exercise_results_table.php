@@ -21,7 +21,8 @@ class CreateExerciseResultsTable extends Migration
             $table->foreignId('exercise_id')
                 ->constrained()
                 ->onDelete('cascade');
-            $table->unsignedSmallInteger('score')->default(0);
+            $table->unsignedDouble('score')->default(0);
+            $table->unsignedSmallInteger('status')->default(0);
             $table->string('value')->nullable();
             $table->string('comment')->nullable();
             $table->timestamp('checked_at')->nullable();
