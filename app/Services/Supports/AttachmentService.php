@@ -6,7 +6,7 @@ namespace App\Services\Supports;
 
 interface AttachmentService
 {
-    public function setDir($dir_name);
+//    public function setDir($dir_name);
 
     /**
      * @param $model_id
@@ -15,7 +15,7 @@ interface AttachmentService
      * @param null $uuid
      * @param null $slug
      */
-    public function save($model_id, $model_type, $file, $uuid = null, $slug = null);
+    public function save($model_id, $model_type, $file, $uuid = null, $slug = null, $folder=null);
 
     /**
      * @param $uuid

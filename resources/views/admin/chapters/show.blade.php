@@ -61,12 +61,26 @@
                                       rows="4">
                             </textarea>
                         </div>
-                        <div class="form-group">
-                            <label for="inputPhone">Порядок</label>
-                            <input type="number" class="form-control"
-                                   id="order"
-                                   name="order"
-                                   placeholder="Введите Порядок">
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="inputName">Папка</label>
+                                    <input type="text"
+                                           class="form-control"
+                                           id="path"
+                                           placeholder="Введите название папки"
+                                           name="path">
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="inputPhone">Порядок</label>
+                                    <input type="number" class="form-control"
+                                           id="order"
+                                           name="order"
+                                           placeholder="Введите Порядок">
+                                </div>
+                            </div>
                         </div>
                         <div class="form-group">
                             <input type="file"
@@ -109,9 +123,11 @@
             $('#collapseExample').hide();
             $('#staticBackdropLabel').text("Новое задание");
             $('#form-errors').html("");
+            $('#form-files').html("");
             $('#exercise_id').val('');
-            $( '#form-files' ).html( '' );
+            $("#path").prop('disabled', false);
             $('#name').val('');
+            $('#path').val('');
             $('#order').val('');
             $('#exercise_content').val('');
             $('#post-modal').modal('show');
@@ -130,6 +146,7 @@
                 let myForm = document.getElementById('upload_form');
             //     // event.preventDefault();
                 let formData = new FormData(myForm);
+                formData.append('folder', $('#path').val());
                 formData.append('model_type', 'exercise');
                 formData.append('model_id', $('#exercise_id').val());
                 $.ajax({
@@ -170,6 +187,9 @@
             console.log('3')
             $('#collapseExample').show();
             $('#form-errors').html("");
+            $('#form-files').html("");
+            // $('#path').val(response.path);
+            $("#path").prop('disabled', true);
             $('#staticBackdropLabel').text("Редактировать задание");
             var id  = $(event).data("id");
             if(!id){
@@ -185,6 +205,7 @@
                     if(response) {
                         $("#exercise_id").val(response.id);
                         $("#name").val(response.name);
+                        $('#path').val(response.path);
                         $("#exercise_content").val(response.content);
                         $("#order").val(response.order);
                         if(response.attachments.length > 0){
@@ -205,6 +226,7 @@
         }
         function save(callback) {
             var name = $('#name').val();
+            var path = $('#path').val();
             var content = $('#exercise_content').val();
             var id = $('#exercise_id').val();
             var order = $('#order').val();
@@ -217,6 +239,7 @@
                 data: {
                     id: id,
                     name: name,
+                    path: path,
                     content: content,
                     order: order,
                     chapter_id: chapter_id,

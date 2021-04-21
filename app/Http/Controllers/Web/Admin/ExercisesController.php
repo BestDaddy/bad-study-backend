@@ -72,7 +72,11 @@ class ExercisesController extends Controller
      */
     public function show($id)
     {
-        $exercise = $this->exercisesService->find($id);
+        $exercise = $this->exercisesService->findWith($id, [
+            'attachments' => function($q){
+                $q->where('name', 'like', '%.json');
+            }
+        ]);
         return view('admin.exercises.show', compact('exercise'));
     }
 

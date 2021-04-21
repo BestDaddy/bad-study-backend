@@ -31,6 +31,7 @@ class AttachmentsController extends Controller
         $model_type = $request->input('model_type');
         $model_uuid = $request->input('uuid', null);
         $slug = $request->input('slug', null);
+        $folder = $request->input('folder', null);
 
         if (!isset($this->attachments[$model_type])) {
             abort(404);
@@ -53,7 +54,8 @@ class AttachmentsController extends Controller
             $model_name,
             $request->file('file'),
             $model_uuid,
-            $slug
+            $slug,
+            $folder
         );
 
         $response = [

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Exercise extends Model
 {
     protected $fillable = [
-        'chapter_id', 'name', 'content', 'order'
+        'chapter_id', 'name', 'content', 'order', 'path'
     ];
 
     public function chapter(){
