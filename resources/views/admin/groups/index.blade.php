@@ -33,7 +33,7 @@
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel">Новый курс</h5>
+                    <h5 class="modal-title" id="staticBackdropLabel">Новый </h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -79,7 +79,7 @@
 
                     <div class="col-lg-9">
                         <div  class="collapse" id="collapseExample">
-                            <button class="btn btn-danger" onclick="deleteCourse()"><i class="fas fa-trash"></i> Удалить</button>
+                            <button class="btn btn-danger" onclick="deleteGroup()"><i class="fas fa-trash"></i> Удалить</button>
                         </div>
                     </div>
                     <button class="btn btn-primary" onclick="save()">Сохранить</button>
@@ -95,7 +95,7 @@
     <script>
         function add() {
             $('#collapseExample').hide();
-            $('#staticBackdropLabel').text("Новый курс");
+            $('#staticBackdropLabel').text("Новая группа");
             $('#form-errors').html("");
             $('#group_id').val('');
             $('#name').val('');
@@ -104,45 +104,46 @@
             $('#post-modal').modal('show');
         }
 
-        {{--function deleteCourse() {--}}
-        {{--    var id = $('#group_id').val();--}}
-        {{--    let _url = `courses/${id}`;--}}
+        function deleteGroup() {
+            var id = $('#group_id').val();
+            let _url = `/groups/${id}`;
 
-        {{--    let _token   = $('meta[name="csrf-token"]').attr('content');--}}
+            let _token   = $('meta[name="csrf-token"]').attr('content');
 
-        {{--    $.ajax({--}}
-        {{--        url: _url,--}}
-        {{--        type: 'DELETE',--}}
-        {{--        data: {--}}
-        {{--            _token: _token--}}
-        {{--        },--}}
-        {{--        success: function(response) {--}}
-        {{--            $('#course_table').DataTable().ajax.reload();--}}
-        {{--            $('#post-modal').modal('hide');--}}
-        {{--        }--}}
-        {{--    });--}}
-        {{--}--}}
+            $.ajax({
+                url: _url,
+                type: 'DELETE',
+                data: {
+                    _token: _token
+                },
+                success: function(response) {
+                    $('#course_table').DataTable().ajax.reload();
+                    $('#post-modal').modal('hide');
+                }
+            });
+        }
 
-        {{--function editCourse (event) {--}}
-        {{--    $('#collapseExample').show();--}}
-        {{--    $('#form-errors').html("");--}}
-        {{--    $('#staticBackdropLabel').text("Редактировать курс");--}}
+        function editGroup (event) {
+            $('#collapseExample').show();
+            $('#form-errors').html("");
+            $('#staticBackdropLabel').text("Редактировать группу");
 
-        {{--    var id  = $(event).data("id");--}}
-        {{--    let _url = `courses/${id}/edit`;--}}
-        {{--    $.ajax({--}}
-        {{--        url: _url,--}}
-        {{--        type: "GET",--}}
-        {{--        success: function(response) {--}}
-        {{--            if(response) {--}}
-        {{--                $("#group_id").val(response.id);--}}
-        {{--                $("#name").val(response.name);--}}
-        {{--                $("#description").val(response.description);--}}
-        {{--                $('#post-modal').modal('show');--}}
-        {{--            }--}}
-        {{--        }--}}
-        {{--    });--}}
-        {{--}--}}
+            var id  = $(event).data("id");
+            let _url = `/groups/${id}/edit`;
+            $.ajax({
+                url: _url,
+                type: "GET",
+                success: function(response) {
+                    if(response) {
+                        $("#group_id").val(response.id);
+                        $("#name").val(response.name);
+                        $("#description").val(response.description);
+                        $("#chat").val(response.chat);
+                        $('#post-modal').modal('show');
+                    }
+                }
+            });
+        }
         function save() {
             var name = $('#name').val();
             var description = $('#description').val();

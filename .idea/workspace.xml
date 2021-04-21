@@ -5,16 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4ab46e84-ab3e-4e26-ac9b-d274ec4ea08b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/Build/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Web/Admin/ExercisesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Web/Admin/ExercisesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Web/Support/AttachmentsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Web/Support/AttachmentsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Exercise.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Exercise.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Services/Supports/AttachmentService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/Supports/AttachmentService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Services/Supports/AttachmentServiceImpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/Supports/AttachmentServiceImpl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/Build/UnityLoader.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/chapters/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/chapters/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/exercises/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/exercises/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Web/Admin/GroupsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Web/Admin/GroupsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Services/Groups/GroupsServiceImpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/Groups/GroupsServiceImpl.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/groups/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/groups/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/groups/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/groups/show.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -308,14 +303,7 @@
       <workItem from="1618235024547" duration="5729000" />
       <workItem from="1618320350395" duration="4420000" />
       <workItem from="1618929919050" duration="6144000" />
-      <workItem from="1619011984565" duration="6852000" />
-    </task>
-    <task id="LOCAL-00010" summary="auto make attendance">
-      <created>1613148623819</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1613148623819</updated>
+      <workItem from="1619011984565" duration="7515000" />
     </task>
     <task id="LOCAL-00011" summary="fixes">
       <created>1613149024438</created>
@@ -653,7 +641,14 @@
       <option name="project" value="LOCAL" />
       <updated>1619014229196</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="fix exercises attachments by folders">
+      <created>1619019120208</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1619019120208</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -673,7 +668,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="results score added" />
     <MESSAGE value="breadcrumbs added" />
     <MESSAGE value="student part start" />
     <MESSAGE value="jwt token added. login page&#10;my courses index" />
@@ -698,6 +692,7 @@
     <MESSAGE value="test" />
     <MESSAGE value="delete courses chapter exercises files" />
     <MESSAGE value="html fix&#10;migrations fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="html fix&#10;migrations fix" />
+    <MESSAGE value="fix exercises attachments by folders" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix exercises attachments by folders" />
   </component>
 </project>

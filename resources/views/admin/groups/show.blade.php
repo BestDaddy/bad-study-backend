@@ -21,7 +21,7 @@
             <tr>
                 <th width="5%">ID</th>
                 <th width="35%">Название</th>
-                <th width="30%">преподаватель</th>
+                <th width="30%">Преподаватель</th>
                 <th width="15%"></th>
                 <th width="15%"></th>
             </tr>
@@ -42,8 +42,9 @@
             <thead>
             <tr>
                 <th width="5%">ID</th>
-                <th width="40%">Название</th>
-                <th width="40%">преподаватель</th>
+                <th width="25%">Имя</th>
+                <th width="25%">Фамилия</th>
+                <th width="30%">Почта</th>
                 <th width="15%"></th>
             </tr>
             </thead>
@@ -349,6 +350,10 @@
                     {
                         data: 'last_name',
                         name: 'last_name'
+                    },
+                    {
+                        data: 'email',
+                        name: 'email'
                     },
                     {
                         data: 'delete',
