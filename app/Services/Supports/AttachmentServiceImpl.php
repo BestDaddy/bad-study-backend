@@ -76,4 +76,12 @@ class AttachmentServiceImpl extends BaseServiceImpl implements AttachmentService
 //        $path = str_replace('/storage/','', $path);
         return response()->download(public_path("{$path}"));
     }
+
+    public function deleteFile($model_type, $model_id){
+        $files = Attachment::where('model_type', $model_type)->where('model_id', $model_id)->get();
+        foreach ($files as $file){
+            Storage::disk('public_build')->delete($file->name);
+        }
+        Attachment::where('model_type', $model_type)->where('model_id', $model_id)->delete();
+    }
 }

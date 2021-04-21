@@ -26,4 +26,6 @@ interface AttachmentService
     public function storeFile($file, $folder);
 
     public function download($id);
+
+    public function deleteFile($model_type, $model_id);
 }

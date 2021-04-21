@@ -106,7 +106,7 @@
 
         function deleteChapter() {
             var id = $('#chapter_id').val();
-            let _url = `chapters/${id}`;
+            let _url = `/chapters/${id}`;
 
             let _token   = $('meta[name="csrf-token"]').attr('content');
 

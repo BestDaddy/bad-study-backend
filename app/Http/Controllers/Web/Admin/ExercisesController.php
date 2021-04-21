@@ -3,17 +3,23 @@
 namespace App\Http\Controllers\Web\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Attachment;
+use App\Models\Exercise;
 use App\Services\Courses\ExercisesService;
+use App\Services\Groups\AttendancesService;
+use App\Services\Supports\AttachmentService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
 class ExercisesController extends Controller
 {
     private $exercisesService;
+    private $attachmentsService;
 
-    public function __construct(ExercisesService $exercisesService)
+    public function __construct(ExercisesService $exercisesService, AttachmentService $attachmentsService)
     {
         $this->exercisesService = $exercisesService;
+        $this->attachmentsService = $attachmentsService;
     }
 
     /**
@@ -97,10 +103,12 @@ class ExercisesController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\JsonResponse
      */
     public function destroy($id)
     {
-        //
+        $this->attachmentsService->deleteFile(Exercise::class, $id);
+        $this->exercisesService->delete($id);
+        return response()->json('Exercise deleted successfully');
     }
 }

@@ -11,7 +11,7 @@
     <br>
     <div class="row" style="clear: both;">
         <div class="col-12 text-right">
-            <a href="javascript:void(0)" class="btn btn-primary" data-toggle="modal"  onclick="add()"><i class="fas fa-plus-square"></i> Добавить курс</a>
+            <a href="javascript:void(0)" class="btn btn-primary" data-toggle="modal"  onclick="add()"><i class="fas fa-plus-square"></i> Добавить задание</a>
         </div>
     </div>
     <br>
@@ -34,7 +34,7 @@
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel">Новый курс</h5>
+                    <h5 class="modal-title" id="staticBackdropLabel">Новое задание</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -94,7 +94,7 @@
                         </div>
                     </div>
                     <button class="btn btn-primary" onclick="addFile()">Upload</button>
-                    <button class="btn btn-primary" onclick="save()">Сохранить</button>
+                    <button class="btn btn-primary" onclick="finalSave()">Сохранить</button>
                     <button class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
                 </div>
             </div>
@@ -115,6 +115,10 @@
             $('#order').val('');
             $('#exercise_content').val('');
             $('#post-modal').modal('show');
+        }
+
+        function finalSave(){
+            save(() => $('#post-modal').modal('hide'));
         }
 
         function addFile(){
@@ -147,10 +151,8 @@
 
         function deleteChapter() {
             var id = $('#exercise_id').val();
-            let _url = `chapters/${id}`;
-
+            let _url = `/exercises/${id}`;
             let _token   = $('meta[name="csrf-token"]').attr('content');
-
             $.ajax({
                 url: _url,
                 type: 'DELETE',
