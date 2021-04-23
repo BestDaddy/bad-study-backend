@@ -4,17 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4ab46e84-ab3e-4e26-ac9b-d274ec4ea08b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Resources/AttachmentResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/Student/CoursesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/Student/CoursesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/Student/ExercisesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/Student/ExercisesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Web/Admin/ExerciseResultsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Web/Admin/ExerciseResultsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Resources/ExerciseResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/ExerciseResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Resources/ExerciseResultResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/ExerciseResultResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Resources/ScheduleResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/ScheduleResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/ExerciseResult.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/ExerciseResult.php" afterDir="false" />
-    </list>
+    <list default="true" id="4ab46e84-ab3e-4e26-ac9b-d274ec4ea08b" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -309,14 +299,7 @@
       <workItem from="1618929919050" duration="6144000" />
       <workItem from="1619011984565" duration="7596000" />
       <workItem from="1619119854313" duration="640000" />
-      <workItem from="1619186008429" duration="7426000" />
-    </task>
-    <task id="LOCAL-00017" summary="jwt token added. login page&#10;my courses index">
-      <created>1616223124889</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1616223124889</updated>
+      <workItem from="1619186008429" duration="8170000" />
     </task>
     <task id="LOCAL-00018" summary="course show api">
       <created>1616955093053</created>
@@ -654,7 +637,14 @@
       <option name="project" value="LOCAL" />
       <updated>1619192528363</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <task id="LOCAL-00066" summary="status for exercise results">
+      <created>1619193659569</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1619193659569</updated>
+    </task>
+    <option name="localTasksCounter" value="67" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -674,7 +664,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="file upload alpha 0.2" />
     <MESSAGE value="file upload alpha finished" />
     <MESSAGE value="file upload beta" />
     <MESSAGE value="event create attendance" />
@@ -699,6 +688,7 @@
     <MESSAGE value="validation fix" />
     <MESSAGE value="file dowload fix" />
     <MESSAGE value="student answer files" />
-    <option name="LAST_COMMIT_MESSAGE" value="student answer files" />
+    <MESSAGE value="status for exercise results" />
+    <option name="LAST_COMMIT_MESSAGE" value="status for exercise results" />
   </component>
 </project>
