@@ -6,12 +6,14 @@ namespace App\Http\Controllers\Api\Auth;
 
 use App\Exceptions\ApiServiceException;
 use App\Http\Controllers\ApiBaseController;
+use App\Http\Errors\ErrorCode;
 use App\Http\Requests\Api\Auth\LoginApiRequest;
 use App\Http\Requests\Api\Auth\RegisterApiRequest;
 use App\Http\Resources\UserResource;
 use App\Models\Role;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
+use Tymon\JWTAuth\Exceptions\TokenBlacklistedException;
 
 class AuthController extends ApiBaseController
 {
@@ -39,7 +41,7 @@ class AuthController extends ApiBaseController
         return [
             'token' => $token,
             'user' => new UserResource($user),
-            'expires_in' => $this->guard()->factory()->getTTL() * 60 * 12
+            'expires_in' => $this->guard()->factory()->getTTL() * 60
         ];
 
     }
@@ -50,6 +52,19 @@ class AuthController extends ApiBaseController
         return $this->successResponse(
             UserResource::make($user)
         );
+    }
+
+    public function refresh(){
+        try {
+            return [
+                'token' => $this->guard()->refresh(),
+            ];
+        } catch (TokenBlacklistedException $e) {
+            throw new ApiServiceException(401, false, [
+                'message'   => $e->getMessage(),
+                'errorCode' => ErrorCode::ALREADY_REQUESTED
+            ]);
+        }
     }
 
     public function logout()

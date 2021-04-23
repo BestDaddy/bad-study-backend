@@ -29,6 +29,8 @@ Route::group(['namespace' => 'Api'], function () {
 
         Route::post('/register', 'AuthController@register');
 
+        Route::get('/refresh', 'AuthController@refresh')->middleware('jwt');
+
         Route::post('/logout', 'AuthController@logout')->middleware('jwt');
 
         Route::get('/me', 'AuthController@me')->middleware('jwt');

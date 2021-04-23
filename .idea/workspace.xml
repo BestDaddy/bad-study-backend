@@ -6,10 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="4ab46e84-ab3e-4e26-ac9b-d274ec4ea08b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Web/Admin/GroupsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Web/Admin/GroupsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Services/Groups/GroupsServiceImpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/Groups/GroupsServiceImpl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/groups/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/groups/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/groups/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/groups/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/Auth/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/Auth/AuthController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/Student/CoursesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/Student/CoursesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -206,7 +205,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/Build" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../backend" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -303,14 +302,9 @@
       <workItem from="1618235024547" duration="5729000" />
       <workItem from="1618320350395" duration="4420000" />
       <workItem from="1618929919050" duration="6144000" />
-      <workItem from="1619011984565" duration="7515000" />
-    </task>
-    <task id="LOCAL-00011" summary="fixes">
-      <created>1613149024438</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1613149024438</updated>
+      <workItem from="1619011984565" duration="7596000" />
+      <workItem from="1619119854313" duration="640000" />
+      <workItem from="1619186008429" duration="671000" />
     </task>
     <task id="LOCAL-00012" summary="attendance">
       <created>1613899999510</created>
@@ -648,7 +642,14 @@
       <option name="project" value="LOCAL" />
       <updated>1619019120208</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="group update dlete htmp fix">
+      <created>1619019693654</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1619019693654</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -668,7 +669,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="breadcrumbs added" />
     <MESSAGE value="student part start" />
     <MESSAGE value="jwt token added. login page&#10;my courses index" />
     <MESSAGE value="course show api" />
@@ -693,6 +693,7 @@
     <MESSAGE value="delete courses chapter exercises files" />
     <MESSAGE value="html fix&#10;migrations fix" />
     <MESSAGE value="fix exercises attachments by folders" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix exercises attachments by folders" />
+    <MESSAGE value="group update dlete htmp fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="group update dlete htmp fix" />
   </component>
 </project>
