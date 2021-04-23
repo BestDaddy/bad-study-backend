@@ -6,8 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="4ab46e84-ab3e-4e26-ac9b-d274ec4ea08b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/Auth/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/Auth/AuthController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/Student/CoursesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/Student/CoursesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Web/Admin/ExercisesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Web/Admin/ExercisesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Resources/ExerciseResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/ExerciseResource.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -304,14 +305,7 @@
       <workItem from="1618929919050" duration="6144000" />
       <workItem from="1619011984565" duration="7596000" />
       <workItem from="1619119854313" duration="640000" />
-      <workItem from="1619186008429" duration="671000" />
-    </task>
-    <task id="LOCAL-00012" summary="attendance">
-      <created>1613899999510</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1613899999510</updated>
+      <workItem from="1619186008429" duration="1351000" />
     </task>
     <task id="LOCAL-00013" summary="result show by schedule user">
       <created>1613902695773</created>
@@ -649,7 +643,14 @@
       <option name="project" value="LOCAL" />
       <updated>1619019693654</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="refresh token added">
+      <created>1619186758020</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1619186758020</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -669,7 +670,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="student part start" />
     <MESSAGE value="jwt token added. login page&#10;my courses index" />
     <MESSAGE value="course show api" />
     <MESSAGE value="test lab added" />
@@ -694,6 +694,7 @@
     <MESSAGE value="html fix&#10;migrations fix" />
     <MESSAGE value="fix exercises attachments by folders" />
     <MESSAGE value="group update dlete htmp fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="group update dlete htmp fix" />
+    <MESSAGE value="refresh token added" />
+    <option name="LAST_COMMIT_MESSAGE" value="refresh token added" />
   </component>
 </project>

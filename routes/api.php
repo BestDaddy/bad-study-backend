@@ -33,7 +33,7 @@ Route::group(['namespace' => 'Api'], function () {
 
         Route::post('/logout', 'AuthController@logout')->middleware('jwt');
 
-        Route::get('/me', 'AuthController@me')->middleware('jwt');
+        Route::get('/user', 'AuthController@me')->middleware('jwt');
 
     });
 

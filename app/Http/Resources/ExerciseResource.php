@@ -15,6 +15,7 @@ class ExerciseResource extends JsonResource
             'chapter_id' => $this->chapter_id,
             'name' => $this->name,
             'content' => $this->content,
+            'path' => $this->path,
             'order' => $this->order,
             'result' => $this->when(
                 $this->relationLoaded('result'),

@@ -53,6 +53,7 @@ class ExercisesController extends Controller
         $rules = array(
             'chapter_id' => 'required',
             'name'=> 'required',
+            'path' => 'required|unique:exercises,path,'. $request->input('id'),
             'content'=> 'required',
             'order' => 'required'
         );

@@ -76,7 +76,9 @@ class CoursesController extends ApiBaseController
             'attendance' => function($q) use($user) {
                 $q->where('user_id', $user->id);
             },
-            'chapter.exercises.attachments',
+            'chapter.exercises.attachments' => function($q){
+                $q->where('name', 'like', '%.json');
+            },
             'chapter.exercises.result' => function ($q) use ($user) {
                 $q->where('user_id', $user->id);
             }
