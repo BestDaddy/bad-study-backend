@@ -55,5 +55,10 @@ Route::group(['namespace' => 'Api'], function () {
 
     });
 
+    Route::group(['namespace' => 'Support' , 'middleware'=>'jwt'], function () {
+        Route::post('/attachments', 'AttachmentsController@store');
+        Route::get('/download/{id}', 'AttachmentsController@download');
+    });
+
 });
 

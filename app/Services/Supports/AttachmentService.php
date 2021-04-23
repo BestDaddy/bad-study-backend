@@ -15,7 +15,7 @@ interface AttachmentService
      * @param null $uuid
      * @param null $slug
      */
-    public function save($model_id, $model_type, $file, $uuid = null, $slug = null, $folder=null);
+    public function save($model_id, $model_type, $file, $uuid = null, $folder = null, $disk = null);
 
     /**
      * @param $uuid
@@ -23,7 +23,7 @@ interface AttachmentService
      */
     public function move($uuid, $new_model_id);
 
-    public function storeFile($file, $folder);
+    public function storeFile($file, $folder, $disk);
 
     public function download($id);
 

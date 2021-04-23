@@ -1,23 +1,25 @@
 <?php
 
 
-namespace App\Http\Controllers\Web\Support;
+namespace App\Http\Controllers\Api\Support;
 
 
-use App\Http\Controllers\Controller;
-use App\Models\Exercise;
+use App\Http\Controllers\ApiBaseController;
+
+use App\Http\Requests\Api\Support\AttachmentStoreApiRequest;
+use App\Models\ExerciseResult;
 use App\Services\Supports\AttachmentService;
 use Illuminate\Http\Request;
 
-class AttachmentsController extends Controller
+class AttachmentsController extends ApiBaseController
 {
     private $attachmentService;
     const COMMON_EXTENSIONS = 'odt,ods,png,jpg,jpeg,rar,zip,doc,docx,DOCX,xls,xlsx,pdf,ppt,pptx,gif,txt,mp4';
     private $attachments = [
-        'exercise' => [
-            'model' => Exercise::class,
+        'result' => [
+            'model' => ExerciseResult::class,
             'rights' => [],
-            'disk' => 'public_build',
+            'disk' => 'public',
         ],
     ];
     public function __construct(AttachmentService $attachmentService)
@@ -25,7 +27,7 @@ class AttachmentsController extends Controller
         $this->attachmentService = $attachmentService;
     }
 
-    public function store(Request $request)
+    public function store(AttachmentStoreApiRequest $request)
     {
         $model_id = $request->input('model_id', 0);
         $model_type = $request->input('model_type');
@@ -38,7 +40,7 @@ class AttachmentsController extends Controller
 
         $model_params = $this->attachments[$model_type];
         $model_name = $model_params['model'];
-        $disk =  $model_params['disk'];
+        $disk = $model_params['disk'];
         // расширения
 //        $extensions = isset($model_params['extensions'])
 //            ? implode(",", $model_params['extensions'])
@@ -69,5 +71,4 @@ class AttachmentsController extends Controller
     {
         return $this->attachmentService->download($id);
     }
-
 }

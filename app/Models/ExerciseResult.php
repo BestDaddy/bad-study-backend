@@ -17,4 +17,8 @@ class ExerciseResult extends Model
     public function exercise(){
         return $this->belongsTo(Exercise::class);
     }
+
+    public function attachments(){
+        return $this->morphMany(Attachment::class, 'model');
+    }
 }

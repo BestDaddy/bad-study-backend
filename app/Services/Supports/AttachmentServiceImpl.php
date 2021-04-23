@@ -13,22 +13,16 @@ use Illuminate\Support\Facades\Storage;
 
 class AttachmentServiceImpl extends BaseServiceImpl implements AttachmentService
 {
-//    private $main_dir = 'attachments';
-
     public function __construct(Attachment $model)
     {
         parent::__construct($model);
     }
 
-//    public function setDir($dir_name)
-//    {
-//        $this->main_dir = $dir_name;
-//    }
-
-    public function save($model_id, $model_type, $file, $uuid = null, $slug = null, $folder = null)
+    public function save($model_id, $model_type, $file, $uuid = null, $folder = null, $disk = 'public')
     {
-
-        $fullpath = $this->storeFile($file, $folder);
+        if($disk == 'public_build')
+            $folder = 'Build/'. $folder;
+        $fullpath = $this->storeFile($file, $folder, $disk);
 
         $data['path'] = $fullpath;
         $data['name'] = $file->getClientOriginalName();
@@ -54,20 +48,22 @@ class AttachmentServiceImpl extends BaseServiceImpl implements AttachmentService
         }
     }
 
-    public function storeFile($file, $folder)
+    public function storeFile($file, $folder, $disk)
     {
         $filename =  $folder . '/' .$file->getClientOriginalName();
-        Storage::disk('public_build')->put($filename,  File::get($file));
-        return 'Build/'. $filename;
-
-
+        Storage::disk($disk)->put($filename,  File::get($file));
+        return $filename;
     }
 
     public function download($id){
         $attachment = Attachment::findOrFail($id);
         $path = $attachment->path;
-//        $path = str_replace('/storage/','', $path);
-        return response()->download(public_path("{$path}"));
+        if(Storage::disk('public')->exists($path))
+            return response()->download(storage_path('app/public/' . "{$path}"));
+        elseif(Storage::disk('public_build')->exists($path))
+            return response()->download(public_path("{$path}"));
+        else
+            return response('File not found');
     }
 
     public function deleteFile($model_type, $model_id){

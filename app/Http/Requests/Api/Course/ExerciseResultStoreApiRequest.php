@@ -14,7 +14,6 @@ class ExerciseResultStoreApiRequest extends ApiBaseRequest
         return [
             'user_id.required' => 'Введите ID user',
             'exercise_id.required' => 'Введите ID exercise',
-            'value.required' => 'Введите ответ',
         ];
     }
 
@@ -23,7 +22,6 @@ class ExerciseResultStoreApiRequest extends ApiBaseRequest
         return [
             'user_id'       => ['required'],
             'exercise_id'   => ['required'],
-            'value'         => ['required'],
         ];
     }
 }

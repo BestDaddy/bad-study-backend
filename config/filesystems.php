@@ -65,7 +65,7 @@ return [
         ],
         'public_build' => [
             'driver' => 'local',
-            'root'   => public_path() . '/Build',
+            'root'   => public_path(),
         ],
 
     ],
