@@ -81,7 +81,8 @@ class CoursesController extends ApiBaseController
             },
             'chapter.exercises.result' => function ($q) use ($user) {
                 $q->where('user_id', $user->id);
-            }
+            },
+            'chapter.exercises.result.attachments',
         ]);
 
         return $this->successResponse(ScheduleResource::make($schedule));

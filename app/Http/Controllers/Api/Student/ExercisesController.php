@@ -38,6 +38,7 @@ class ExercisesController extends ApiBaseController
             'result' => function($q) use($user){
                 $q->where('user_id', $user->id);
             },
+            'result.attachments',
             'attachments'
         ]);
 

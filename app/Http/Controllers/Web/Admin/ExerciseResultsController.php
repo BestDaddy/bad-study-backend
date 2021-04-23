@@ -85,7 +85,7 @@ class ExerciseResultsController extends Controller
         $error = Validator::make($request->all(), $rules);
         if($error->fails())
             return response()->json(['errors' => $error->errors()->all()]);
-
+        $request['status'] = ExerciseResult::STATUS_PASSED;
         $request['checked_at'] = Carbon::now();
         $result =  $this->exerciseResultsService->update($id, $request->all());
 

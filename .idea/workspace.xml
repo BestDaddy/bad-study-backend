@@ -5,17 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4ab46e84-ab3e-4e26-ac9b-d274ec4ea08b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/Support/AttachmentsController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Requests/Api/Support/AttachmentStoreApiRequest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Resources/AttachmentResource.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Web/Support/AttachmentsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Web/Support/AttachmentsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/Api/Course/ExerciseResultStoreApiRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Api/Course/ExerciseResultStoreApiRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/Student/CoursesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/Student/CoursesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/Student/ExercisesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/Student/ExercisesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Web/Admin/ExerciseResultsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Web/Admin/ExerciseResultsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Resources/ExerciseResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/ExerciseResource.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Resources/ExerciseResultResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/ExerciseResultResource.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Resources/ScheduleResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/ScheduleResource.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/ExerciseResult.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/ExerciseResult.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Services/Supports/AttachmentService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/Supports/AttachmentService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Services/Supports/AttachmentServiceImpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/Supports/AttachmentServiceImpl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/filesystems.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/filesystems.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/exercises/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/exercises/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -311,21 +309,7 @@
       <workItem from="1618929919050" duration="6144000" />
       <workItem from="1619011984565" duration="7596000" />
       <workItem from="1619119854313" duration="640000" />
-      <workItem from="1619186008429" duration="6147000" />
-    </task>
-    <task id="LOCAL-00015" summary="breadcrumbs added">
-      <created>1614876883265</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1614876883265</updated>
-    </task>
-    <task id="LOCAL-00016" summary="student part start">
-      <created>1616219881587</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1616219881587</updated>
+      <workItem from="1619186008429" duration="7426000" />
     </task>
     <task id="LOCAL-00017" summary="jwt token added. login page&#10;my courses index">
       <created>1616223124889</created>
@@ -656,7 +640,21 @@
       <option name="project" value="LOCAL" />
       <updated>1619188404539</updated>
     </task>
-    <option name="localTasksCounter" value="64" />
+    <task id="LOCAL-00064" summary="file dowload fix">
+      <created>1619192275134</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1619192275134</updated>
+    </task>
+    <task id="LOCAL-00065" summary="student answer files">
+      <created>1619192528363</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1619192528363</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -676,8 +674,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="test lab added" />
-    <MESSAGE value="file upload alpha" />
     <MESSAGE value="file upload alpha 0.2" />
     <MESSAGE value="file upload alpha finished" />
     <MESSAGE value="file upload beta" />
@@ -701,6 +697,8 @@
     <MESSAGE value="refresh token added" />
     <MESSAGE value="exercise validation fix" />
     <MESSAGE value="validation fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="validation fix" />
+    <MESSAGE value="file dowload fix" />
+    <MESSAGE value="student answer files" />
+    <option name="LAST_COMMIT_MESSAGE" value="student answer files" />
   </component>
 </project>

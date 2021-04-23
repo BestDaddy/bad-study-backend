@@ -14,7 +14,7 @@ class ScheduleResource extends JsonResource
             'id' => $this->id,
             'group_id' => $this->group_id,
             'chapter_id' => $this->chapter_id,
-            'live_url' => $this->live_url,
+//            'live_url' => $this->live_url,
             'starts_at' => $this->starts_at,
             'attendance' => $this->when(
                 $this->relationLoaded('attendance'),

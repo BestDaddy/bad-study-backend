@@ -23,7 +23,7 @@ class ExerciseResource extends JsonResource
             ),
             'attachments' => $this->when(
                 $this->relationLoaded('attachments'),
-                $this->attachments
+                AttachmentResource::collection($this->attachments)
             ),
         ];
     }

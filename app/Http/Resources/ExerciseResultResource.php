@@ -4,6 +4,7 @@
 namespace App\Http\Resources;
 
 
+use App\Models\ExerciseResult;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class ExerciseResultResource extends JsonResource
@@ -14,15 +15,15 @@ class ExerciseResultResource extends JsonResource
             'id' => $this->id,
             'user_id' => $this->user_id,
             'exercise_id'=> $this->exercise_id,
+            'status' => ExerciseResult::getStatusTexts()[$this->status],
             'score' => $this->score,
             'value' => $this->value,
             'comment'=> $this->comment,
             'checked_at'=> $this->checked_at,
             'created_at'=> $this->created_at,
-            'updated_at' => $this->updated_at,
             'attachments' => $this->when(
                 $this->relationLoaded('attachments'),
-                $this->attachments
+                AttachmentResource::collection($this->attachments)
             ),
             'exercise' => $this->when(
                 $this->relationLoaded('exercise'),
