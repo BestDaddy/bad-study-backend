@@ -67,7 +67,7 @@ class ExerciseResultsController extends Controller
      */
     public function edit($id)
     {
-        return  $this->exerciseResultsService->findWith($id, ['exercise', 'user']);
+        return  $this->exerciseResultsService->findWith($id, ['exercise', 'user', 'attachments']);
     }
 
     /**

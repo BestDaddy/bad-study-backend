@@ -66,6 +66,9 @@
                                 </ul>
                             </div>
                         </div>
+                        <div class="form-group" id="form-files">
+
+                        </div>
                     </form>
                 </div>
                 <div class="modal-footer">
@@ -80,42 +83,10 @@
 
 @section('scripts')
     <script>
-        {{--String.prototype.splice = function(idx, rem, str) {--}}
-        {{--    return this.slice(0, idx) + str + this.slice(idx + Math.abs(rem));--}}
-        {{--};--}}
-        {{--function add() {--}}
-        {{--    $('#collapseExample').hide();--}}
-        {{--    $('#staticBackdropLabel').text("Новый курс");--}}
-        {{--    $('#form-errors').html("");--}}
-        {{--    $('#group_id').val('');--}}
-        {{--    $('#name').val('');--}}
-        {{--    $('#chat').val('');--}}
-        {{--    $('#description').val('');--}}
-        {{--    $('#post-modal').modal('show');--}}
-        {{--}--}}
-
-        {{--function deleteSchedule() {--}}
-        {{--    var id = $('#schedule_id').val();--}}
-        {{--    let _url = `/groups/{{$group->id}}/courses/{{$course->id}}/schedules/${id}`;--}}
-
-        {{--    let _token   = $('meta[name="csrf-token"]').attr('content');--}}
-
-        {{--    $.ajax({--}}
-        {{--        url: _url,--}}
-        {{--        type: 'DELETE',--}}
-        {{--        data: {--}}
-        {{--            _token: _token--}}
-        {{--        },--}}
-        {{--        success: function(response) {--}}
-        {{--            $('#schedule_table').DataTable().ajax.reload();--}}
-        {{--            $('#post-modal').modal('hide');--}}
-        {{--        }--}}
-        {{--    });--}}
-        {{--}--}}
-
         function editAnswer (event) {
             $('#collapseExample').show();
             $('#form-errors').html("");
+            $('#form-files').html("");
             var id  = $(event).data("id");
             let _url = `/results/${id}/edit`;
             $.ajax({
@@ -128,6 +99,17 @@
                         $('#exercise_name').text('Задача: ' + response.exercise.name);
                         $("#result_id").val(response.id);
                         $("#value").val(response.value);
+                        if(response.attachments.length > 0){
+                            var files = response.attachments;
+                            fileHtml = '<label>Вложенные файлы</label>';
+                            fileHtml += '<ul>';
+                            $.each( files, function(i) {
+                                fileHtml += '<li><a href="/download/'+ files[i].id + '">'+ files[i].name + '</a></li>';
+                            });
+                            fileHtml += '</ul>';
+
+                            $( '#form-files' ).html( fileHtml );
+                        }
                         $("#score").val(response.score);
                         $("#comment").val(response.comment);
                         $("#exercise_content").val(response.exercise.content);
