@@ -7,7 +7,7 @@
 @section('content')
         {{ Breadcrumbs::render('schedules.user.results', $schedule, $user) }}
     <h2>Ответы студента : {{$user->fullName()}}</h2>
-    <h2>Урок : {{$schedule->chapter->name}}</h2>
+    <h4>Глава : {{$schedule->chapter->name}}</h4>
     <hr>
     <br>
     <br>

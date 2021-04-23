@@ -6,10 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="4ab46e84-ab3e-4e26-ac9b-d274ec4ea08b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/Student/CoursesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/Student/CoursesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Web/Admin/ExercisesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Web/Admin/ExercisesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Resources/ExerciseResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/ExerciseResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Web/Admin/ExerciseResultsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Web/Admin/ExerciseResultsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Web/Admin/SchedulesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Web/Admin/SchedulesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/results/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/results/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/schedules/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/schedules/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/schedules/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/schedules/show.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -305,14 +306,7 @@
       <workItem from="1618929919050" duration="6144000" />
       <workItem from="1619011984565" duration="7596000" />
       <workItem from="1619119854313" duration="640000" />
-      <workItem from="1619186008429" duration="1351000" />
-    </task>
-    <task id="LOCAL-00013" summary="result show by schedule user">
-      <created>1613902695773</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1613902695773</updated>
+      <workItem from="1619186008429" duration="2221000" />
     </task>
     <task id="LOCAL-00014" summary="results score added">
       <created>1614874948153</created>
@@ -650,7 +644,14 @@
       <option name="project" value="LOCAL" />
       <updated>1619186758020</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="exercise validation fix">
+      <created>1619187478585</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1619187478585</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -670,7 +671,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="jwt token added. login page&#10;my courses index" />
     <MESSAGE value="course show api" />
     <MESSAGE value="test lab added" />
     <MESSAGE value="file upload alpha" />
@@ -695,6 +695,7 @@
     <MESSAGE value="fix exercises attachments by folders" />
     <MESSAGE value="group update dlete htmp fix" />
     <MESSAGE value="refresh token added" />
-    <option name="LAST_COMMIT_MESSAGE" value="refresh token added" />
+    <MESSAGE value="exercise validation fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="exercise validation fix" />
   </component>
 </project>

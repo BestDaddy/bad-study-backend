@@ -6,7 +6,8 @@
 
 @section('content')
         {{ Breadcrumbs::render('schedules.show', $group, $course, $schedule) }}
-    <h2>Урок на : {{$schedule->starts_at}}</h2>
+    <h2>Глава : {{$schedule->chapter->name}}</h2>
+    <h4>Урок на : {{$schedule->starts_at}}</h4>
     <hr>
     <br>
     <div class="row" style="clear: both;">

@@ -49,8 +49,7 @@
                                     <input type="datetime-local"
                                            class="form-control"
                                            id="starts_at"
-                                           name="starts_at" value="2020-09-22T13:25"
-                                           min="2020-09-22T13:25" max="2021-06-14T00:00">
+                                           name="starts_at">
                                 </div>
                             </div>
                             <div class="col">
@@ -104,12 +103,11 @@
         };
         function add() {
             $('#collapseExample').hide();
-            $('#staticBackdropLabel').text("Новый курс");
+            $('#staticBackdropLabel').text("Новое раписание");
             $('#form-errors').html("");
-            $('#group_id').val('');
-            $('#name').val('');
-            $('#chat').val('');
-            $('#description').val('');
+            $('#schedule_id').val('');
+            $('#starts_at').val('');
+            $('#live_url').val('');
             $('#post-modal').modal('show');
         }
 
@@ -135,7 +133,7 @@
         function editSchedule (event) {
             $('#collapseExample').show();
             $('#form-errors').html("");
-            $('#staticBackdropLabel').text("Редактировать курс");
+            $('#staticBackdropLabel').text("Редактировать раписание");
 
             var id  = $(event).data("id");
             let _url = `/groups/{{$group->id}}/courses/{{$course->id}}/schedules/${id}/edit`;
@@ -169,7 +167,6 @@
                     chapter_id:chapter_id,
                     starts_at: starts_at,
                     live_url: live_url,
-                    chapter_id: chapter_id,
                     _token: _token
                 },
                 success: function(response) {

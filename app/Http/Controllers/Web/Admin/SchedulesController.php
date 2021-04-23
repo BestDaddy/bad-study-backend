@@ -12,6 +12,7 @@ use App\Services\Groups\GroupsService;
 use App\Services\Groups\SchedulesService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Validator;
 
 class SchedulesController extends Controller
 {
@@ -36,7 +37,7 @@ class SchedulesController extends Controller
     }
 
     public function show(Group $group, Course $course, $id){
-        $schedule = $this->schedulesService->find($id);
+        $schedule = $this->schedulesService->findWith($id, ['chapter']);
         if(request()->ajax()){
             return $this->schedulesService->attendance($schedule);
         }
@@ -44,14 +45,14 @@ class SchedulesController extends Controller
     }
 
     public function store(Group $group, Course $course, Request $request){
+        $rules = array(
+            'chapter_id'=> 'required',
+            'starts_at' =>'required',
+        );
+        $error = Validator::make($request->all(), $rules);
+        if($error->fails())
+            return response()->json(['errors' => $error->errors()->all()]);
         $schedule = $this->schedulesService->store($group, $course, $request);
-
-//        foreach ($group->users as $student){
-//            $request['schedule_id'] = $schedule->id;
-//            $request['user_id'] = $student->id;
-//            $this->attendanceService->store($request);
-//        }
-
         return response()->json(['code'=>200, 'message'=>'Schedule Saved successfully','data' => $schedule], 200);
     }
 

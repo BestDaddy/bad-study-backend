@@ -8,6 +8,7 @@ use App\Models\ExerciseResult;
 use App\Services\Courses\ExerciseResultsService;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class ExerciseResultsController extends Controller
 {
@@ -78,6 +79,13 @@ class ExerciseResultsController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $rules = array(
+            'score'=> 'required|numeric|min:0|max:100',
+        );
+        $error = Validator::make($request->all(), $rules);
+        if($error->fails())
+            return response()->json(['errors' => $error->errors()->all()]);
+
         $request['checked_at'] = Carbon::now();
         $result =  $this->exerciseResultsService->update($id, $request->all());
 
