@@ -62,7 +62,7 @@ class User extends Authenticatable implements JWTSubject
     }
 
     public function teacherGroups(){
-        return $this->belongsToMany(Group::class, GroupCourse::class, 'teacher_id');
+        return $this->belongsToMany(Group::class, GroupCourse::class, 'teacher_id')->distinct();
     }
 
     public function getJWTIdentifier()

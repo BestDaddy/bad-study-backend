@@ -157,7 +157,7 @@ class GroupsController extends Controller
 
     public function getStudents($id){
         $group = Group::with(['users'])->findOrFail($id);
-        return datatables()->of( $group->users()->distinct()->latest()->get())
+        return datatables()->of( $group->users()->latest()->get())
             ->addColumn('delete', function ($data){
                 return '<button  id="'.$data->id.'" class="btn btn-danger btn-sm btn-block" data-id="'.$data->id.'"  onclick="removeUser(event.target)"><i class="fas fa-trash" data-id="'.$data->id.'"></i> Удалить</button>';
             })

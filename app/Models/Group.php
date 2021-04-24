@@ -23,7 +23,7 @@ class Group extends Model
     }
 
     public function users(){
-        return $this->belongsToMany(User::class, 'user_course_group');
+        return $this->belongsToMany(User::class, 'user_course_group')->distinct();
     }
 
     public function schedules(){

@@ -15,8 +15,12 @@ class GroupsController extends ApiBaseController
     public function index(Request $request){
 //        DB::connection()->enableQueryLog();
         $user = Auth::user();
-        $user->load('teacherGroupCourses');
+        $user->load([
+            'teacherGroups.courses' => function($q) use ($user){
+                $q->wherePivot('teacher_id' , $user->id);
+            }
+        ]);
 //        dd(DB::getQueryLog());  //6
-        return $this->successResponse(  ($user->teacherGroupCourses));
+        return $this->successResponse(  ($user->teacherGroups));
     }
 }
