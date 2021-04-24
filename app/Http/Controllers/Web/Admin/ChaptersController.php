@@ -106,4 +106,10 @@ class ChaptersController extends Controller
         $this->chaptersService->delete($id);
         return response()->json('Chapter deleted successfully');
     }
+
+    public function lectures($id){
+        if(request()->ajax()){
+            return $this->chaptersService->lectures($id);
+        }
+    }
 }

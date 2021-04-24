@@ -22,6 +22,11 @@ Breadcrumbs::for('exercises.show', function ($trail, $exercise) {
     $trail->push($exercise->name, route('exercises.show', $exercise->id));
 });
 
+Breadcrumbs::for('lectures.show', function ($trail, $lecture) {
+    $trail->parent('chapters.show', $lecture->chapter);
+    $trail->push($lecture->title, route('lectures.show', $lecture->id));
+});
+
 
 //Groups
 

@@ -31,10 +31,13 @@ Route::group(['namespace' => 'Web'], function () {
             'exercises' => 'ExercisesController',
             'groups' => 'GroupsController',
             'groups.courses.schedules' => 'SchedulesController',
-            'results' => 'ExerciseResultsController'
+            'results' => 'ExerciseResultsController',
+            'lectures' => 'LecturesController',
         ]);
         Route::get('/import/users/create', 'UsersController@importPage')->name('import.users.index');
         Route::post('/import/users', 'UsersController@import')->name('import.users');
+
+        Route::get('/chapters/{id}/lectures', 'ChaptersController@lectures')->name('chapters.lectures');
 
         Route::get('/getNewCourses/{id}', 'GroupsController@getNewCourses')->name('getNewCourses');
         Route::get('/getNewStudents/{id}', 'GroupsController@getNewStudents')->name('getNewStudents');

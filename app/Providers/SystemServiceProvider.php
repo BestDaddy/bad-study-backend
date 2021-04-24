@@ -13,6 +13,8 @@ use App\Services\Courses\ExerciseResultsService;
 use App\Services\Courses\ExerciseResultsServiceImpl;
 use App\Services\Courses\ExercisesService;
 use App\Services\Courses\ExercisesServiceImpl;
+use App\Services\Courses\LecturesService;
+use App\Services\Courses\LecturesServiceImpl;
 use App\Services\Groups\AttendancesService;
 use App\Services\Groups\AttendancesServiceImpl;
 use App\Services\Groups\GroupsService;
@@ -54,6 +56,6 @@ class SystemServiceProvider extends ServiceProvider
         $this->app->bind(AttendancesService::class, AttendancesServiceImpl::class);
         $this->app->bind(ExerciseResultsService::class, ExerciseResultsServiceImpl::class);
         $this->app->bind(AttachmentService::class, AttachmentServiceImpl::class);
-
+        $this->app->bind(LecturesService::class, LecturesServiceImpl::class);
     }
 }

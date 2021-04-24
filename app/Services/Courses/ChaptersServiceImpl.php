@@ -43,4 +43,22 @@ class ChaptersServiceImpl  extends BaseServiceImpl implements ChaptersService
                 ->make(true);
         }
     }
+
+    public function lectures($id){
+        if(request()->ajax())
+        {
+            return datatables()->of(Chapter::findOrFail($id)->lectures()->latest()->get())
+                ->addColumn('edit', function($data){
+                    return  '<button
+                         class=" btn btn-primary btn-sm btn-block "
+                          data-id="'.$data->id.'"
+                          onclick="editLecture(event.target)"><i class="fas fa-edit" data-id="'.$data->id.'"></i> Изменить</button>';
+                })
+                ->addColumn('more', function ($data){
+                    return '<a class="text-decoration-none"  href="/lectures/'.$data->id.'"><button class="btn btn-primary btn-sm btn-block">Подробнее</button></a>';
+                })
+                ->rawColumns(['more', 'edit'])
+                ->make(true);
+        }
+    }
 }
