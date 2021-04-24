@@ -8,12 +8,12 @@
     {{--    <link rel="shortcut icon" href="TemplateData/favicon.ico">--}}
     {{--    <link rel="stylesheet" href="TemplateData/style.css">--}}
     <script src="{{asset('TemplateData/UnityProgress.js')}}"></script>
-    <script src="{{asset('Build/'.$exercise->path.'/UnityLoader.js')}}"></script>
+    <script src="{{asset('Build/exercise1/UnityLoader.js')}}"></script>
     {{--    <script src="TemplateData/UnityProgress.js"></script>--}}
     {{--    <script src="Build/UnityLoader.js"></script>--}}
     <script>
-        {{--var gameInstance = UnityLoader.instantiate("gameContainer", "{{asset('Build/ZVA_WEB.json')}}", {onProgress: UnityProgress});--}}
-        var gameInstance = UnityLoader.instantiate("gameContainer", "{{asset(data_get($exercise->attachments->first(),'path'))}}", {onProgress: UnityProgress});
+        var gameInstance = UnityLoader.instantiate("gameContainer", "{{asset('Build/exercise1/ZVA_WEB.json')}}", {onProgress: UnityProgress});
+{{--        var gameInstance = UnityLoader.instantiate("gameContainer", "{{asset(data_get($exercise->attachments->first(),'path'))}}", {onProgress: UnityProgress});--}}
 
     </script>
 
