@@ -5,20 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4ab46e84-ab3e-4e26-ac9b-d274ec4ea08b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Web/Admin/LecturesController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Services/Courses/LecturesService.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Services/Courses/LecturesServiceImpl.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/lectures/show.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/Teacher/GroupsController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Middleware/Teacher.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Resources/GroupResource.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Web/Admin/ChaptersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Web/Admin/ChaptersController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Chapter.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Chapter.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Lecture.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Lecture.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/SystemServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/SystemServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Services/Courses/ChaptersService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/Courses/ChaptersService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Services/Courses/ChaptersServiceImpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/Courses/ChaptersServiceImpl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/chapters/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/chapters/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/breadcrumbs.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/breadcrumbs.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -315,21 +308,8 @@
       <workItem from="1619011984565" duration="7596000" />
       <workItem from="1619119854313" duration="640000" />
       <workItem from="1619186008429" duration="9656000" />
-      <workItem from="1619247488204" duration="4371000" />
-    </task>
-    <task id="LOCAL-00019" summary="test lab added">
-      <created>1617031443863</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1617031443863</updated>
-    </task>
-    <task id="LOCAL-00020" summary="test">
-      <created>1617196804459</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1617196804459</updated>
+      <workItem from="1619247488204" duration="9106000" />
+      <workItem from="1619289103448" duration="344000" />
     </task>
     <task id="LOCAL-00021" summary="test">
       <created>1617197110453</created>
@@ -660,7 +640,21 @@
       <option name="project" value="LOCAL" />
       <updated>1619194749082</updated>
     </task>
-    <option name="localTasksCounter" value="68" />
+    <task id="LOCAL-00068" summary="lectures added">
+      <created>1619252087094</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1619252087094</updated>
+    </task>
+    <task id="LOCAL-00069" summary="api lectures added">
+      <created>1619252299211</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1619252299211</updated>
+    </task>
+    <option name="localTasksCounter" value="70" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -680,8 +674,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="file upload alpha finished" />
-    <MESSAGE value="file upload beta" />
     <MESSAGE value="event create attendance" />
     <MESSAGE value="api courses show. schedule show added" />
     <MESSAGE value="event exercise Result scored" />
@@ -705,6 +697,8 @@
     <MESSAGE value="student answer files" />
     <MESSAGE value="status for exercise results" />
     <MESSAGE value="fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix" />
+    <MESSAGE value="lectures added" />
+    <MESSAGE value="api lectures added" />
+    <option name="LAST_COMMIT_MESSAGE" value="api lectures added" />
   </component>
 </project>

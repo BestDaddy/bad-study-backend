@@ -60,5 +60,8 @@ Route::group(['namespace' => 'Api'], function () {
         Route::get('/download/{id}', 'AttachmentsController@download');
     });
 
+    Route::group(['namespace' => 'Teacher' , 'middleware' => ['jwt', 'teacher'] , 'prefix' => 'teacher'], function () {
+        Route::get('/groups', 'GroupsController@index');
+    });
 });
 

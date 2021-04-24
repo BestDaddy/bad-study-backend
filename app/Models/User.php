@@ -32,6 +32,11 @@ class User extends Authenticatable implements JWTSubject
         return $this->role_id == Role::ADMIN_ID;
     }
 
+    public function isTeacher()
+    {
+        return $this->role_id == Role::TEACHER_ID;
+    }
+
     public function fullName(){
         return $this->first_name . ' ' . $this->last_name;
     }
@@ -50,6 +55,14 @@ class User extends Authenticatable implements JWTSubject
 
     public function userCourseGroup(){
         return $this->hasOne(UserCourseGroup::class);
+    }
+
+    public function teacherGroupCourses(){
+        return $this->hasMany(GroupCourse::class, 'teacher_id');
+    }
+
+    public function teacherGroups(){
+        return $this->belongsToMany(Group::class, GroupCourse::class, 'teacher_id');
     }
 
     public function getJWTIdentifier()
