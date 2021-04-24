@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4ab46e84-ab3e-4e26-ac9b-d274ec4ea08b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Http/Middleware/Cors.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/exercises/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/exercises/show.blade.php" afterDir="false" />
     </list>
@@ -304,14 +305,7 @@
       <workItem from="1619119854313" duration="640000" />
       <workItem from="1619186008429" duration="9656000" />
       <workItem from="1619247488204" duration="9106000" />
-      <workItem from="1619289103448" duration="4388000" />
-    </task>
-    <task id="LOCAL-00024" summary="test">
-      <created>1617198236540</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1617198236540</updated>
+      <workItem from="1619289103448" duration="6140000" />
     </task>
     <task id="LOCAL-00025" summary="file upload alpha">
       <created>1617200217806</created>
@@ -649,7 +643,14 @@
       <option name="project" value="LOCAL" />
       <updated>1619292234495</updated>
     </task>
-    <option name="localTasksCounter" value="73" />
+    <task id="LOCAL-00073" summary="asdf">
+      <created>1619294403781</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1619294403781</updated>
+    </task>
+    <option name="localTasksCounter" value="74" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -669,7 +670,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="event exercise Result scored" />
     <MESSAGE value="total score sync change added" />
     <MESSAGE value="sdf" />
     <MESSAGE value="logout me api added" />
@@ -694,6 +694,7 @@
     <MESSAGE value="api lectures added" />
     <MESSAGE value="teacher groups index api" />
     <MESSAGE value="lab by git" />
-    <option name="LAST_COMMIT_MESSAGE" value="lab by git" />
+    <MESSAGE value="asdf" />
+    <option name="LAST_COMMIT_MESSAGE" value="asdf" />
   </component>
 </project>
