@@ -14,6 +14,10 @@ class GroupResource extends JsonResource
             'id' => $this->id,
             'name' => $this->name,
             'description' => $this->description,
+            'student_count' => $this->when(
+                $this->student_count,
+                $this->student_count
+            ),
             'courses' => $this->when(
                 $this->relationLoaded('courses'),
                 CourseResource::collection($this->courses)

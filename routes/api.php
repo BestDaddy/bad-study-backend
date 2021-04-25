@@ -62,6 +62,10 @@ Route::group(['namespace' => 'Api'], function () {
 
     Route::group(['namespace' => 'Teacher' , 'middleware' => ['jwt', 'teacher'] , 'prefix' => 'teacher'], function () {
         Route::get('/groups', 'GroupsController@index');
+
+        Route::get('/groups/{id}', 'GroupsController@show');
+
+        Route::get('/groups/{group_id}/courses/{course_id}/students', 'GroupsController@students');
     });
 });
 
