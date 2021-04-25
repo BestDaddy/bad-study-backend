@@ -47,7 +47,7 @@ class AttendancesServiceImpl extends BaseServiceImpl implements AttendancesServi
         $score = $exercise_results->sum('score') / count($attendance->schedule->chapter->exercises);
 
         $this->update($id, [
-            'score' => intval($score),
+            'score' => $score,
             'status' => Attendance::STATUS_PASSED
         ]);
     }
@@ -68,7 +68,7 @@ class AttendancesServiceImpl extends BaseServiceImpl implements AttendancesServi
         $score = $scores  / count($schedules);
 
         $userCourseGroup->update([
-            'score' => intval($score)
+            'score' => $score
         ]);
 
     }

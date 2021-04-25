@@ -6,6 +6,10 @@ namespace App\Http\Controllers\Api\Teacher;
 
 use App\Http\Controllers\ApiBaseController;
 use App\Http\Resources\GroupResource;
+use App\Http\Resources\ScheduleResource;
+use App\Http\Resources\Teacher\TeacherScheduleResource;
+use App\Models\GroupCourse;
+use App\Models\UserCourseGroup;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;

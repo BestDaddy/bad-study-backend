@@ -18,6 +18,10 @@ class AttendanceResource extends JsonResource
             'score' => $this->score,
             'value' => $this->value,
             'status' => Attendance::getStatusTexts()[$this->status],
+            'user' => $this->when(
+                $this->relationLoaded('user'),
+                UserResource::make($this->user)
+            ),
         ];
 
     }

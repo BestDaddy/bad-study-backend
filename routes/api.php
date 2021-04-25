@@ -66,6 +66,12 @@ Route::group(['namespace' => 'Api'], function () {
         Route::get('/groups/{id}', 'GroupsController@show');
 
         Route::get('/groups/{group_id}/courses/{course_id}/students', 'GroupsController@students');
+
+        Route::get('/groups/{group_id}/courses/{course_id}/schedules', 'SchedulesController@index');
+
+        Route::get('/schedules/{id}/attendances', 'SchedulesController@attendances');
+
+        Route::post('/changeAttendance', 'SchedulesController@changeAttendance');
     });
 });
 
