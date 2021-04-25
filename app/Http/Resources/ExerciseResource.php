@@ -25,6 +25,14 @@ class ExerciseResource extends JsonResource
                 $this->relationLoaded('attachments'),
                 AttachmentResource::collection($this->attachments)
             ),
+            'results_count' => $this->when(
+                $this->results_count,
+                $this->results_count
+            ),
+            'not_checked' => $this->when(
+                $this->not_checked,
+                $this->not_checked
+            ),
         ];
     }
 }

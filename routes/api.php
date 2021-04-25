@@ -71,6 +71,8 @@ Route::group(['namespace' => 'Api'], function () {
 
         Route::get('/schedules/{id}/attendances', 'SchedulesController@attendances');
 
+        Route::get('/schedules/{id}/exercises', 'SchedulesController@exercises');
+
         Route::post('/changeAttendance', 'SchedulesController@changeAttendance');
     });
 });

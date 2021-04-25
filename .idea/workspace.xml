@@ -5,13 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4ab46e84-ab3e-4e26-ac9b-d274ec4ea08b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/Teacher/SchedulesController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Requests/Api/Group/ChangeAttendanceApiRequest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Resources/Teacher/TeacherScheduleResource.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/Teacher/GroupsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/Teacher/GroupsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Resources/AttendanceResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/AttendanceResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Services/Groups/AttendancesServiceImpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/Groups/AttendancesServiceImpl.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/Teacher/SchedulesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/Teacher/SchedulesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Resources/ExerciseResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/ExerciseResource.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -312,14 +308,7 @@
       <workItem from="1619247488204" duration="9106000" />
       <workItem from="1619289103448" duration="6140000" />
       <workItem from="1619332947990" duration="5496000" />
-      <workItem from="1619349544796" duration="4900000" />
-    </task>
-    <task id="LOCAL-00026" summary="file upload alpha 0.2">
-      <created>1617203852533</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1617203852533</updated>
+      <workItem from="1619349544796" duration="8187000" />
     </task>
     <task id="LOCAL-00027" summary="file upload alpha finished">
       <created>1617290898644</created>
@@ -657,7 +646,14 @@
       <option name="project" value="LOCAL" />
       <updated>1619338639096</updated>
     </task>
-    <option name="localTasksCounter" value="75" />
+    <task id="LOCAL-00075" summary="teacher schedules index api">
+      <created>1619356324985</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1619356324986</updated>
+    </task>
+    <option name="localTasksCounter" value="76" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -677,7 +673,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="sdf" />
     <MESSAGE value="logout me api added" />
     <MESSAGE value="register api" />
     <MESSAGE value="php info" />
@@ -702,6 +697,7 @@
     <MESSAGE value="lab by git" />
     <MESSAGE value="asdf" />
     <MESSAGE value="teacher show api" />
-    <option name="LAST_COMMIT_MESSAGE" value="teacher show api" />
+    <MESSAGE value="teacher schedules index api" />
+    <option name="LAST_COMMIT_MESSAGE" value="teacher schedules index api" />
   </component>
 </project>
