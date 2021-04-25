@@ -9,7 +9,9 @@ use App\Http\Requests\Api\Group\ChangeAttendanceApiRequest;
 use App\Http\Resources\AttendanceResource;
 use App\Http\Resources\ChapterResource;
 use App\Http\Resources\ExerciseResource;
+use App\Http\Resources\ExerciseResultResource;
 use App\Http\Resources\GroupResource;
+use App\Http\Resources\ScheduleResource;
 use App\Http\Resources\Teacher\TeacherScheduleResource;
 use App\Models\Attendance;
 use App\Models\Exercise;
@@ -115,6 +117,34 @@ class SchedulesController extends ApiBaseController
             'exercises' => ExerciseResource::collection($exercises),
             'students_count' => $user_course_groups->count(),
         ];
+        return $this->successResponse($result);
+    }
+
+    public function exercisesResults($schedule_id, $exercise_id){
+        $user = Auth::user();
+        $schedule = Schedule::with([
+            'group',
+            'chapter',
+        ])->findOrFail($schedule_id);
+        $group_course = $user->teacherGroupCourses()->findOrFail($schedule->group_course_id);
+        $user_course_groups = UserCourseGroup::where('group_id', $group_course->group_id)->where('course_id', $group_course->course_id)->get();
+        $exercise = Exercise::with([
+            'results' => function($qq) use($user_course_groups) {
+                $qq->whereIn('user_id', $user_course_groups->pluck('user_id'));
+            },
+            'results.user'
+        ])
+            ->where('chapter_id', $schedule->chapter_id)
+            ->findOrFail($exercise_id);
+
+        $result = [
+            'group' => GroupResource::make($schedule->group),
+            'schedule' => ScheduleResource::make($schedule),
+            'exercise' => ExerciseResource::make($exercise),
+            'exercise_results' => ExerciseResultResource::collection($exercise->results),
+            'students_count' => $user_course_groups->count(),
+        ];
+
         return $this->successResponse($result);
     }
 }

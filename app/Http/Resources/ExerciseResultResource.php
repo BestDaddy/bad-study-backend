@@ -29,6 +29,10 @@ class ExerciseResultResource extends JsonResource
                 $this->relationLoaded('exercise'),
                 ExerciseResource::make($this->exercise)
             ),
+            'user' => $this->when(
+                $this->relationLoaded('user'),
+                UserResource::make($this->user)
+            )
         ];
     }
 }

@@ -45,13 +45,13 @@ Route::group(['namespace' => 'Api'], function () {
 
         Route::get('/schedules/{id}', 'CoursesController@scheduleShow');
 
-        Route::get('/exercises', 'ExercisesController@index'); // all available exercises
+        Route::get('/exercises', 'ExerciseResultsController@index'); // all available exercises
 
-        Route::get('/exercises/{id}', 'ExercisesController@show');
+        Route::get('/exercises/{id}', 'ExerciseResultsController@show');
 
-        Route::post('/exercises/results', 'ExercisesController@exerciseResultStore');  // store answer of student
+        Route::post('/exercises/results', 'ExerciseResultsController@exerciseResultStore');  // store answer of student
 
-        Route::get('/exercises/results', 'ExercisesController@indexExerciseResult');
+        Route::get('/exercises/results', 'ExerciseResultsController@indexExerciseResult');
 
     });
 
@@ -72,6 +72,12 @@ Route::group(['namespace' => 'Api'], function () {
         Route::get('/schedules/{id}/attendances', 'SchedulesController@attendances');
 
         Route::get('/schedules/{id}/exercises', 'SchedulesController@exercises');
+
+        Route::get('/schedules/{schedule_id}/exercises/{exercise_id}', 'SchedulesController@exercisesResults');
+
+        Route::get('/results/{id}/edit', 'ExerciseResultsController@edit');
+
+        Route::post('/results', 'ExerciseResultsController@update');
 
         Route::post('/changeAttendance', 'SchedulesController@changeAttendance');
     });
