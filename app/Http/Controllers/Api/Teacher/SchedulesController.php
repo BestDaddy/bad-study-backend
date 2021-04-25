@@ -147,4 +147,8 @@ class SchedulesController extends ApiBaseController
 
         return $this->successResponse($result);
     }
+
+    public function userResults($schedule_id, $user_id){
+
+    }
 }

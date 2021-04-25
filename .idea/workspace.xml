@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4ab46e84-ab3e-4e26-ac9b-d274ec4ea08b" name="Default Changelist" comment="teacher schedules exercises api">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/Teacher/ExerciseResultsController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Requests/Api/Course/ExerciseResultUpdateApiRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="4ab46e84-ab3e-4e26-ac9b-d274ec4ea08b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/Teacher/SchedulesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/Teacher/SchedulesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Resources/ExerciseResultResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/ExerciseResultResource.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Services/Groups/SchedulesServiceImpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/Groups/SchedulesServiceImpl.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -310,14 +307,7 @@
       <workItem from="1619247488204" duration="9106000" />
       <workItem from="1619289103448" duration="6140000" />
       <workItem from="1619332947990" duration="5496000" />
-      <workItem from="1619349544796" duration="10336000" />
-    </task>
-    <task id="LOCAL-00028" summary="file upload beta">
-      <created>1617294043690</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1617294043690</updated>
+      <workItem from="1619349544796" duration="10941000" />
     </task>
     <task id="LOCAL-00029" summary="event create attendance">
       <created>1617296588999</created>
@@ -655,7 +645,14 @@
       <option name="project" value="LOCAL" />
       <updated>1619359597304</updated>
     </task>
-    <option name="localTasksCounter" value="77" />
+    <task id="LOCAL-00077" summary="teacher schedules exercises result score api">
+      <created>1619362173020</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1619362173020</updated>
+    </task>
+    <option name="localTasksCounter" value="78" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -675,7 +672,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="register api" />
     <MESSAGE value="php info" />
     <MESSAGE value="php info remove" />
     <MESSAGE value="remove datatable" />
@@ -700,6 +696,7 @@
     <MESSAGE value="teacher show api" />
     <MESSAGE value="teacher schedules index api" />
     <MESSAGE value="teacher schedules exercises api" />
-    <option name="LAST_COMMIT_MESSAGE" value="teacher schedules exercises api" />
+    <MESSAGE value="teacher schedules exercises result score api" />
+    <option name="LAST_COMMIT_MESSAGE" value="teacher schedules exercises result score api" />
   </component>
 </project>

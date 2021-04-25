@@ -73,6 +73,8 @@ Route::group(['namespace' => 'Api'], function () {
 
         Route::get('/schedules/{id}/exercises', 'SchedulesController@exercises');
 
+        Route::get('/schedules/{schedule_id}/users/{user_id}/results', 'SchedulesController@userResults');
+
         Route::get('/schedules/{schedule_id}/exercises/{exercise_id}', 'SchedulesController@exercisesResults');
 
         Route::get('/results/{id}/edit', 'ExerciseResultsController@edit');

@@ -21,7 +21,7 @@ class SchedulesServiceImpl extends BaseServiceImpl implements SchedulesService
 
     public function index(GroupCourse $group_course){
         if(request()->ajax()){
-            return datatables()->of($group_course->schedules()->with(['chapter'])->latest()->get())
+            return datatables()->of($group_course->schedules()->with(['chapter'])->latest())
                 ->addColumn('edit', function($data){
                     return  '<button
                          class=" btn btn-primary btn-sm btn-block "
