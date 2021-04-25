@@ -6,8 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="4ab46e84-ab3e-4e26-ac9b-d274ec4ea08b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/Teacher/SchedulesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/Teacher/SchedulesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Services/Groups/SchedulesServiceImpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/Groups/SchedulesServiceImpl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -307,14 +305,7 @@
       <workItem from="1619247488204" duration="9106000" />
       <workItem from="1619289103448" duration="6140000" />
       <workItem from="1619332947990" duration="5496000" />
-      <workItem from="1619349544796" duration="10941000" />
-    </task>
-    <task id="LOCAL-00029" summary="event create attendance">
-      <created>1617296588999</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1617296588999</updated>
+      <workItem from="1619349544796" duration="11255000" />
     </task>
     <task id="LOCAL-00030" summary="event create attendance">
       <created>1617453460788</created>
@@ -652,7 +643,14 @@
       <option name="project" value="LOCAL" />
       <updated>1619362173020</updated>
     </task>
-    <option name="localTasksCounter" value="78" />
+    <task id="LOCAL-00078" summary="test">
+      <created>1619362611676</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1619362611676</updated>
+    </task>
+    <option name="localTasksCounter" value="79" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -676,7 +674,6 @@
     <MESSAGE value="php info remove" />
     <MESSAGE value="remove datatable" />
     <MESSAGE value="added datatable" />
-    <MESSAGE value="test" />
     <MESSAGE value="delete courses chapter exercises files" />
     <MESSAGE value="html fix&#10;migrations fix" />
     <MESSAGE value="fix exercises attachments by folders" />
@@ -697,6 +694,7 @@
     <MESSAGE value="teacher schedules index api" />
     <MESSAGE value="teacher schedules exercises api" />
     <MESSAGE value="teacher schedules exercises result score api" />
-    <option name="LAST_COMMIT_MESSAGE" value="teacher schedules exercises result score api" />
+    <MESSAGE value="test" />
+    <option name="LAST_COMMIT_MESSAGE" value="test" />
   </component>
 </project>

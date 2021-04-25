@@ -18,6 +18,7 @@ use App\Models\Exercise;
 use App\Models\ExerciseResult;
 use App\Models\GroupCourse;
 use App\Models\Schedule;
+use App\Models\User;
 use App\Models\UserCourseGroup;
 use App\Services\Groups\AttendancesService;
 use Illuminate\Http\Request;
@@ -149,6 +150,20 @@ class SchedulesController extends ApiBaseController
     }
 
     public function userResults($schedule_id, $user_id){
+        $schedule = Schedule::with([
+            'group',
+            'chapter.exercises',
+        ])->findOrFail($schedule_id);
+        $exercises = $schedule->chapter->exercises;
+        $results = User::findOrFail($user_id)->exerciseResults()->with(['exercise'])
+            ->whereIn('exercise_id', $exercises->pluck('id'))->get();
 
+        $result = [
+            'group' => GroupResource::make($schedule->group),
+            'schedule' => ScheduleResource::make($schedule),
+            'exercise_results' => ExerciseResultResource::collection($results),
+        ];
+
+        return $this->successResponse($result);
     }
 }
