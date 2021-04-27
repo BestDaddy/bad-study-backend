@@ -10,6 +10,7 @@ use App\Http\Requests\Api\Support\AttachmentStoreApiRequest;
 use App\Models\ExerciseResult;
 use App\Services\Supports\AttachmentService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class AttachmentsController extends ApiBaseController
 {
@@ -101,5 +102,12 @@ class AttachmentsController extends ApiBaseController
     public function download($id)
     {
         return $this->attachmentService->download($id);
+    }
+
+    public function destroy($id){
+        $file = $this->attachmentService->find($id);
+        Storage::disk('public')->delete($file->name);
+        $this->attachmentService->delete($id);
+        return $this->successResponse('File Deleted');
     }
 }

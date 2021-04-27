@@ -5,8 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4ab46e84-ab3e-4e26-ac9b-d274ec4ea08b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/Support/AttachmentsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/Support/AttachmentsController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -308,14 +306,7 @@
       <workItem from="1619289103448" duration="6140000" />
       <workItem from="1619332947990" duration="5496000" />
       <workItem from="1619349544796" duration="11293000" />
-      <workItem from="1619535979297" duration="383000" />
-    </task>
-    <task id="LOCAL-00031" summary="api courses show. schedule show added">
-      <created>1617519449509</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1617519449509</updated>
+      <workItem from="1619535979297" duration="695000" />
     </task>
     <task id="LOCAL-00032" summary="event exercise Result scored">
       <created>1617523376839</created>
@@ -653,7 +644,14 @@
       <option name="project" value="LOCAL" />
       <updated>1619362925513</updated>
     </task>
-    <option name="localTasksCounter" value="80" />
+    <task id="LOCAL-00080" summary="multiple file upload">
+      <created>1619536464713</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1619536464713</updated>
+    </task>
+    <option name="localTasksCounter" value="81" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -673,7 +671,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="php info remove" />
     <MESSAGE value="remove datatable" />
     <MESSAGE value="added datatable" />
     <MESSAGE value="delete courses chapter exercises files" />
@@ -698,6 +695,7 @@
     <MESSAGE value="teacher schedules exercises result score api" />
     <MESSAGE value="test" />
     <MESSAGE value="user results" />
-    <option name="LAST_COMMIT_MESSAGE" value="user results" />
+    <MESSAGE value="multiple file upload" />
+    <option name="LAST_COMMIT_MESSAGE" value="multiple file upload" />
   </component>
 </project>

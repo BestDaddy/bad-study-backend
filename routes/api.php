@@ -45,13 +45,13 @@ Route::group(['namespace' => 'Api'], function () {
 
         Route::get('/schedules/{id}', 'CoursesController@scheduleShow');
 
-        Route::get('/exercises', 'ExerciseResultsController@index'); // all available exercises
+        Route::get('/exercises', 'ExercisesController@index'); // all available exercises
 
-        Route::get('/exercises/{id}', 'ExerciseResultsController@show');
+        Route::get('/exercises/{id}', 'ExercisesController@show');
 
-        Route::post('/exercises/results', 'ExerciseResultsController@exerciseResultStore');  // store answer of student
+        Route::post('/exercises/results', 'ExercisesController@exerciseResultStore');  // store answer of student
 
-        Route::get('/exercises/results', 'ExerciseResultsController@indexExerciseResult');
+        Route::get('/exercises/results', 'ExercisesController@indexExerciseResult');
 
     });
 
@@ -59,6 +59,7 @@ Route::group(['namespace' => 'Api'], function () {
         Route::post('/attachments', 'AttachmentsController@store');
         Route::post('/attachments/multiple', 'AttachmentsController@storeMultiple');
         Route::get('/download/{id}', 'AttachmentsController@download');
+        Route::delete('/attachments/{id}', 'AttachmentsController@destroy');
     });
 
     Route::group(['namespace' => 'Teacher' , 'middleware' => ['jwt', 'teacher'] , 'prefix' => 'teacher'], function () {
