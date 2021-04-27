@@ -67,6 +67,37 @@ class AttachmentsController extends ApiBaseController
         return response()->json($response);
     }
 
+    public function storeMultiple(AttachmentStoreApiRequest $request){
+        $model_id = $request->input('model_id', 0);
+        $model_type = $request->input('model_type');
+        $model_uuid = $request->input('uuid', null);
+        $folder = $request->input('folder', null);
+        if (!isset($this->attachments[$model_type])) {
+            abort(404);
+        }
+        $model_params = $this->attachments[$model_type];
+        $model_name = $model_params['model'];
+        $disk = $model_params['disk'];
+        $files = $request->file('file');
+        $data =[];
+        foreach ($files as $file){
+            array_push ($data , $this->attachmentService->save(
+                $model_id,
+                $model_name,
+                $file,
+                $model_uuid,
+                $folder,
+                $disk
+            ));
+        }
+        $response = [
+            'success' => true,
+            'data' => $data
+        ];
+
+        return response()->json($response);
+    }
+
     public function download($id)
     {
         return $this->attachmentService->download($id);
