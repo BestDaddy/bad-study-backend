@@ -15,7 +15,7 @@ class UserCourseGroupResource extends JsonResource
             'course_id' => $this->course_id,
             'group_id' => $this->group_id,
             'user_id' => $this->user_id,
-            'score' => $this->score,
+            'score' => number_format($this->score, 1),
             'status' => $this->status,
         ];
     }
