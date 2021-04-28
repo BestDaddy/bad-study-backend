@@ -9,6 +9,7 @@ use App\Http\Requests\Api\Course\ExerciseResultStoreApiRequest;
 use App\Http\Resources\CourseResource;
 
 use App\Http\Resources\ScheduleResource;
+use App\Models\Course;
 use App\Models\GroupCourse;
 use App\Services\Courses\CoursesService;
 use App\Services\Courses\ExerciseResultsService;
@@ -32,9 +33,29 @@ class CoursesController extends ApiBaseController
 
     public function index(){
         $user = Auth::user();
-        $courses = CourseResource::collection($user->courses()->get());
+        $user_courses = $user->userCourseGroups()
+            ->whereNotNull('group_id')
+            ->get();
+        $courses = Course::with([
+            'userCourseGroup' => function($q) use($user) {
+                $q->where('user_id', $user->id);
+            },
+            'groupCourse' => function($q) use($user_courses) {
+                $q->withCount([
+                    'schedules as passed_count' => function($qq){
+                        $qq->whereDate('starts_at', '<=', Carbon::now()->addHour());
+                    },
+                    'schedules'
+                ])
+                    ->whereIn('group_id', $user_courses->pluck('group_id'));
+            },
+            'groupCourse.teacher',
+        ])
+            ->whereIn('id', $user_courses->pluck('course_id'))
+            ->get();
+//        $courses = CourseResource::collection($user->courses()->get());
 
-        return $this->successResponse($courses);
+        return $this->successResponse( CourseResource::collection($courses));
     }
 
     public function show($id){
@@ -50,6 +71,7 @@ class CoursesController extends ApiBaseController
             'groupCourse' => function($q) use($user_course_group){
                 $q->where('group_id', $user_course_group->group_id);
             },
+            'groupCourse.teacher',
             'groupCourse.schedules.chapter',
             'groupCourse.schedules.attendance' => function($q) use($user_course_group){
                 $q->where('user_id', $user_course_group->user_id);

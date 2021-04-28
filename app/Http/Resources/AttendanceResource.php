@@ -15,7 +15,7 @@ class AttendanceResource extends JsonResource
             'id' => $this->id,
             'user_id' => $this->user_id,
             'schedule_id' => $this->schedule_id,
-            'score' => $this->score,
+            'score' => number_format($this->score, 1),
             'value' => $this->value,
             'status' => Attendance::getStatusTexts()[$this->status],
             'user' => $this->when(

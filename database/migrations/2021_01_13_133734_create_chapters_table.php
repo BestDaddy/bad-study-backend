@@ -19,7 +19,7 @@ class CreateChaptersTable extends Migration
                 ->constrained()
                 ->onDelete('cascade');
             $table->string('name');
-            $table->string('description')->nullable();
+            $table->text('description')->nullable();
             $table->unsignedSmallInteger('order');
             $table->timestamps();
         });

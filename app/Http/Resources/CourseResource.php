@@ -25,6 +25,25 @@ class CourseResource extends JsonResource
             'exercises' => $this->when($this->relationLoaded('exercises'),
                 ExerciseResource::collection($this->exercises)
             ),
+            'user_course' => $this->when(
+                $this->relationLoaded('userCourseGroup'),
+                UserCourseGroupResource::make($this->userCourseGroup)
+            ),
+            'passed_count' => $this->when(
+                $this->relationLoaded('groupCourse'),
+                data_get($this,'groupCourse.passed_count')
+            ),
+            'schedules_count' => $this->when(
+                $this->relationLoaded('groupCourse'),
+                data_get($this,'groupCourse.schedules_count')
+            ),
+            'teacher' => $this->when(
+                $this->relationLoaded('groupCourse'),
+                $this->when(
+                    $this->groupCourse->relationLoaded('teacher'),
+                    UserResource::make($this->groupCourse->teacher)
+                )
+            ),
         ];
     }
 }

@@ -5,7 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4ab46e84-ab3e-4e26-ac9b-d274ec4ea08b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Resources/UserCourseGroupResource.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/Student/CoursesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/Student/CoursesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Resources/CourseResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/CourseResource.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Resources/ExerciseResultResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/ExerciseResultResource.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Resources/ScheduleResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/ScheduleResource.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_01_13_133450_create_courses_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_01_13_133450_create_courses_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_01_13_133734_create_chapters_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_01_13_133734_create_chapters_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_01_13_140240_create_groups_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_01_13_140240_create_groups_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_01_13_142325_create_exercise_results_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_01_13_142325_create_exercise_results_table.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -306,14 +315,10 @@
       <workItem from="1619289103448" duration="6140000" />
       <workItem from="1619332947990" duration="5496000" />
       <workItem from="1619349544796" duration="11293000" />
-      <workItem from="1619535979297" duration="695000" />
-    </task>
-    <task id="LOCAL-00032" summary="event exercise Result scored">
-      <created>1617523376839</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1617523376839</updated>
+      <workItem from="1619535979297" duration="1532000" />
+      <workItem from="1619538806345" duration="2237000" />
+      <workItem from="1619546593380" duration="2577000" />
+      <workItem from="1619611179622" duration="2319000" />
     </task>
     <task id="LOCAL-00033" summary="fix">
       <created>1617523742439</created>
@@ -651,7 +656,14 @@
       <option name="project" value="LOCAL" />
       <updated>1619536464713</updated>
     </task>
-    <option name="localTasksCounter" value="81" />
+    <task id="LOCAL-00081" summary="delete file">
+      <created>1619536944996</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1619536944996</updated>
+    </task>
+    <option name="localTasksCounter" value="82" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -671,7 +683,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="remove datatable" />
     <MESSAGE value="added datatable" />
     <MESSAGE value="delete courses chapter exercises files" />
     <MESSAGE value="html fix&#10;migrations fix" />
@@ -696,6 +707,7 @@
     <MESSAGE value="test" />
     <MESSAGE value="user results" />
     <MESSAGE value="multiple file upload" />
-    <option name="LAST_COMMIT_MESSAGE" value="multiple file upload" />
+    <MESSAGE value="delete file" />
+    <option name="LAST_COMMIT_MESSAGE" value="delete file" />
   </component>
 </project>

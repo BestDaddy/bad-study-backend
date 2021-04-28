@@ -5,6 +5,7 @@ namespace App\Http\Resources;
 
 
 use App\Models\ExerciseResult;
+use Carbon\Carbon;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class ExerciseResultResource extends JsonResource
@@ -16,11 +17,11 @@ class ExerciseResultResource extends JsonResource
             'user_id' => $this->user_id,
             'exercise_id'=> $this->exercise_id,
             'status' => ExerciseResult::getStatusTexts()[$this->status],
-            'score' => $this->score,
+            'score' => number_format($this->score, 1),
             'value' => $this->value,
             'comment'=> $this->comment,
-            'checked_at'=> $this->checked_at,
-            'created_at'=> $this->created_at,
+            'checked_at'=> Carbon::parse($this->checked_at)->diffForHumans(),
+            'updated_at'=> Carbon::parse($this->updated_at)->diffForHumans(),
             'attachments' => $this->when(
                 $this->relationLoaded('attachments'),
                 AttachmentResource::collection($this->attachments)
@@ -32,7 +33,7 @@ class ExerciseResultResource extends JsonResource
             'user' => $this->when(
                 $this->relationLoaded('user'),
                 UserResource::make($this->user)
-            )
+            ),
         ];
     }
 }

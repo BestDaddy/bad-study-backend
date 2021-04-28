@@ -4,6 +4,7 @@
 namespace App\Http\Resources;
 
 
+use Carbon\Carbon;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class ScheduleResource extends JsonResource
@@ -15,7 +16,7 @@ class ScheduleResource extends JsonResource
             'group_id' => $this->group_id,
             'chapter_id' => $this->chapter_id,
 //            'live_url' => $this->live_url,
-            'starts_at' => $this->starts_at,
+            'starts_at' => Carbon::parse($this->starts_at)->format('d M H:i'),
             'attendance' => $this->when(
                 $this->relationLoaded('attendance'),
                 AttendanceResource::make($this->attendance)

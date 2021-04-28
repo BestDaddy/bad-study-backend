@@ -23,8 +23,8 @@ class CreateExerciseResultsTable extends Migration
                 ->onDelete('cascade');
             $table->unsignedDouble('score')->default(0);
             $table->unsignedSmallInteger('status')->default(0);
-            $table->string('value')->nullable();
-            $table->string('comment')->nullable();
+            $table->text('value')->nullable();
+            $table->text('comment')->nullable();
             $table->timestamp('checked_at')->nullable();
             $table->timestamps();
         });
