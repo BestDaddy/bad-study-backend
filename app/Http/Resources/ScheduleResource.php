@@ -25,6 +25,13 @@ class ScheduleResource extends JsonResource
                 $this->relationLoaded('chapter'),
                 ChapterResource::make($this->chapter)
             ),
+            'teacher' => $this->when(
+                $this->relationLoaded('groupCourse'),
+                $this->when(
+                    $this->groupCourse->relationLoaded('teacher'),
+                    UserResource::make($this->groupCourse->teacher)
+                )
+            ),
         ];
     }
 }
