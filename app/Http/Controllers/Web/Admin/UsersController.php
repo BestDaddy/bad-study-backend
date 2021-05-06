@@ -60,6 +60,7 @@ class UsersController extends Controller
             'first_name'=> 'required',
             'email' => 'required',
             'role_id' => 'required',
+            'password' => 'required',
         );
         $error = Validator::make($request->all(), $rules);
 

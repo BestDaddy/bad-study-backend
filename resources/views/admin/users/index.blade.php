@@ -249,7 +249,6 @@
                 serverSide: true,
                 ajax: {
                     url: "{{ route('users.index') }}",
-                    dataType: "JSON"
                 },
                 columns: [
                     {
