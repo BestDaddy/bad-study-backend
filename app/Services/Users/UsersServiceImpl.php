@@ -12,7 +12,15 @@ class UsersServiceImpl implements UsersService
     public function index(){
         if(request()->ajax())
         {
-            return datatables()->of(User::with('role')->latest()->get())
+            return datatables()->of(User::with(['role'])
+                ->select([
+                    'users.id',
+                    'users.first_name',
+                    'users.last_name',
+                    'users.email',
+                    'users.role_id'
+                ])
+                ->get())
                 ->addColumn('edit', function($data){
                     return  '<button
                          class=" btn btn-primary btn-sm btn-block "
