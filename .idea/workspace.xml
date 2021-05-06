@@ -5,8 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4ab46e84-ab3e-4e26-ac9b-d274ec4ea08b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/Student/CoursesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/Student/CoursesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Resources/ScheduleResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/ScheduleResource.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Resources/GroupCollection.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/Teacher/GroupsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/Teacher/GroupsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/exercises/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/exercises/show.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -310,21 +312,11 @@
       <workItem from="1619535979297" duration="1532000" />
       <workItem from="1619538806345" duration="2237000" />
       <workItem from="1619546593380" duration="2577000" />
-      <workItem from="1619611179622" duration="2637000" />
-    </task>
-    <task id="LOCAL-00034" summary="fix">
-      <created>1617524211941</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1617524211941</updated>
-    </task>
-    <task id="LOCAL-00035" summary="total score sync change added">
-      <created>1617525275192</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1617525275192</updated>
+      <workItem from="1619611179622" duration="4063000" />
+      <workItem from="1619798464309" duration="609000" />
+      <workItem from="1619861485026" duration="595000" />
+      <workItem from="1619958191562" duration="1231000" />
+      <workItem from="1620315774841" duration="1361000" />
     </task>
     <task id="LOCAL-00036" summary="test">
       <created>1618156611248</created>
@@ -655,7 +647,21 @@
       <option name="project" value="LOCAL" />
       <updated>1619613777991</updated>
     </task>
-    <option name="localTasksCounter" value="83" />
+    <task id="LOCAL-00083" summary="resource fix">
+      <created>1619613857321</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1619613857321</updated>
+    </task>
+    <task id="LOCAL-00084" summary="resource fix">
+      <created>1619614061344</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1619614061344</updated>
+    </task>
+    <option name="localTasksCounter" value="85" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

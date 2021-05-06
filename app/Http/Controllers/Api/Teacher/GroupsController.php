@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api\Teacher;
 
 
 use App\Http\Controllers\ApiBaseController;
+use App\Http\Resources\GroupCollection;
 use App\Http\Resources\GroupResource;
 use App\Http\Resources\ScheduleResource;
 use App\Http\Resources\Teacher\TeacherScheduleResource;
@@ -18,19 +19,29 @@ class GroupsController extends ApiBaseController
 {
     public function index(Request $request){
 //        DB::connection()->enableQueryLog();
+        $order = $request->input('order', 'desc');
+        $column = $request->input('column', 'id');
+        $search = $request->input('search', null);
+        $paginate = $request->input('paginate', 5);
+
         $user = Auth::user();
-        $user->load([
-            'teacherGroups.courses' => function($q) use ($user){
-                $q->wherePivot('teacher_id' , $user->id);
-            },
-            'teacherGroups' => function($q){
-                $q->withCount(['users as student_count' => function ($qq){
+        $groups = $user->teacherGroups()->with([
+            'courses',
+            ])
+            ->withCount([
+                'users as student_count' => function ($qq){
                     $qq->select(DB::raw('count(distinct(user_id))'));
-                }]);
-            },
-        ]);
+                }
+            ])
+            ->when($search, function ($q) use ($search) {
+                $q->where(function ($qq) use ($search) {
+                    $qq->whereRaw('LOWER(`name`) LIKE ?',['%'.trim(strtolower($search)).'%']);
+                });
+            })
+            ->orderBy($column, $order)
+            ->paginate($paginate);
 //        dd(DB::getQueryLog());  //2
-        return $this->successResponse(GroupResource::collection($user->teacherGroups));
+        return new GroupCollection($groups);
     }
 
     public function show($id){

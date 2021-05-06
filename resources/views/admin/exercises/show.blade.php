@@ -12,8 +12,8 @@
     {{--    <script src="TemplateData/UnityProgress.js"></script>--}}
     {{--    <script src="Build/UnityLoader.js"></script>--}}
     <script>
-        var gameInstance = UnityLoader.instantiate("gameContainer", "{{asset('Build/exercise1/ZVA_WEB.json')}}", {onProgress: UnityProgress});
-{{--        var gameInstance = UnityLoader.instantiate("gameContainer", "{{asset(data_get($exercise->attachments->first(),'path'))}}", {onProgress: UnityProgress});--}}
+        {{--var gameInstance = UnityLoader.instantiate("gameContainer", "{{asset('Build/exercise1/ZVA_WEB.json')}}", {onProgress: UnityProgress});--}}
+        var gameInstance = UnityLoader.instantiate("gameContainer", "{{asset(data_get($exercise->attachments->first(),'path'))}}", {onProgress: UnityProgress});
 
     </script>
 
