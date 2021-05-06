@@ -5,8 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4ab46e84-ab3e-4e26-ac9b-d274ec4ea08b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/Teacher/GroupsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/Teacher/GroupsController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/admin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/admin.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -315,14 +313,7 @@
       <workItem from="1619798464309" duration="609000" />
       <workItem from="1619861485026" duration="595000" />
       <workItem from="1619958191562" duration="1231000" />
-      <workItem from="1620315774841" duration="1990000" />
-    </task>
-    <task id="LOCAL-00037" summary="test">
-      <created>1618157143463</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1618157143463</updated>
+      <workItem from="1620315774841" duration="2308000" />
     </task>
     <task id="LOCAL-00038" summary="test">
       <created>1618157282516</created>
@@ -660,7 +651,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620317256717</updated>
     </task>
-    <option name="localTasksCounter" value="86" />
+    <task id="LOCAL-00086" summary="fix">
+      <created>1620317861762</created>
+      <option name="number" value="00086" />
+      <option name="presentableId" value="LOCAL-00086" />
+      <option name="project" value="LOCAL" />
+      <updated>1620317861762</updated>
+    </task>
+    <option name="localTasksCounter" value="87" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -690,7 +688,6 @@
     <MESSAGE value="file dowload fix" />
     <MESSAGE value="student answer files" />
     <MESSAGE value="status for exercise results" />
-    <MESSAGE value="fix" />
     <MESSAGE value="lectures added" />
     <MESSAGE value="api lectures added" />
     <MESSAGE value="teacher groups index api" />
@@ -705,6 +702,7 @@
     <MESSAGE value="multiple file upload" />
     <MESSAGE value="delete file" />
     <MESSAGE value="resource fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="resource fix" />
+    <MESSAGE value="fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix" />
   </component>
 </project>
