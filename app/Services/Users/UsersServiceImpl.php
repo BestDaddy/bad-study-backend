@@ -20,7 +20,7 @@ class UsersServiceImpl implements UsersService
                     'users.email',
                     'users.role_id'
                 ])
-                ->get())
+                )
                 ->addColumn('edit', function($data){
                     return  '<button
                          class=" btn btn-primary btn-sm btn-block "
@@ -31,7 +31,7 @@ class UsersServiceImpl implements UsersService
                     return '<a class="text-decoration-none"  href="users/'.$data->id.'"><button class="btn btn-primary btn-sm btn-block">Подробнее</button></a>';
                 })
                 ->rawColumns(['more', 'edit'])
-                ->make(true);
+                ->make();
         }
     }
 
