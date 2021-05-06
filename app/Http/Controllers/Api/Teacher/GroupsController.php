@@ -26,7 +26,9 @@ class GroupsController extends ApiBaseController
 
         $user = Auth::user();
         $groups = $user->teacherGroups()->with([
-            'courses',
+            'courses' => function($q) use ($user) {
+                $q->wherePivot('teacher_id' , $user->id);
+            },
             ])
             ->withCount([
                 'users as student_count' => function ($qq){
