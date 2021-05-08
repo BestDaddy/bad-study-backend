@@ -9,6 +9,7 @@ use App\Http\Resources\GroupCollection;
 use App\Http\Resources\GroupResource;
 use App\Http\Resources\ScheduleResource;
 use App\Http\Resources\Teacher\TeacherScheduleResource;
+use App\Http\Resources\Teacher\TeacherUserResource;
 use App\Models\GroupCourse;
 use App\Models\UserCourseGroup;
 use Illuminate\Http\Request;
@@ -77,10 +78,20 @@ class GroupsController extends ApiBaseController
                     })
                     ->orderBy($column, $order);
             },
+            'groupCourse' => function($q) use($course_id){
+                $q->where('course_id', $course_id);
+            },
+            'groupCourse.schedules'
         ])->findOrFail($group_id);
-
         $students = $group->users;
-
-        return $this->successResponse(($students));
+        $students->loadCount([
+            'attendances' => function($q) use($group){
+                $q->whereIn('schedule_id', $group->groupCourse->schedules->pluck('id'));
+            },
+            'attendances as passed_count' => function($q) use($group){
+                $q->whereIn('schedule_id', $group->groupCourse->schedules->pluck('id'))->where('value', true);
+            },
+        ]);
+        return $this->successResponse(( TeacherUserResource::collection($students)));
     }
 }
