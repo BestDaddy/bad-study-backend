@@ -32,7 +32,7 @@ class TeacherScheduleResource extends JsonResource
             ),
             'average_score' => $this->when(
                 $this->relationLoaded('attendances'),
-                $attendances->average('score')
+                number_format($attendances->average('score'), 1)
             ),
         ];
     }
