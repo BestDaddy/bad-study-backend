@@ -19,14 +19,8 @@ class TeacherUserResource extends JsonResource
                 $this->relationLoaded('role'),
                 $this->role
             ),
-            'attendances_count' => $this->when(
-                $this->attendances_count,
-                $this->attendances_count
-            ),
-            'passed_count' =>$this->when(
-                $this->passed_count,
-                $this->passed_count
-            ),
+            'attendances_count' => $this->attendances_count,
+            'passed_count' => $this->passed_count,
             'pivot' => $this->when(
                 $this->pivot,
                 $this->pivot
