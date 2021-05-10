@@ -13,6 +13,7 @@ use App\Http\Resources\ExerciseResultResource;
 use App\Http\Resources\GroupResource;
 use App\Http\Resources\ScheduleResource;
 use App\Http\Resources\Teacher\TeacherScheduleResource;
+use App\Http\Resources\UserResource;
 use App\Models\Attendance;
 use App\Models\Exercise;
 use App\Models\ExerciseResult;
@@ -150,20 +151,28 @@ class SchedulesController extends ApiBaseController
     }
 
     public function userResults($schedule_id, $user_id){
+//        DB::connection()->enableQueryLog();
+        $user = Auth::user();
         $schedule = Schedule::with([
             'group',
             'chapter.exercises',
         ])->findOrFail($schedule_id);
+        $user->teacherGroupCourses()->findOrFail($schedule->group_course_id);
         $exercises = $schedule->chapter->exercises;
-        $results = User::findOrFail($user_id)->exerciseResults()->with(['exercise'])
+
+        $student = $schedule->group->users()->findOrFail($user_id);
+
+        $results = $student->exerciseResults()->with(['exercise'])
             ->whereIn('exercise_id', $exercises->pluck('id'))->get();
 
         $result = [
             'group' => GroupResource::make($schedule->group),
+            'user' => UserResource::make($student),
             'schedule' => ScheduleResource::make($schedule),
             'exercise_results' => ExerciseResultResource::collection($results),
         ];
 
+//        dd(DB::getQueryLog());  //8
         return $this->successResponse($result);
     }
 }
