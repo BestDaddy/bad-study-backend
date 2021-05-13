@@ -134,6 +134,7 @@ class SchedulesController extends ApiBaseController
             'results' => function($qq) use($user_course_groups) {
                 $qq->whereIn('user_id', $user_course_groups->pluck('user_id'));
             },
+            'results.attachments',
             'results.user'
         ])
             ->where('chapter_id', $schedule->chapter_id)
@@ -162,7 +163,7 @@ class SchedulesController extends ApiBaseController
 
         $student = $schedule->group->users()->findOrFail($user_id);
 
-        $results = $student->exerciseResults()->with(['exercise'])
+        $results = $student->exerciseResults()->with(['exercise', 'attachments'])
             ->whereIn('exercise_id', $exercises->pluck('id'))->get();
 
         $result = [
