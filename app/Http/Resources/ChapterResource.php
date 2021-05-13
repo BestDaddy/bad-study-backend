@@ -14,6 +14,7 @@ class ChapterResource extends JsonResource
             'id' => $this->id,
             'name' => $this->name,
             'description' => $this->description,
+            'course_id' => $this->course_id,
             'order' => $this->order,
             'schedule' => $this->when(
                 $this->relationLoaded('schedule'),
