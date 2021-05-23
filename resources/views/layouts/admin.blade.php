@@ -93,14 +93,6 @@
                 <i class="fas fa-fw fa-user"></i>
                 <span>Пользователи</span></a>
         </li>
-        @endif
-        @endif
-{{--        <li class="nav-item">--}}
-{{--            <a class="nav-link" href="{{route('cars.index')}}">--}}
-{{--                <i class="fas fa-fw fa-car"></i>--}}
-{{--                <span>Мои машины</span></a>--}}
-{{--        </li>--}}
-        <!-- Nav Item - Pages Collapse Menu -->
         <li class="nav-item">
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
                 <i class="fas fa-fw fa-folder"></i>
@@ -109,13 +101,22 @@
             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <a class="collapse-item" href="{{route('import.users.index')}}">Импорт</a>
-{{--                    <a class="nav-link"  href="{{route('import.users')}}">--}}
-{{--                        <i class="fas fa-fw fa-file-import"></i>--}}
-{{--                        <span>Import users</span>--}}
-{{--                    </a>--}}
+                    {{--                    <a class="nav-link"  href="{{route('import.users')}}">--}}
+                    {{--                        <i class="fas fa-fw fa-file-import"></i>--}}
+                    {{--                        <span>Import users</span>--}}
+                    {{--                    </a>--}}
                 </div>
             </div>
         </li>
+        @endif
+        @endif
+{{--        <li class="nav-item">--}}
+{{--            <a class="nav-link" href="{{route('cars.index')}}">--}}
+{{--                <i class="fas fa-fw fa-car"></i>--}}
+{{--                <span>Мои машины</span></a>--}}
+{{--        </li>--}}
+        <!-- Nav Item - Pages Collapse Menu -->
+
 
         <hr class="sidebar-divider d-none d-md-block">
 

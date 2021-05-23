@@ -62,7 +62,11 @@ class ExercisesController extends Controller
             return response()->json(['errors' => $error->errors()->all()]);
 
         $exercise = $this->exercisesService->store($request);
-        return response()->json(['code'=>200, 'message'=>'Exercise Saved successfully','data' => $exercise], 200);
+        return response()->json([
+            'code'=>200,
+            'message'=>'Exercise Saved successfully',
+            'data' => $exercise
+        ], 200);
     }
 
     /**

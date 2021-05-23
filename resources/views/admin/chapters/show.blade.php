@@ -7,6 +7,7 @@
 @section('content')
     {{ Breadcrumbs::render('chapters.show', $chapter) }}
     <h2>Глава : {{ $chapter->name }}</h2>
+    <h3>Практика :</h3>
     <hr>
     <br>
     <div class="row" style="clear: both;">
@@ -31,6 +32,7 @@
     <br>
     <hr>
     <br>
+    <h3>Лекции :</h3>
     <hr>
     <br>
     <div class="row" style="clear: both;">
