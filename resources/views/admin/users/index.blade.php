@@ -104,12 +104,11 @@
                     </form>
                 </div>
                 <div class="modal-footer">
-
-                    {{--                    <div class="col-lg-9">--}}
-                    {{--                        <div  class="collapse" id="collapseExample">--}}
-                    {{--                            <button type="button" class="btn btn-danger" onclick="deleteUser()">Бан</button>--}}
-                    {{--                        </div>--}}
-                    {{--                    </div>--}}
+                    <div class="col">
+                        <div  class="collapse" id="collapseExample">
+                            <button type="button" class="btn btn-danger" onclick="deleteUser()"> <i class="fas fa-trash"></i> Удалить</button>
+                        </div>
+                    </div>
                     <button type="button" class="btn btn-primary" onclick="save()">Сохранить</button>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
                 </div>
@@ -143,24 +142,24 @@
                 x.type = "password";
             }
         }
-        // function deleteUser() {
-        //     var id = $('#user_id').val();
-        //     let _url = `/users/${id}`;
-        //
-        //     let _token   = $('meta[name="csrf-token"]').attr('content');
-        //
-        //     $.ajax({
-        //         url: _url,
-        //         type: 'DELETE',
-        //         data: {
-        //             _token: _token
-        //         },
-        //         success: function(response) {
-        //             $('#user_table').DataTable().ajax.reload();
-        //             $('#post-modal').modal('hide');
-        //         }
-        //     });
-        // }
+        function deleteUser() {
+            var id = $('#user_id').val();
+            let _url = `/users/${id}`;
+
+            let _token   = $('meta[name="csrf-token"]').attr('content');
+
+            $.ajax({
+                url: _url,
+                type: 'DELETE',
+                data: {
+                    _token: _token
+                },
+                success: function(response) {
+                    $('#user_table').DataTable().ajax.reload();
+                    $('#post-modal').modal('hide');
+                }
+            });
+        }
 
 
         function editUser (event) {

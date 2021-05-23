@@ -114,7 +114,7 @@ class UsersController extends Controller
      */
     public function destroy($id)
     {
-        //
+        return $this->usersService->delete($id);
     }
 
     public function importPage(){

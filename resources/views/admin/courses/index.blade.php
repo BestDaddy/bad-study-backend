@@ -69,7 +69,7 @@
                 </div>
                 <div class="modal-footer">
 
-                    <div class="col-lg-9">
+                    <div class="col">
                         <div  class="collapse" id="collapseExample">
                             <button class="btn btn-danger" onclick="deleteCourse()"><i class="fas fa-trash"></i> Удалить</button>
                         </div>

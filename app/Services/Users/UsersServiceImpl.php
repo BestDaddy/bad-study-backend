@@ -5,10 +5,16 @@ namespace App\Services\Users;
 
 
 use App\Models\User;
+use App\Services\BaseServiceImpl;
 use Illuminate\Http\Request;
 
-class UsersServiceImpl implements UsersService
+class UsersServiceImpl extends BaseServiceImpl implements UsersService
 {
+    public function __construct(User $model)
+    {
+        parent::__construct($model);
+    }
+
     public function index(){
         if(request()->ajax())
         {
