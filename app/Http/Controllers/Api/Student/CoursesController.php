@@ -85,6 +85,14 @@ class CoursesController extends ApiBaseController
                 return (data_get($item, 'starts_at') < Carbon::now());
             })),
             'total_schedules' => count($course->groupCourse->schedules),
+            'progress' => round(
+                count($course->groupCourse->schedules->filter(function ($item)  {
+                    return (data_get($item, 'starts_at') < Carbon::now());
+                })) /
+                    (count($course->groupCourse->schedules) != 0
+                        ? count($course->groupCourse->schedules)
+                        : 1) * 100 )
+            ,
             'total_score' => $user_course_group->score,
         ];
 //        dd(DB::getQueryLog());  //6

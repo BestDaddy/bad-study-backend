@@ -6,7 +6,7 @@
 
 @section('content')
         {{ Breadcrumbs::render('courses') }}
-    <h2>Все курсы :</h2>
+    <h2>{{ __('lang.all_courses')}} :</h2>
     <hr>
     <br>
     <div class="row" style="clear: both;">
@@ -20,7 +20,7 @@
             <thead>
             <tr>
                 <th width="5%">ID</th>
-                <th width="50%">Название</th>
+                <th width="50%">{{ __('lang.table_name')}}</th>
                 <th width="15%"></th>
                 <th width="15%"></th>
             </tr>
@@ -33,7 +33,7 @@
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel">Новый курс</h5>
+                    <h5 class="modal-title" id="staticBackdropLabel">{{ __('lang.new_course')}}</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -42,19 +42,19 @@
                     <form name="Form" class="form-horizontal">
                         <input type="hidden" name="course_id" id="course_id">
                         <div class="form-group">
-                            <label for="inputName">Название</label>
+                            <label for="inputName">{{ __('lang.table_name')}}</label>
                             <input type="text"
                                    class="form-control"
                                    id="name"
-                                   placeholder="Введите название"
+                                   placeholder="{{ __('lang.table_name')}}..."
                                    name="name">
                         </div>
                         <div class="form-group">
-                            <label for="inputPhone">Описание</label>
+                            <label for="inputPhone">{{ __('lang.description')}}</label>
                             <textarea class="form-control"
                                       id="description"
                                       name="description"
-                                      placeholder="Введите описание"
+                                      placeholder="{{ __('lang.description')}}..."
                                       rows="4">
                             </textarea>
                         </div>
@@ -71,11 +71,11 @@
 
                     <div class="col">
                         <div  class="collapse" id="collapseExample">
-                            <button class="btn btn-danger" onclick="deleteCourse()"><i class="fas fa-trash"></i> Удалить</button>
+                            <button class="btn btn-danger" onclick="deleteCourse()"><i class="fas fa-trash"></i> {{ __('lang.delete')}}</button>
                         </div>
                     </div>
-                    <button class="btn btn-primary" onclick="save()">Сохранить</button>
-                    <button class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+                    <button class="btn btn-primary" onclick="save()">{{ __('lang.save')}}</button>
+                    <button class="btn btn-secondary" data-dismiss="modal">{{ __('lang.close')}}</button>
                 </div>
             </div>
         </div>
@@ -177,9 +177,12 @@
         $(document).ready(function() {
 
             $('#course_table').DataTable({
+                @php $locale = session()->get('locale'); @endphp
+                @if($locale != 'en')
                 language: {
                     "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Russian.json"
                 },
+                @endif
                 processing: true,
                 serverSide: true,
                 ajax: {

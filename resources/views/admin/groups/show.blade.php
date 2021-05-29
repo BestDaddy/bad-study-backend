@@ -297,9 +297,12 @@
 
         $(document).ready(function() {
             $('#new_student_table').DataTable({
+                @php $locale = session()->get('locale'); @endphp
+                @if($locale != 'en')
                 language: {
                     "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Russian.json"
                 },
+                @endif
                 processing: true,
                 serverSide: true,
                 iDisplayLength: 25,
@@ -330,9 +333,12 @@
         $(document).ready(function() {
 
             $('#student_table').DataTable({
+                @php $locale = session()->get('locale'); @endphp
+                @if($locale != 'en')
                 language: {
                     "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Russian.json"
                 },
+                @endif
                 processing: true,
                 serverSide: true,
                 ajax: {
@@ -366,9 +372,11 @@
 
         $(document).ready(function() {
             $('#new_course_table').DataTable({
+                @if($locale != 'en')
                 language: {
                     "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Russian.json"
                 },
+                @endif
                 processing: true,
                 serverSide: true,
                 iDisplayLength: 25,
@@ -399,9 +407,11 @@
         $(document).ready(function() {
 
             $('#course_table').DataTable({
+                @if($locale != 'en')
                 language: {
                     "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Russian.json"
                 },
+                @endif
                 processing: true,
                 serverSide: true,
                 ajax: {

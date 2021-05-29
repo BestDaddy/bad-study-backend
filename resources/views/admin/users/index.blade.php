@@ -241,9 +241,12 @@
         $(document).ready(function() {
 
             $('#user_table').DataTable({
+                @php $locale = session()->get('locale'); @endphp
+                @if($locale != 'en')
                 language: {
                     "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Russian.json"
                 },
+                @endif
                 processing: true,
                 serverSide: true,
                 ajax: {

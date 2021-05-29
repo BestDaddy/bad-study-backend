@@ -147,7 +147,6 @@
 {{--                <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">--}}
 {{--                    <i class="fa fa-bars"></i>--}}
 {{--                </button>--}}
-{{--                @php $locale = session()->get('locale'); @endphp--}}
                 <div class="col"></div>
                 <div class="col"></div>
                 <div class="col"></div>
@@ -307,6 +306,7 @@
 {{--        window.location = `/lang/${sel.value}`;--}}
 {{--    }--}}
 {{--</script>--}}
+@php $locale = session()->get('locale'); @endphp
 @yield('scripts')
 
 <!-- Bootstrap core JavaScript-->
