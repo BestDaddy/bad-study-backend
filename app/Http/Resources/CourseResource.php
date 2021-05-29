@@ -35,7 +35,16 @@ class CourseResource extends JsonResource
             ),
             'schedules_count' => $this->when(
                 $this->relationLoaded('groupCourse'),
-                data_get($this,'groupCourse.schedules_count')
+                data_get($this,'groupCourse.schedules_count') != 0
+                    ? data_get($this,'groupCourse.schedules_count')
+                    : 1
+            ),
+            'progress' => $this->when(
+                $this->relationLoaded('groupCourse'),
+                round(data_get($this,'groupCourse.passed_count') /
+                    (data_get($this,'groupCourse.schedules_count') != 0
+                    ? data_get($this,'groupCourse.schedules_count')
+                    : 1) * 100 )
             ),
             'teacher' => $this->when(
                 $this->relationLoaded('groupCourse'),
