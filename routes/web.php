@@ -60,6 +60,7 @@ Route::group(['namespace' => 'Web'], function () {
         Route::resources([
             'attachments' => 'AttachmentsController',
         ]);
+        Route::get('/lang/{locale}', 'LocalizationController@index')->name('lang');
         Route::get('/download/{id}', 'AttachmentsController@download');
     });
 });
