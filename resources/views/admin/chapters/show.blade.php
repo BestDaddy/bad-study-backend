@@ -144,7 +144,7 @@
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel">{{__('lang.new_lecture')}}</h5>
+                    <h5 class="modal-title" id="staticBackdropLabel-2">{{__('lang.new_lecture')}}</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -234,7 +234,7 @@
         }
         function addLecture() {
             $('#collapseExample').hide();
-            $('#staticBackdropLabel').text("{{__('lang.new_lecture')}}");
+            $('#staticBackdropLabel-2').text("{{__('lang.new_lecture')}}");
             $('#form-errors-lecture').html("");
             $('#lecture_id').val('');
             $('#title').val('');
@@ -354,7 +354,7 @@
         function editLecture (event) {
             $('#collapseExample-2').show();
             $('#form-errors-lecture').html("");
-            $('#staticBackdropLabel').text("{{__('lang.edit_lecture')}}");
+            $('#staticBackdropLabel-2').text("{{__('lang.edit_lecture')}}");
 
             var id  = $(event).data("id");
             let _url = `/lectures/${id}/edit`;
