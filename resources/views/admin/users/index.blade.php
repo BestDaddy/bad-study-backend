@@ -10,7 +10,7 @@
     <br>
     <div class="row" style="clear: both;">
         <div class="col-12 text-right">
-            <a href="javascript:void(0)" class="btn btn-primary" data-toggle="modal" onclick="add()"><i class="fas fa-plus-square"></i> Добавить пользователя</a>
+            <a href="javascript:void(0)" class="btn btn-primary" data-toggle="modal" onclick="add()"><i class="fas fa-plus-square"></i> {{__('lang.new_user')}}</a>
         </div>
     </div>
     <br>
@@ -19,10 +19,10 @@
             <thead>
             <tr>
                 <th width="5%">ID</th>
-                <th width="15%">Имя</th>
-                <th width="15%">Фамилия</th>
-                <th width="25%">Email</th>
-                <th width="10%">Роль</th>
+                <th width="15%">{{__('lang.first_name')}}</th>
+                <th width="15%">{{__('lang.last_name')}}</th>
+                <th width="25%">{{__('lang.email')}}</th>
+                <th width="10%">{{__('lang.role')}}</th>
                 <th width="15%"></th>
                 <th width="15%"></th>
             </tr>
@@ -46,7 +46,7 @@
                         <div class="row">
                             <div class="col">
                                 <div class="form-group">
-                                    <label for="inputName">Имя</label>
+                                    <label for="inputName">{{__('lang.first_name')}}</label>
                                     <input type="text"
                                            class="form-control"
                                            id="first_name"
@@ -55,7 +55,7 @@
                             </div>
                             <div class="col">
                                 <div class="form-group">
-                                    <label for="inputPhone">Фамилия</label>
+                                    <label for="inputPhone">{{__('lang.last_name')}}</label>
                                     <input type="text"
                                            class="form-control"
                                            id="last_name"
@@ -64,18 +64,18 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="password">Пароль</label>
+                            <label for="password">{{__('lang.password')}}</label>
                             <div class="input-group mb-3">
                                 <input type="password" class="form-control" id="password" name="password">
                                 <div class="input-group-append">
-                                    <button class="btn btn-secondary" type="button" onclick="showPassword()">Показать</button>
+                                    <button class="btn btn-secondary" type="button" onclick="showPassword()">{{__('lang.show')}}</button>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col">
                                 <div class="form-group">
-                                    <label for="inputPhone">Почта</label>
+                                    <label for="inputPhone">{{__('lang.email')}}</label>
                                     <input type="email"
                                            class="form-control"
                                            id="email"
@@ -85,7 +85,7 @@
                             </div>
                             <div class="col">
                                 <div class="form-group">
-                                    <label for="inputPhone">Роль</label>
+                                    <label for="inputPhone">{{__('lang.role')}}</label>
                                     <select class="form-control" id="role_id" name="role_id">
                                         @foreach($roles as $role)
                                             <option value="{{$role->id}}">{{$role->name}}</option>
@@ -106,11 +106,11 @@
                 <div class="modal-footer">
                     <div class="col">
                         <div  class="collapse" id="collapseExample">
-                            <button type="button" class="btn btn-danger" onclick="deleteUser()"> <i class="fas fa-trash"></i> Удалить</button>
+                            <button type="button" class="btn btn-danger" onclick="deleteUser()"> <i class="fas fa-trash"></i> {{__('lang.delete')}}</button>
                         </div>
                     </div>
-                    <button type="button" class="btn btn-primary" onclick="save()">Сохранить</button>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+                    <button type="button" class="btn btn-primary" onclick="save()">{{__('lang.save')}}</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">{{__('lang.close')}}</button>
                 </div>
             </div>
         </div>
@@ -123,6 +123,7 @@
 
         function add() {
             $('#form-errors').html("");
+            $('#staticBackdropLabel').text("{{__('lang.new_user')}}");
             $('#user_id').val('');
             $('#first_name').val('');
             $('#last_name').val('');
@@ -164,7 +165,7 @@
 
         function editUser (event) {
             $('#collapseExample').show();
-            $('#staticBackdropLabel').text("Редактировать пользователя");
+            $('#staticBackdropLabel').text("{{__('lang.edit_user')}}");
             $('#form-errors').html("");
             var id  = $(event).data("id");
             let _url = `users/${id}/edit`;

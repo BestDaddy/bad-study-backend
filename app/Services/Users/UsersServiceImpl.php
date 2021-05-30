@@ -7,6 +7,7 @@ namespace App\Services\Users;
 use App\Models\User;
 use App\Services\BaseServiceImpl;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Lang;
 
 class UsersServiceImpl extends BaseServiceImpl implements UsersService
 {
@@ -31,10 +32,10 @@ class UsersServiceImpl extends BaseServiceImpl implements UsersService
                     return  '<button
                          class=" btn btn-primary btn-sm btn-block "
                           data-id="'.$data->id.'"
-                          onclick="editUser(event.target)"><i class="fas fa-edit" data-id="'.$data->id.'"></i> Изменить</button>';
+                          onclick="editUser(event.target)"><i class="fas fa-edit" data-id="'.$data->id.'"></i> '.Lang::get('lang.edit').'</button>';
                 })
                 ->addColumn('more', function ($data){
-                    return '<a class="text-decoration-none"  href="users/'.$data->id.'"><button class="btn btn-primary btn-sm btn-block">Подробнее</button></a>';
+                    return '<a class="text-decoration-none"  href="users/'.$data->id.'"><button class="btn btn-primary btn-sm btn-block">'.Lang::get('lang.more').'</button></a>';
                 })
                 ->rawColumns(['more', 'edit'])
                 ->make();

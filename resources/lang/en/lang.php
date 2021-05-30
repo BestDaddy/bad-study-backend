@@ -43,5 +43,14 @@ return [
     'folder' =>'Folder',
     'upload' => 'Upload',
     'files' =>'Files',
+
+    'new_user' => 'Add user',
+    'edit_user' => 'Edit user',
+    'first_name' => 'First name',
+    'last_name' =>'Last name',
+    'email' => 'Email',
+    'role' => 'Role',
+    'password' => 'Password',
+    'show' => 'Show',
 ];
 
