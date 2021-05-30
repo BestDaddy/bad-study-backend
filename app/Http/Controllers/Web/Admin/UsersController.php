@@ -57,10 +57,11 @@ class UsersController extends Controller
     public function store(Request $request)
     {
         $rules = array(
+            'id' => 'numeric',
             'first_name'=> 'required',
-            'email' => 'required',
+            'email' => 'required|email|unique:users,email,'.$request->id,
             'role_id' => 'required',
-            'password' => 'required',
+            'password' => 'required_without:id',
         );
         $error = Validator::make($request->all(), $rules);
 
