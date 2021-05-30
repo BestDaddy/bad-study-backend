@@ -23,7 +23,7 @@ class Group extends Model
     }
 
     public function users(){
-        return $this->belongsToMany(User::class, 'user_course_group')->distinct()->withPivot('score');
+        return $this->belongsToMany(User::class, 'user_course_group')->withPivot('score')->groupBy('id')->distinct();
     }
 
     public function schedules(){
