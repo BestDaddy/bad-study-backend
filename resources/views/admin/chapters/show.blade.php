@@ -6,13 +6,13 @@
 
 @section('content')
     {{ Breadcrumbs::render('chapters.show', $chapter) }}
-    <h2>Глава : {{ $chapter->name }}</h2>
-    <h3>Практика :</h3>
+    <h2>{{__('lang.chapter')}} : {{ $chapter->name }}</h2>
+    <h3>{{__('lang.labs')}} :</h3>
     <hr>
     <br>
     <div class="row" style="clear: both;">
         <div class="col-12 text-right">
-            <a href="javascript:void(0)" class="btn btn-primary" data-toggle="modal"  onclick="add()"><i class="fas fa-plus-square"></i> Добавить задание</a>
+            <a href="javascript:void(0)" class="btn btn-primary" data-toggle="modal"  onclick="add()"><i class="fas fa-plus-square"></i> {{__('lang.add') .' '. __('lang.exercise')}}</a>
         </div>
     </div>
     <br>
@@ -21,8 +21,8 @@
             <thead>
             <tr>
                 <th width="5%">ID</th>
-                <th width="40%">Название</th>
-                <th width="10%">Порядок</th>
+                <th width="40%">{{__('lang.table_name')}}</th>
+                <th width="10%">{{__('lang.order')}}</th>
                 <th width="15%"></th>
                 <th width="15%"></th>
             </tr>
@@ -32,12 +32,13 @@
     <br>
     <hr>
     <br>
-    <h3>Лекции :</h3>
+    <h3>{{__('lang.lectures')}} :</h3>
     <hr>
     <br>
     <div class="row" style="clear: both;">
         <div class="col-12 text-right">
-            <a href="javascript:void(0)" class="btn btn-primary" data-toggle="modal"  onclick="addLecture()"><i class="fas fa-plus-square"></i> Добавить лекцию</a>
+            <a href="javascript:void(0)" class="btn btn-primary" data-toggle="modal"  onclick="addLecture()"><i class="fas fa-plus-square"></i>
+                {{__('lang.new_lecture')}}</a>
         </div>
     </div>
     <br>
@@ -46,8 +47,8 @@
             <thead>
             <tr>
                 <th width="5%">ID</th>
-                <th width="40%">Название</th>
-                <th width="10%">Порядок</th>
+                <th width="40%">{{__('lang.table_name')}}</th>
+                <th width="10%">{{__('lang.order')}}</th>
                 <th width="15%"></th>
                 <th width="15%"></th>
             </tr>
@@ -59,7 +60,7 @@
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel">Новое задание</h5>
+                    <h5 class="modal-title" id="staticBackdropLabel">{{__('lang.add') .' '. __('lang.exercise')}}</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -70,40 +71,40 @@
                         <input type="hidden" name="exercise_id" id="exercise_id">
 {{--                        <input type="hidden" name="model_type" id="model_type" value="exercise">--}}
                         <div class="form-group">
-                            <label for="inputName">Название</label>
+                            <label for="inputName">{{__('lang.table_name')}}</label>
                             <input type="text"
                                    class="form-control"
                                    id="name"
-                                   placeholder="Введите название"
+                                   placeholder="{{__('lang.table_name')}}..."
                                    name="name">
                         </div>
                         <div class="form-group">
-                            <label for="inputPhone">Описание</label>
+                            <label for="inputPhone">{{__('lang.description')}}</label>
                             <textarea class="form-control"
                                       id="exercise_content"
                                       name="exercise_content"
-                                      placeholder="Введите описание"
+                                      placeholder="{{__('lang.description')}}..."
                                       rows="4">
                             </textarea>
                         </div>
                         <div class="row">
                             <div class="col">
                                 <div class="form-group">
-                                    <label for="inputName">Папка</label>
+                                    <label for="inputName">{{__('lang.folder')}}</label>
                                     <input type="text"
                                            class="form-control"
                                            id="path"
-                                           placeholder="Введите название папки"
+                                           placeholder="{{__('lang.folder')}}..."
                                            name="path">
                                 </div>
                             </div>
                             <div class="col">
                                 <div class="form-group">
-                                    <label for="inputPhone">Порядок</label>
+                                    <label for="inputPhone">{{__('lang.order')}}</label>
                                     <input type="number" class="form-control"
                                            id="order"
                                            name="order"
-                                           placeholder="Введите Порядок">
+                                           placeholder="{{__('lang.folder')}}...">
                                 </div>
                             </div>
                         </div>
@@ -129,12 +130,12 @@
 
                     <div class="col">
                         <div  class="collapse" id="collapseExample">
-                            <button class="btn btn-danger" onclick="deleteChapter()"><i class="fas fa-trash"></i> Удалить</button>
+                            <button class="btn btn-danger" onclick="deleteChapter()"><i class="fas fa-trash"></i> {{ __('lang.delete')}}</button>
                         </div>
                     </div>
-                    <button class="btn btn-primary" onclick="addFile()">Upload</button>
-                    <button class="btn btn-primary" onclick="finalSave()">Сохранить</button>
-                    <button class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+                    <button class="btn btn-primary" onclick="addFile()">{{ __('lang.upload')}}</button>
+                    <button class="btn btn-primary" onclick="finalSave()">{{ __('lang.save')}}</button>
+                    <button class="btn btn-secondary" data-dismiss="modal">{{ __('lang.close')}}</button>
                 </div>
             </div>
         </div>
@@ -143,7 +144,7 @@
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel">Новая лекция</h5>
+                    <h5 class="modal-title" id="staticBackdropLabel">{{__('lang.new_lecture')}}</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -153,28 +154,28 @@
                         <input type="hidden" name="lecture_id" id="lecture_id">
                         {{--                        <input type="hidden" name="model_type" id="model_type" value="exercise">--}}
                         <div class="form-group">
-                            <label for="inputName">Название</label>
+                            <label for="inputName">{{__('lang.table_name')}}</label>
                             <input type="text"
                                    class="form-control"
                                    id="title"
-                                   placeholder="Введите название"
+                                   placeholder="{{__('lang.table_name')}}..."
                                    name="title">
                         </div>
                         <div class="form-group">
-                            <label for="inputPhone">Описание</label>
+                            <label for="inputPhone">{{__('lang.description')}}</label>
                             <textarea class="form-control lecture"
                                       id="lecture_content"
                                       name="lecture_content"
-                                      placeholder="Введите описание"
+                                      placeholder="{{__('lang.description')}}..."
                                       rows="4">
                             </textarea>
                         </div>
                         <div class="form-group">
-                            <label for="inputPhone">Порядок</label>
+                            <label for="inputPhone">{{__('lang.order')}}</label>
                             <input type="number" class="form-control"
                                    id="lecture_order"
                                    name="lecture_order"
-                                   placeholder="Введите Порядок">
+                                   placeholder="{{__('lang.order')}}...">
                         </div>
                         <div class="form-group" id="form-errors-lecture">
                             <div class="alert alert-danger">
@@ -189,11 +190,11 @@
 
                     <div class="col">
                         <div  class="collapse" id="collapseExample-2">
-                            <button class="btn btn-danger" onclick="deleteLecture()"><i class="fas fa-trash"></i> Удалить</button>
+                            <button class="btn btn-danger" onclick="deleteLecture()"><i class="fas fa-trash"></i> {{__('lang.delete')}}</button>
                         </div>
                     </div>
-                    <button class="btn btn-primary" onclick="saveLecture()">Сохранить</button>
-                    <button class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+                    <button class="btn btn-primary" onclick="saveLecture()">{{__('lang.save')}}</button>
+                    <button class="btn btn-secondary" data-dismiss="modal">{{__('lang.close')}}</button>
                 </div>
             </div>
         </div>
@@ -220,7 +221,7 @@
     <script>
         function add() {
             $('#collapseExample').hide();
-            $('#staticBackdropLabel').text("Новое задание");
+            $('#staticBackdropLabel').text("{{__('lang.add') .' '. __('lang.exercise')}}");
             $('#form-errors').html("");
             $('#form-files').html("");
             $('#exercise_id').val('');
@@ -233,7 +234,7 @@
         }
         function addLecture() {
             $('#collapseExample').hide();
-            $('#staticBackdropLabel').text("Новая лекция");
+            $('#staticBackdropLabel').text("{{__('lang.new_lecture')}}");
             $('#form-errors-lecture').html("");
             $('#lecture_id').val('');
             $('#title').val('');
@@ -299,7 +300,7 @@
             $('#form-files').html("");
             // $('#path').val(response.path);
             $("#path").prop('disabled', true);
-            $('#staticBackdropLabel').text("Редактировать задание");
+            $('#staticBackdropLabel').text("{{__('lang.edit_exercise')}}");
             var id  = $(event).data("id");
             if(!id){
                 console.log(id);
@@ -319,7 +320,7 @@
                         $("#order").val(response.order);
                         if(response.attachments.length > 0){
                             var files = response.attachments;
-                            fileHtml = '<label>Вложенные файлы</label>';
+                                fileHtml = '<label>Вложенные файлы</label>';
                             fileHtml += '<ul>';
                             $.each( files, function(i) {
                                 fileHtml += '<li><a href="/download/'+ files[i].id + '">'+ files[i].name + '</a></li>';
@@ -353,7 +354,7 @@
         function editLecture (event) {
             $('#collapseExample-2').show();
             $('#form-errors-lecture').html("");
-            $('#staticBackdropLabel').text("Редактировать лекцию");
+            $('#staticBackdropLabel').text("{{__('lang.edit_lecture')}}");
 
             var id  = $(event).data("id");
             let _url = `/lectures/${id}/edit`;
@@ -507,9 +508,11 @@
         $(document).ready(function() {
 
             $('#exercise_table').DataTable({
+                @if($locale != 'en')
                 language: {
                     "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Russian.json"
                 },
+                @endif
                 order: [[ 2, "asc" ]],
                 processing: true,
                 serverSide: true,

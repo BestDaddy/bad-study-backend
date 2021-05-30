@@ -20,7 +20,7 @@
 @endsection
 @section('content')
     {{ Breadcrumbs::render('exercises.show', $exercise) }}
-    <h2>Задача : {{ $exercise->name }}</h2>
+    <h2>{{__('lang.exercise')}} : {{ $exercise->name }}</h2>
 {{--    <h2>JsON : {{ $exercise->attachments }}</h2>--}}
     <hr>
     <br>

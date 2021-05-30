@@ -2,7 +2,7 @@
 
 @section('content')
     {{ Breadcrumbs::render('lectures.show', $lecture) }}
-    <h2>Лекция : {{ $lecture->title }}</h2>
+    <h2>{{__('lang.lecture')}} : {{ $lecture->title }}</h2>
 
     <p>{!! $lecture->content !!}</p>
 @endsection

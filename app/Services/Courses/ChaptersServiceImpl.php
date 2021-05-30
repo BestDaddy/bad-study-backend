@@ -8,6 +8,7 @@ use App\Models\Chapter;
 use App\Models\Course;
 use App\Services\BaseServiceImpl;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Lang;
 
 class ChaptersServiceImpl  extends BaseServiceImpl implements ChaptersService
 {
@@ -34,10 +35,10 @@ class ChaptersServiceImpl  extends BaseServiceImpl implements ChaptersService
                     return  '<button
                          class=" btn btn-primary btn-sm btn-block "
                           data-id="'.$data->id.'"
-                          onclick="editExercise(event.target)"><i class="fas fa-edit" data-id="'.$data->id.'"></i> Изменить</button>';
+                          onclick="editExercise(event.target)"><i class="fas fa-edit" data-id="'.$data->id.'"></i> '.Lang::get('lang.edit').'</button>';
                 })
                 ->addColumn('more', function ($data){
-                    return '<a class="text-decoration-none"  href="/exercises/'.$data->id.'"><button class="btn btn-primary btn-sm btn-block">Подробнее</button></a>';
+                    return '<a class="text-decoration-none"  href="/exercises/'.$data->id.'"><button class="btn btn-primary btn-sm btn-block">'.Lang::get('lang.more').'</button></a>';
                 })
                 ->rawColumns(['more', 'edit'])
                 ->make(true);
@@ -52,10 +53,10 @@ class ChaptersServiceImpl  extends BaseServiceImpl implements ChaptersService
                     return  '<button
                          class=" btn btn-primary btn-sm btn-block "
                           data-id="'.$data->id.'"
-                          onclick="editLecture(event.target)"><i class="fas fa-edit" data-id="'.$data->id.'"></i> Изменить</button>';
+                          onclick="editLecture(event.target)"><i class="fas fa-edit" data-id="'.$data->id.'"></i> '.Lang::get('lang.edit').'</button>';
                 })
                 ->addColumn('more', function ($data){
-                    return '<a class="text-decoration-none"  href="/lectures/'.$data->id.'"><button class="btn btn-primary btn-sm btn-block">Подробнее</button></a>';
+                    return '<a class="text-decoration-none"  href="/lectures/'.$data->id.'"><button class="btn btn-primary btn-sm btn-block">'.Lang::get('lang.more').'</button></a>';
                 })
                 ->rawColumns(['more', 'edit'])
                 ->make(true);

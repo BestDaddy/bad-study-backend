@@ -29,7 +29,19 @@ return [
     'order' => 'Order',
 
     'chapters' => 'Chapters',
+    'chapter' => 'Chapter',
     'new_chapter' => 'Add chapter',
     'edit_chapter' =>'Edit chapter',
+
+    'labs' => 'Laboratory works ',
+    'exercise' => 'Exercise',
+    'edit_exercise' =>'Edit exercise',
+    'lectures' =>'Lectures',
+    'lecture' =>'Lecture',
+    'new_lecture' => 'Add lecture',
+    'edit_lecture' =>'Edit lecture',
+    'folder' =>'Folder',
+    'upload' => 'Upload',
+    'files' =>'Files',
 ];
 
