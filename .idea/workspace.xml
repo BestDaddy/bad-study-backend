@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4ab46e84-ab3e-4e26-ac9b-d274ec4ea08b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/Services/Users/UsersServiceImpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/Users/UsersServiceImpl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/en/lang.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/lang.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/ru/lang.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/ru/lang.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/users/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/users/index.blade.php" afterDir="false" />
-    </list>
+    <list default="true" id="4ab46e84-ab3e-4e26-ac9b-d274ec4ea08b" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -327,14 +322,7 @@
       <workItem from="1621789760343" duration="6687000" />
       <workItem from="1622135469339" duration="641000" />
       <workItem from="1622306890147" duration="7025000" />
-      <workItem from="1622368441949" duration="4582000" />
-    </task>
-    <task id="LOCAL-00058" summary="html fix&#10;migrations fix">
-      <created>1619014229196</created>
-      <option name="number" value="00058" />
-      <option name="presentableId" value="LOCAL-00058" />
-      <option name="project" value="LOCAL" />
-      <updated>1619014229196</updated>
+      <workItem from="1622368441949" duration="5418000" />
     </task>
     <task id="LOCAL-00059" summary="fix exercises attachments by folders">
       <created>1619019120208</created>
@@ -672,7 +660,14 @@
       <option name="project" value="LOCAL" />
       <updated>1622372831506</updated>
     </task>
-    <option name="localTasksCounter" value="107" />
+    <task id="LOCAL-00107" summary="lang user finished">
+      <created>1622373294249</created>
+      <option name="number" value="00107" />
+      <option name="presentableId" value="LOCAL-00107" />
+      <option name="project" value="LOCAL" />
+      <updated>1622373294249</updated>
+    </task>
+    <option name="localTasksCounter" value="108" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -692,7 +687,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="refresh token added" />
     <MESSAGE value="exercise validation fix" />
     <MESSAGE value="validation fix" />
     <MESSAGE value="file dowload fix" />
@@ -717,6 +711,7 @@
     <MESSAGE value="added lang course show" />
     <MESSAGE value="added lang course finished" />
     <MESSAGE value="fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix" />
+    <MESSAGE value="lang user finished" />
+    <option name="LAST_COMMIT_MESSAGE" value="lang user finished" />
   </component>
 </project>
