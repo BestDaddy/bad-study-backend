@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4ab46e84-ab3e-4e26-ac9b-d274ec4ea08b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-    </list>
+    <list default="true" id="4ab46e84-ab3e-4e26-ac9b-d274ec4ea08b" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -325,14 +323,7 @@
       <workItem from="1622135469339" duration="641000" />
       <workItem from="1622306890147" duration="7025000" />
       <workItem from="1622368441949" duration="5418000" />
-      <workItem from="1622386619247" duration="940000" />
-    </task>
-    <task id="LOCAL-00062" summary="exercise validation fix">
-      <created>1619187478585</created>
-      <option name="number" value="00062" />
-      <option name="presentableId" value="LOCAL-00062" />
-      <option name="project" value="LOCAL" />
-      <updated>1619187478585</updated>
+      <workItem from="1622386619247" duration="1050000" />
     </task>
     <task id="LOCAL-00063" summary="validation fix">
       <created>1619188404539</created>
@@ -670,7 +661,14 @@
       <option name="project" value="LOCAL" />
       <updated>1622387440141</updated>
     </task>
-    <option name="localTasksCounter" value="111" />
+    <task id="LOCAL-00111" summary="default language ru">
+      <created>1622387619230</created>
+      <option name="number" value="00111" />
+      <option name="presentableId" value="LOCAL-00111" />
+      <option name="project" value="LOCAL" />
+      <updated>1622387619230</updated>
+    </task>
+    <option name="localTasksCounter" value="112" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -690,7 +688,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="exercise validation fix" />
     <MESSAGE value="validation fix" />
     <MESSAGE value="file dowload fix" />
     <MESSAGE value="student answer files" />
@@ -715,6 +712,7 @@
     <MESSAGE value="added lang course finished" />
     <MESSAGE value="lang user finished" />
     <MESSAGE value="fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix" />
+    <MESSAGE value="default language ru" />
+    <option name="LAST_COMMIT_MESSAGE" value="default language ru" />
   </component>
 </project>
