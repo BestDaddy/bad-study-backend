@@ -50,10 +50,11 @@ class ExercisesController extends Controller
      */
     public function store(Request $request)
     {
+//        |unique:exercises,path,'. $request->input('id')
         $rules = array(
             'chapter_id' => 'required',
             'name'=> 'required',
-            'path' => 'required|unique:exercises,path,'. $request->input('id'),
+            'path' => 'required',
             'content'=> 'required',
             'order' => 'required'
         );
