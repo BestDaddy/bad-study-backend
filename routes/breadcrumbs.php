@@ -3,7 +3,7 @@ use DaveJamesMiller\Breadcrumbs\Facades\Breadcrumbs;
 
 //Courses
 Breadcrumbs::for('courses', function ($trail) {
-    $trail->push('Курсы', route('courses.index'));
+    $trail->push(__('lang.courses'), route('courses.index'));
 });
 
 Breadcrumbs::for('courses.show', function ($trail, $course) {
@@ -31,7 +31,7 @@ Breadcrumbs::for('lectures.show', function ($trail, $lecture) {
 //Groups
 
 Breadcrumbs::for('groups', function ($trail) {
-    $trail->push('Группы', route('groups.index'));
+    $trail->push(__('lang.groups'), route('groups.index'));
 });
 
 Breadcrumbs::for('groups.show', function ($trail, $group) {

@@ -11,7 +11,7 @@
 {{--    <meta name="description" content="">--}}
 {{--    <meta name="author" content="">--}}
 
-    <title>SB Admin 2</title>
+    <title>Know Admin</title>
 
 
     <!-- Custom fonts for this template -->
@@ -54,53 +54,53 @@
 {{--            <div class="sidebar-brand-icon rotate-n-15">--}}
 {{--                <i class="fas fa-laugh-wink"></i>--}}
 {{--            </div>--}}
-            <div class="sidebar-brand-text mx-3">Bad Study</div>
+            <div class="sidebar-brand-text mx-3">Know Study</div>
         </a>
 
         <!-- Divider -->
         <hr class="sidebar-divider my-0">
 
         <!-- Nav Item - Dashboard -->
-        <li class="nav-item active">
-            <a class="nav-link" href="#">
-                <i class="fas fa-fw fa-tachometer-alt"></i>
-                <span>Menu:</span></a>
-        </li>
+{{--        <li class="nav-item active">--}}
+{{--            <a class="nav-link" href="#">--}}
+{{--                <i class="fas fa-fw fa-tachometer-alt"></i>--}}
+{{--                <span>{{__('lang.menu')}}:</span></a>--}}
+{{--        </li>--}}
 
         <!-- Divider -->
         <hr class="sidebar-divider">
 
         <!-- Heading -->
         <div class="sidebar-heading">
-            Interface
+            {{__('lang.menu')}}
         </div>
         @if(Auth::user())
         @if(Auth::user()->role_id == 1)
         <li class="nav-item">
             <a class="nav-link" href="{{route('courses.index')}}">
                 <i class="fas fa-fw fa-book"></i>
-                <span>Курсы</span></a>
+                <span>{{__('lang.courses')}}</span></a>
         </li>
 
         <li class="nav-item">
             <a class="nav-link" href="{{route('groups.index')}}">
                 <i class="fas fa-fw fa-users"></i>
-                <span>Группы</span></a>
+                <span>{{__('lang.groups')}}</span></a>
         </li>
 
         <li class="nav-item">
             <a class="nav-link" href="{{route('users.index')}}">
                 <i class="fas fa-fw fa-user"></i>
-                <span>Пользователи</span></a>
+                <span>{{__('lang.users')}}</span></a>
         </li>
         <li class="nav-item">
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
                 <i class="fas fa-fw fa-folder"></i>
-                <span>Links</span>
+                <span>{{__('lang.links')}}</span>
             </a>
             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
-                    <a class="collapse-item" href="{{route('import.users.index')}}">Импорт</a>
+                    <a class="collapse-item" href="{{route('import.users.index')}}">{{__('lang.import')}}</a>
                     {{--                    <a class="nav-link"  href="{{route('import.users')}}">--}}
                     {{--                        <i class="fas fa-fw fa-file-import"></i>--}}
                     {{--                        <span>Import users</span>--}}
@@ -110,20 +110,7 @@
         </li>
         @endif
         @endif
-        <li class="nav-item">
-            <a class="nav-link" href="{{route('users.index')}}">
-                <i class="fas fa-fw fa-user"></i>
-                <span>{{ __('lang.welcome')}}</span></a>
-        </li>
-
-{{--        <li class="nav-item">--}}
-{{--            <a class="nav-link" href="{{route('cars.index')}}">--}}
-{{--                <i class="fas fa-fw fa-car"></i>--}}
-{{--                <span>Мои машины</span></a>--}}
-{{--        </li>--}}
         <!-- Nav Item - Pages Collapse Menu -->
-
-
         <hr class="sidebar-divider d-none d-md-block">
 
         <!-- Sidebar Toggler (Sidebar) -->
@@ -217,14 +204,6 @@
                                 <a class="dropdown-item" href="{{ url('/') }}">
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Profile
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Settings
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Activity Log
                                 </a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="{{ url('/logout') }}" data-toggle="modal" data-target="#logoutModal">

@@ -6,7 +6,7 @@
 
 @section('content')
     {{ Breadcrumbs::render('groups') }}
-    <h2>Все группы :</h2>
+    <h2>{{__('lang.all_groups')}} :</h2>
     <hr>
     <br>
     <div class="row" style="clear: both;">

@@ -8,6 +8,9 @@ return [
     'name' => 'English(en)',
 
     'all_courses' => 'All courses',
+    'all_groups' => 'All groups',
+    'all_users' => 'All users',
+    'courses' =>'Courses',
     'table_name' => 'Name',
     'new_course' => 'New course',
     'description' => 'Description',
@@ -16,5 +19,10 @@ return [
     'close' => 'Close',
     'edit' => 'Edit',
     'more' => 'More',
+    'menu' => 'Menu',
+    'groups' =>'Groups',
+    'users' =>'Users',
+    'links' =>'Links',
+    'import' => 'Import',
 ];
 

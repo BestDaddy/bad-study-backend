@@ -6,20 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="4ab46e84-ab3e-4e26-ac9b-d274ec4ea08b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/Student/CoursesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/Student/CoursesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Services/Courses/CoursesServiceImpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/Courses/CoursesServiceImpl.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/lang/en/lang.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/lang.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/lang/ru/lang.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/ru/lang.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/chapters/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/chapters/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/courses/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/courses/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/courses/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/courses/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/groups/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/groups/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/groups/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/groups/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/results/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/results/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/schedules/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/schedules/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/schedules/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/schedules/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/users/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/users/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/admin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/admin.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/breadcrumbs.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/breadcrumbs.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -337,14 +328,8 @@
       <workItem from="1621455541561" duration="5549000" />
       <workItem from="1621789760343" duration="6687000" />
       <workItem from="1622135469339" duration="641000" />
-      <workItem from="1622306890147" duration="6811000" />
-    </task>
-    <task id="LOCAL-00052" summary="test">
-      <created>1618933646299</created>
-      <option name="number" value="00052" />
-      <option name="presentableId" value="LOCAL-00052" />
-      <option name="project" value="LOCAL" />
-      <updated>1618933646299</updated>
+      <workItem from="1622306890147" duration="7025000" />
+      <workItem from="1622368441949" duration="619000" />
     </task>
     <task id="LOCAL-00053" summary="remove datatable">
       <created>1618934710065</created>
@@ -682,7 +667,14 @@
       <option name="project" value="LOCAL" />
       <updated>1622308807650</updated>
     </task>
-    <option name="localTasksCounter" value="101" />
+    <task id="LOCAL-00101" summary="fix">
+      <created>1622316109103</created>
+      <option name="number" value="00101" />
+      <option name="presentableId" value="LOCAL-00101" />
+      <option name="project" value="LOCAL" />
+      <updated>1622316109103</updated>
+    </task>
+    <option name="localTasksCounter" value="102" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

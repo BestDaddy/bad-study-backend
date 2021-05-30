@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-    <h2>Все пользователи</h2>
+    <h2>{{__('lang.all_users')}} :</h2>
     <hr>
     <br>
     <div class="row" style="clear: both;">
