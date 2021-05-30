@@ -11,7 +11,7 @@
     <br>
     <div class="row" style="clear: both;">
         <div class="col-12 text-right">
-            <a href="javascript:void(0)" class="btn btn-primary" data-toggle="modal"  onclick="add()"><i class="fas fa-plus-square"></i> Добавить курс</a>
+            <a href="javascript:void(0)" class="btn btn-primary" data-toggle="modal"  onclick="add()"><i class="fas fa-plus-square"></i> {{__('lang.add') .' '. __('lang.course') }}</a>
         </div>
     </div>
     <br>
@@ -87,7 +87,7 @@
     <script>
         function add() {
             $('#collapseExample').hide();
-            $('#staticBackdropLabel').text("Новый курс");
+            $('#staticBackdropLabel').text('{{ __('lang.new_course')}}');
             $('#form-errors').html("");
             $('#course_id').val('');
             $('#name').val('');
@@ -117,7 +117,7 @@
         function editCourse (event) {
             $('#collapseExample').show();
             $('#form-errors').html("");
-            $('#staticBackdropLabel').text("Редактировать курс");
+            $('#staticBackdropLabel').text("{{__('lang.edit') .' '. __('lang.course')}}");
 
             var id  = $(event).data("id");
             let _url = `courses/${id}/edit`;

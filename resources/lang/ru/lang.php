@@ -10,7 +10,9 @@ return [
     'all_courses' => 'Все курсы',
     'all_groups' => 'Все группы',
     'all_users' => 'Все пользователи',
+    'add' => 'Добавить',
     'courses' =>'Курсы',
+    'course' =>'Курс',
     'table_name' => 'Название',
     'new_course' => 'Новый курс',
     'description' => 'Описание',
@@ -24,6 +26,11 @@ return [
     'users' =>'Пользователи',
     'links' =>'Ссылки',
     'import' => 'Импорт',
+    'order' => 'Порядок',
+
+    'chapters' => 'Главы',
+    'new_chapter' => 'Добавить главу',
+    'edit_chapter' =>'Редактировать главу',
 
 ];
 

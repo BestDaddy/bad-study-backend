@@ -10,7 +10,9 @@ return [
     'all_courses' => 'All courses',
     'all_groups' => 'All groups',
     'all_users' => 'All users',
+    'add' => 'Add',
     'courses' =>'Courses',
+    'course' =>'Course',
     'table_name' => 'Name',
     'new_course' => 'New course',
     'description' => 'Description',
@@ -24,5 +26,10 @@ return [
     'users' =>'Users',
     'links' =>'Links',
     'import' => 'Import',
+    'order' => 'Order',
+
+    'chapters' => 'Chapters',
+    'new_chapter' => 'Add chapter',
+    'edit_chapter' =>'Edit chapter',
 ];
 

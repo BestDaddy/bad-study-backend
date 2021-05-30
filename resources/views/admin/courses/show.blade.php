@@ -6,12 +6,12 @@
 
 @section('content')
         {{ Breadcrumbs::render('courses.show', $course) }}
-    <h2>Главы курса : {{ $course->name }}</h2>
+    <h2>{{__('lang.chapters')}} : {{ $course->name }}</h2>
     <hr>
     <br>
     <div class="row" style="clear: both;">
         <div class="col-12 text-right">
-            <a href="javascript:void(0)" class="btn btn-primary" data-toggle="modal"  onclick="add()"><i class="fas fa-plus-square"></i> Добавить главу</a>
+            <a href="javascript:void(0)" class="btn btn-primary" data-toggle="modal"  onclick="add()"><i class="fas fa-plus-square"></i> {{__('lang.new_chapter') }}</a>
         </div>
     </div>
     <br>
@@ -20,8 +20,8 @@
             <thead>
             <tr>
                 <th width="5%">ID</th>
-                <th width="40%">Название</th>
-                <th width="10%">Порядок</th>
+                <th width="40%">{{__('lang.table_name')}}</th>
+                <th width="10%">{{__('lang.order')}}</th>
                 <th width="15%"></th>
                 <th width="15%"></th>
             </tr>
@@ -43,28 +43,28 @@
                     <form name="Form" class="form-horizontal">
                         <input type="hidden" name="chapter_id" id="chapter_id">
                         <div class="form-group">
-                            <label for="inputName">Название</label>
+                            <label for="inputName">{{ __('lang.table_name')}}</label>
                             <input type="text"
                                    class="form-control"
                                    id="name"
-                                   placeholder="Введите название"
+                                   placeholder="{{ __('lang.table_name')}}..."
                                    name="name">
                         </div>
                         <div class="form-group">
-                            <label for="inputPhone">Описание</label>
+                            <label for="inputPhone">{{ __('lang.description')}}</label>
                             <textarea class="form-control"
                                       id="description"
                                       name="description"
-                                      placeholder="Введите описание"
+                                      placeholder="{{ __('lang.description')}}..."
                                       rows="4">
                             </textarea>
                         </div>
                         <div class="form-group">
-                            <label for="inputPhone">Порядок</label>
+                            <label for="inputPhone">{{ __('lang.order')}}</label>
                             <input type="number" class="form-control"
                                       id="order"
                                       name="order"
-                                      placeholder="Введите Порядок">
+                                      placeholder="{{ __('lang.order')}}...">
                         </div>
                         <div class="form-group" id="form-errors">
                             <div class="alert alert-danger">
@@ -79,11 +79,11 @@
 
                     <div class="col">
                         <div  class="collapse" id="collapseExample">
-                            <button class="btn btn-danger" onclick="deleteChapter()"><i class="fas fa-trash"></i> Удалить</button>
+                            <button class="btn btn-danger" onclick="deleteChapter()"><i class="fas fa-trash"></i> {{ __('lang.delete')}}</button>
                         </div>
                     </div>
-                    <button class="btn btn-primary" onclick="save()">Сохранить</button>
-                    <button class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+                    <button class="btn btn-primary" onclick="save()">{{ __('lang.save')}}</button>
+                    <button class="btn btn-secondary" data-dismiss="modal">{{ __('lang.close')}}</button>
                 </div>
             </div>
         </div>
@@ -95,7 +95,7 @@
     <script>
         function add() {
             $('#collapseExample').hide();
-            $('#staticBackdropLabel').text("Новая глава");
+            $('#staticBackdropLabel').text("{{__('lang.new_chapter')}}");
             $('#form-errors').html("");
             $('#chapter_id').val('');
             $('#name').val('');
@@ -126,7 +126,7 @@
         function editChapter (event) {
             $('#collapseExample').show();
             $('#form-errors').html("");
-            $('#staticBackdropLabel').text("Редактировать главу");
+            $('#staticBackdropLabel').text("{{__('lang.edit_chapter')}}");
 
             var id  = $(event).data("id");
             let _url = `/chapters/${id}/edit`;
