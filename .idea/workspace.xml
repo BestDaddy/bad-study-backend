@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4ab46e84-ab3e-4e26-ac9b-d274ec4ea08b" name="Default Changelist" comment="" />
+    <list default="true" id="4ab46e84-ab3e-4e26-ac9b-d274ec4ea08b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/custom_php.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/.user.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user.ini" beforeDir="false" afterPath="$PROJECT_DIR$/user.ini" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -200,7 +204,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../backend" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -325,14 +329,7 @@
       <workItem from="1622368441949" duration="5418000" />
       <workItem from="1622386619247" duration="1050000" />
       <workItem from="1622394644358" duration="2994000" />
-      <workItem from="1622468848064" duration="2559000" />
-    </task>
-    <task id="LOCAL-00075" summary="teacher schedules index api">
-      <created>1619356324985</created>
-      <option name="number" value="00075" />
-      <option name="presentableId" value="LOCAL-00075" />
-      <option name="project" value="LOCAL" />
-      <updated>1619356324986</updated>
+      <workItem from="1622468848064" duration="3033000" />
     </task>
     <task id="LOCAL-00076" summary="teacher schedules exercises api">
       <created>1619359597304</created>
@@ -670,7 +667,14 @@
       <option name="project" value="LOCAL" />
       <updated>1622471337830</updated>
     </task>
-    <option name="localTasksCounter" value="124" />
+    <task id="LOCAL-00124" summary="25 mb file fix">
+      <created>1622471659549</created>
+      <option name="number" value="00124" />
+      <option name="presentableId" value="LOCAL-00124" />
+      <option name="project" value="LOCAL" />
+      <updated>1622471659549</updated>
+    </task>
+    <option name="localTasksCounter" value="125" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
