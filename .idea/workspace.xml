@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4ab46e84-ab3e-4e26-ac9b-d274ec4ea08b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="4ab46e84-ab3e-4e26-ac9b-d274ec4ea08b" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -327,20 +325,7 @@
       <workItem from="1622368441949" duration="5418000" />
       <workItem from="1622386619247" duration="1050000" />
       <workItem from="1622394644358" duration="2994000" />
-    </task>
-    <task id="LOCAL-00066" summary="status for exercise results">
-      <created>1619193659569</created>
-      <option name="number" value="00066" />
-      <option name="presentableId" value="LOCAL-00066" />
-      <option name="project" value="LOCAL" />
-      <updated>1619193659569</updated>
-    </task>
-    <task id="LOCAL-00067" summary="fix">
-      <created>1619194749082</created>
-      <option name="number" value="00067" />
-      <option name="presentableId" value="LOCAL-00067" />
-      <option name="project" value="LOCAL" />
-      <updated>1619194749082</updated>
+      <workItem from="1622468848064" duration="331000" />
     </task>
     <task id="LOCAL-00068" summary="lectures added">
       <created>1619252087094</created>
@@ -671,7 +656,21 @@
       <option name="project" value="LOCAL" />
       <updated>1622396594383</updated>
     </task>
-    <option name="localTasksCounter" value="115" />
+    <task id="LOCAL-00115" summary="25 mb file">
+      <created>1622468985316</created>
+      <option name="number" value="00115" />
+      <option name="presentableId" value="LOCAL-00115" />
+      <option name="project" value="LOCAL" />
+      <updated>1622468985316</updated>
+    </task>
+    <task id="LOCAL-00116" summary="25 mb file fix">
+      <created>1622469058357</created>
+      <option name="number" value="00116" />
+      <option name="presentableId" value="LOCAL-00116" />
+      <option name="project" value="LOCAL" />
+      <updated>1622469058357</updated>
+    </task>
+    <option name="localTasksCounter" value="117" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -691,8 +690,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="file dowload fix" />
-    <MESSAGE value="student answer files" />
     <MESSAGE value="status for exercise results" />
     <MESSAGE value="lectures added" />
     <MESSAGE value="api lectures added" />
@@ -716,6 +713,8 @@
     <MESSAGE value="fix" />
     <MESSAGE value="default language ru" />
     <MESSAGE value="heroku" />
-    <option name="LAST_COMMIT_MESSAGE" value="heroku" />
+    <MESSAGE value="25 mb file" />
+    <MESSAGE value="25 mb file fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="25 mb file fix" />
   </component>
 </project>
