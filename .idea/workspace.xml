@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4ab46e84-ab3e-4e26-ac9b-d274ec4ea08b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Procfile" beforeDir="false" afterPath="$PROJECT_DIR$/Procfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/user.ini" beforeDir="false" afterPath="$PROJECT_DIR$/public/.user.ini" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -327,14 +328,7 @@
       <workItem from="1622368441949" duration="5418000" />
       <workItem from="1622386619247" duration="1050000" />
       <workItem from="1622394644358" duration="2994000" />
-      <workItem from="1622468848064" duration="1360000" />
-    </task>
-    <task id="LOCAL-00072" summary="lab by git">
-      <created>1619292234495</created>
-      <option name="number" value="00072" />
-      <option name="presentableId" value="LOCAL-00072" />
-      <option name="project" value="LOCAL" />
-      <updated>1619292234495</updated>
+      <workItem from="1622468848064" duration="2259000" />
     </task>
     <task id="LOCAL-00073" summary="asdf">
       <created>1619294403781</created>
@@ -672,7 +666,14 @@
       <option name="project" value="LOCAL" />
       <updated>1622469965297</updated>
     </task>
-    <option name="localTasksCounter" value="121" />
+    <task id="LOCAL-00121" summary="25 mb file fix">
+      <created>1622470233399</created>
+      <option name="number" value="00121" />
+      <option name="presentableId" value="LOCAL-00121" />
+      <option name="project" value="LOCAL" />
+      <updated>1622470233399</updated>
+    </task>
+    <option name="localTasksCounter" value="122" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
