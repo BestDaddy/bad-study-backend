@@ -5,8 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4ab46e84-ab3e-4e26-ac9b-d274ec4ea08b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/.user.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Procfile" beforeDir="false" afterPath="$PROJECT_DIR$/Procfile" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -328,14 +327,7 @@
       <workItem from="1622368441949" duration="5418000" />
       <workItem from="1622386619247" duration="1050000" />
       <workItem from="1622394644358" duration="2994000" />
-      <workItem from="1622468848064" duration="1041000" />
-    </task>
-    <task id="LOCAL-00071" summary="teacher groups index api">
-      <created>1619290760903</created>
-      <option name="number" value="00071" />
-      <option name="presentableId" value="LOCAL-00071" />
-      <option name="project" value="LOCAL" />
-      <updated>1619290760903</updated>
+      <workItem from="1622468848064" duration="1360000" />
     </task>
     <task id="LOCAL-00072" summary="lab by git">
       <created>1619292234495</created>
@@ -673,7 +665,14 @@
       <option name="project" value="LOCAL" />
       <updated>1622469680325</updated>
     </task>
-    <option name="localTasksCounter" value="120" />
+    <task id="LOCAL-00120" summary="25 mb file fix">
+      <created>1622469965297</created>
+      <option name="number" value="00120" />
+      <option name="presentableId" value="LOCAL-00120" />
+      <option name="project" value="LOCAL" />
+      <updated>1622469965297</updated>
+    </task>
+    <option name="localTasksCounter" value="121" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
