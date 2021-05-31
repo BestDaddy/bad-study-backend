@@ -325,21 +325,7 @@
       <workItem from="1622368441949" duration="5418000" />
       <workItem from="1622386619247" duration="1050000" />
       <workItem from="1622394644358" duration="2994000" />
-      <workItem from="1622468848064" duration="331000" />
-    </task>
-    <task id="LOCAL-00068" summary="lectures added">
-      <created>1619252087094</created>
-      <option name="number" value="00068" />
-      <option name="presentableId" value="LOCAL-00068" />
-      <option name="project" value="LOCAL" />
-      <updated>1619252087094</updated>
-    </task>
-    <task id="LOCAL-00069" summary="api lectures added">
-      <created>1619252299211</created>
-      <option name="number" value="00069" />
-      <option name="presentableId" value="LOCAL-00069" />
-      <option name="project" value="LOCAL" />
-      <updated>1619252299211</updated>
+      <workItem from="1622468848064" duration="680000" />
     </task>
     <task id="LOCAL-00070" summary="api lectures added">
       <created>1619289457301</created>
@@ -670,7 +656,21 @@
       <option name="project" value="LOCAL" />
       <updated>1622469058357</updated>
     </task>
-    <option name="localTasksCounter" value="117" />
+    <task id="LOCAL-00117" summary="25 mb file fix">
+      <created>1622469216780</created>
+      <option name="number" value="00117" />
+      <option name="presentableId" value="LOCAL-00117" />
+      <option name="project" value="LOCAL" />
+      <updated>1622469216780</updated>
+    </task>
+    <task id="LOCAL-00118" summary="25 mb file fix">
+      <created>1622469436257</created>
+      <option name="number" value="00118" />
+      <option name="presentableId" value="LOCAL-00118" />
+      <option name="project" value="LOCAL" />
+      <updated>1622469436257</updated>
+    </task>
+    <option name="localTasksCounter" value="119" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
