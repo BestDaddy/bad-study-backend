@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4ab46e84-ab3e-4e26-ac9b-d274ec4ea08b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/user.ini" beforeDir="false" afterPath="$PROJECT_DIR$/public/.user.ini" afterDir="false" />
-    </list>
+    <list default="true" id="4ab46e84-ab3e-4e26-ac9b-d274ec4ea08b" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -217,18 +214,18 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\User\PhpstormProjects\bad-study-backend" />
       <recent name="C:\Users\User\PhpstormProjects\bad-study-backend\public\Build" />
       <recent name="C:\Users\User\PhpstormProjects\bad-study-backend\public\Build\exercise1" />
       <recent name="C:\Users\User\PhpstormProjects\bad-study-backend\public\vendor" />
       <recent name="C:\Users\User\PhpstormProjects\bad-study-backend\public" />
-      <recent name="C:\xampp\htdocs\bad-study\database\seeds" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\User\PhpstormProjects\bad-study-backend\public" />
+      <recent name="C:\Users\User\PhpstormProjects\bad-study-backend" />
       <recent name="C:\Users\User\PhpstormProjects\bad-study-backend\public\Build\exercise1" />
       <recent name="C:\Users\User\PhpstormProjects\bad-study-backend\storage\app\public\test" />
       <recent name="C:\Users\User\PhpstormProjects\bad-study-backend\public\vendor\datatables" />
-      <recent name="C:\Users\User\PhpstormProjects\bad-study-backend\resources\views" />
-      <recent name="C:\xampp\htdocs\bad-study\app\Http\Requests\Api\Auth" />
     </key>
   </component>
   <component name="RunManager">
@@ -328,21 +325,7 @@
       <workItem from="1622368441949" duration="5418000" />
       <workItem from="1622386619247" duration="1050000" />
       <workItem from="1622394644358" duration="2994000" />
-      <workItem from="1622468848064" duration="2259000" />
-    </task>
-    <task id="LOCAL-00073" summary="asdf">
-      <created>1619294403781</created>
-      <option name="number" value="00073" />
-      <option name="presentableId" value="LOCAL-00073" />
-      <option name="project" value="LOCAL" />
-      <updated>1619294403781</updated>
-    </task>
-    <task id="LOCAL-00074" summary="teacher show api">
-      <created>1619338639096</created>
-      <option name="number" value="00074" />
-      <option name="presentableId" value="LOCAL-00074" />
-      <option name="project" value="LOCAL" />
-      <updated>1619338639096</updated>
+      <workItem from="1622468848064" duration="2559000" />
     </task>
     <task id="LOCAL-00075" summary="teacher schedules index api">
       <created>1619356324985</created>
@@ -673,7 +656,21 @@
       <option name="project" value="LOCAL" />
       <updated>1622470233399</updated>
     </task>
-    <option name="localTasksCounter" value="122" />
+    <task id="LOCAL-00122" summary="25 mb file fix">
+      <created>1622471187312</created>
+      <option name="number" value="00122" />
+      <option name="presentableId" value="LOCAL-00122" />
+      <option name="project" value="LOCAL" />
+      <updated>1622471187312</updated>
+    </task>
+    <task id="LOCAL-00123" summary="25 mb file fix">
+      <created>1622471337830</created>
+      <option name="number" value="00123" />
+      <option name="presentableId" value="LOCAL-00123" />
+      <option name="project" value="LOCAL" />
+      <updated>1622471337830</updated>
+    </task>
+    <option name="localTasksCounter" value="124" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
