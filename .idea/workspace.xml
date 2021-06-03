@@ -4,18 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4ab46e84-ab3e-4e26-ac9b-d274ec4ea08b" name="Default Changelist" comment="25 mb file fix">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/Student/CoursesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/Student/CoursesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/Student/ExercisesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/Student/ExercisesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Resources/ChapterResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/ChapterResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Resources/ExerciseResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/ExerciseResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Chapter.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Chapter.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Exercise.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Exercise.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/en/lang.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/lang.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/ru/lang.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/ru/lang.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
-    </list>
+    <list default="true" id="4ab46e84-ab3e-4e26-ac9b-d274ec4ea08b" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -338,14 +327,7 @@
       <workItem from="1622394644358" duration="2994000" />
       <workItem from="1622468848064" duration="3822000" />
       <workItem from="1622482457352" duration="838000" />
-      <workItem from="1622736993746" duration="3196000" />
-    </task>
-    <task id="LOCAL-00079" summary="user results">
-      <created>1619362925513</created>
-      <option name="number" value="00079" />
-      <option name="presentableId" value="LOCAL-00079" />
-      <option name="project" value="LOCAL" />
-      <updated>1619362925513</updated>
+      <workItem from="1622736993746" duration="3726000" />
     </task>
     <task id="LOCAL-00080" summary="multiple file upload">
       <created>1619536464713</created>
@@ -683,7 +665,14 @@
       <option name="project" value="LOCAL" />
       <updated>1622472161548</updated>
     </task>
-    <option name="localTasksCounter" value="128" />
+    <task id="LOCAL-00128" summary="asdf">
+      <created>1622740430128</created>
+      <option name="number" value="00128" />
+      <option name="presentableId" value="LOCAL-00128" />
+      <option name="project" value="LOCAL" />
+      <updated>1622740430128</updated>
+    </task>
+    <option name="localTasksCounter" value="129" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -708,7 +697,6 @@
     <MESSAGE value="api lectures added" />
     <MESSAGE value="teacher groups index api" />
     <MESSAGE value="lab by git" />
-    <MESSAGE value="asdf" />
     <MESSAGE value="teacher show api" />
     <MESSAGE value="teacher schedules index api" />
     <MESSAGE value="teacher schedules exercises api" />
@@ -728,6 +716,7 @@
     <MESSAGE value="heroku" />
     <MESSAGE value="25 mb file" />
     <MESSAGE value="25 mb file fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="25 mb file fix" />
+    <MESSAGE value="asdf" />
+    <option name="LAST_COMMIT_MESSAGE" value="asdf" />
   </component>
 </project>
