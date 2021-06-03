@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4ab46e84-ab3e-4e26-ac9b-d274ec4ea08b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/nginx_app.conf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -330,13 +331,7 @@
       <workItem from="1622468848064" duration="3822000" />
       <workItem from="1622482457352" duration="838000" />
       <workItem from="1622736993746" duration="9301000" />
-    </task>
-    <task id="LOCAL-00086" summary="fix">
-      <created>1620317861762</created>
-      <option name="number" value="00086" />
-      <option name="presentableId" value="LOCAL-00086" />
-      <option name="project" value="LOCAL" />
-      <updated>1620317861762</updated>
+      <workItem from="1622748319234" duration="780000" />
     </task>
     <task id="LOCAL-00087" summary="fix">
       <created>1620318159771</created>
@@ -674,7 +669,14 @@
       <option name="project" value="LOCAL" />
       <updated>1622742923773</updated>
     </task>
-    <option name="localTasksCounter" value="135" />
+    <task id="LOCAL-00135" summary="cors remove">
+      <created>1622748613664</created>
+      <option name="number" value="00135" />
+      <option name="presentableId" value="LOCAL-00135" />
+      <option name="project" value="LOCAL" />
+      <updated>1622748613664</updated>
+    </task>
+    <option name="localTasksCounter" value="136" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -694,7 +696,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="status for exercise results" />
     <MESSAGE value="lectures added" />
     <MESSAGE value="api lectures added" />
     <MESSAGE value="teacher groups index api" />
@@ -719,6 +720,7 @@
     <MESSAGE value="25 mb file" />
     <MESSAGE value="25 mb file fix" />
     <MESSAGE value="asdf" />
-    <option name="LAST_COMMIT_MESSAGE" value="asdf" />
+    <MESSAGE value="cors remove" />
+    <option name="LAST_COMMIT_MESSAGE" value="cors remove" />
   </component>
 </project>
