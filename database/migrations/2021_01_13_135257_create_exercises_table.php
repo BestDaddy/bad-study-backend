@@ -20,7 +20,7 @@ class CreateExercisesTable extends Migration
                 ->onDelete('cascade');
             $table->string('name');
             $table->text('content')->nullable();
-            $table->string('path', 255)->unique()->nullable();
+            $table->string('path', 150)->unique()->nullable();
             $table->unsignedSmallInteger('order');
             $table->timestamps();
         });
