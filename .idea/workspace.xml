@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4ab46e84-ab3e-4e26-ac9b-d274ec4ea08b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/nginx_app.conf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="4ab46e84-ab3e-4e26-ac9b-d274ec4ea08b" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -331,21 +328,7 @@
       <workItem from="1622468848064" duration="3822000" />
       <workItem from="1622482457352" duration="838000" />
       <workItem from="1622736993746" duration="9301000" />
-      <workItem from="1622748319234" duration="780000" />
-    </task>
-    <task id="LOCAL-00087" summary="fix">
-      <created>1620318159771</created>
-      <option name="number" value="00087" />
-      <option name="presentableId" value="LOCAL-00087" />
-      <option name="project" value="LOCAL" />
-      <updated>1620318159771</updated>
-    </task>
-    <task id="LOCAL-00088" summary="fix">
-      <created>1620318840201</created>
-      <option name="number" value="00088" />
-      <option name="presentableId" value="LOCAL-00088" />
-      <option name="project" value="LOCAL" />
-      <updated>1620318840201</updated>
+      <workItem from="1622748319234" duration="1090000" />
     </task>
     <task id="LOCAL-00089" summary="fix">
       <created>1620319166393</created>
@@ -676,7 +659,21 @@
       <option name="project" value="LOCAL" />
       <updated>1622748613664</updated>
     </task>
-    <option name="localTasksCounter" value="136" />
+    <task id="LOCAL-00136" summary="kekw">
+      <created>1622749203052</created>
+      <option name="number" value="00136" />
+      <option name="presentableId" value="LOCAL-00136" />
+      <option name="project" value="LOCAL" />
+      <updated>1622749203052</updated>
+    </task>
+    <task id="LOCAL-00137" summary="kekw">
+      <created>1622749359795</created>
+      <option name="number" value="00137" />
+      <option name="presentableId" value="LOCAL-00137" />
+      <option name="project" value="LOCAL" />
+      <updated>1622749359795</updated>
+    </task>
+    <option name="localTasksCounter" value="138" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -696,7 +693,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="lectures added" />
     <MESSAGE value="api lectures added" />
     <MESSAGE value="teacher groups index api" />
     <MESSAGE value="lab by git" />
@@ -721,6 +717,7 @@
     <MESSAGE value="25 mb file fix" />
     <MESSAGE value="asdf" />
     <MESSAGE value="cors remove" />
-    <option name="LAST_COMMIT_MESSAGE" value="cors remove" />
+    <MESSAGE value="kekw" />
+    <option name="LAST_COMMIT_MESSAGE" value="kekw" />
   </component>
 </project>
