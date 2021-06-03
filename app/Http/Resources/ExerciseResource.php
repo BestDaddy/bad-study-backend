@@ -25,6 +25,10 @@ class ExerciseResource extends JsonResource
                 $this->relationLoaded('attachments'),
                 AttachmentResource::collection($this->attachments)
             ),
+            'attachment' => $this->when(
+                $this->relationLoaded('attachment'),
+                AttachmentResource::make($this->attachment)
+            ),
             'results_count' => $this->when(
                 $this->results_count,
                 $this->results_count

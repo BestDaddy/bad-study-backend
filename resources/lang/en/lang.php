@@ -52,5 +52,7 @@ return [
     'role' => 'Role',
     'password' => 'Password',
     'show' => 'Show',
+
+    'new_group' => 'Добавить группу',
 ];
 

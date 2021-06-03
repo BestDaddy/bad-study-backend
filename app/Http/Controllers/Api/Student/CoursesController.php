@@ -8,9 +8,11 @@ use App\Http\Controllers\ApiBaseController;
 use App\Http\Requests\Api\Course\ExerciseResultStoreApiRequest;
 use App\Http\Resources\CourseResource;
 
+use App\Http\Resources\LectureResource;
 use App\Http\Resources\ScheduleResource;
 use App\Models\Course;
 use App\Models\GroupCourse;
+use App\Models\Lecture;
 use App\Services\Courses\CoursesService;
 use App\Services\Courses\ExerciseResultsService;
 use App\Services\Groups\SchedulesService;
@@ -72,7 +74,10 @@ class CoursesController extends ApiBaseController
                 $q->where('group_id', $user_course_group->group_id);
             },
             'groupCourse.teacher',
-            'groupCourse.schedules.chapter',
+            'groupCourse.schedules',
+            'groupCourse.schedules.chapter.exercises' => function($q){
+//                $q->select('exercises.*',);
+            },
             'groupCourse.schedules.attendance' => function($q) use($user_course_group){
                 $q->where('user_id', $user_course_group->user_id);
             },
@@ -118,5 +123,11 @@ class CoursesController extends ApiBaseController
         ]);
 
         return $this->successResponse(ScheduleResource::make($schedule));
+    }
+
+    public function lectureShow($id){
+        return $this->successResponse(
+            LectureResource::make(Lecture::findOrFail($id))
+        );
     }
 }

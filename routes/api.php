@@ -45,6 +45,8 @@ Route::group(['namespace' => 'Api'], function () {
 
         Route::get('/schedules/{id}', 'CoursesController@scheduleShow');
 
+        Route::get('/lectures/{id}', 'CoursesController@lectureShow');
+
         Route::get('/exercises', 'ExercisesController@index'); // all available exercises
 
         Route::get('/exercises/{id}', 'ExercisesController@show');

@@ -25,4 +25,8 @@ class Exercise extends Model
     public function attachments(){
         return $this->morphMany(Attachment::class, 'model');
     }
+
+    public function attachment(){
+        return $this->morphOne(Attachment::class, 'model');
+    }
 }
