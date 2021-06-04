@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4ab46e84-ab3e-4e26-ac9b-d274ec4ea08b" name="Default Changelist" comment="" />
+    <list default="true" id="4ab46e84-ab3e-4e26-ac9b-d274ec4ea08b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/Cors.php" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -328,14 +332,8 @@
       <workItem from="1622468848064" duration="3822000" />
       <workItem from="1622482457352" duration="838000" />
       <workItem from="1622736993746" duration="9301000" />
-      <workItem from="1622748319234" duration="3274000" />
-    </task>
-    <task id="LOCAL-00101" summary="fix">
-      <created>1622316109103</created>
-      <option name="number" value="00101" />
-      <option name="presentableId" value="LOCAL-00101" />
-      <option name="project" value="LOCAL" />
-      <updated>1622316109103</updated>
+      <workItem from="1622748319234" duration="3943000" />
+      <workItem from="1622815016840" duration="906000" />
     </task>
     <task id="LOCAL-00102" summary="added lang">
       <created>1622369207689</created>
@@ -673,7 +671,14 @@
       <option name="project" value="LOCAL" />
       <updated>1622751512441</updated>
     </task>
-    <option name="localTasksCounter" value="150" />
+    <task id="LOCAL-00150" summary="kekw12">
+      <created>1622751684174</created>
+      <option name="number" value="00150" />
+      <option name="presentableId" value="LOCAL-00150" />
+      <option name="project" value="LOCAL" />
+      <updated>1622751684174</updated>
+    </task>
+    <option name="localTasksCounter" value="151" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -693,7 +698,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="teacher groups index api" />
     <MESSAGE value="lab by git" />
     <MESSAGE value="teacher show api" />
     <MESSAGE value="teacher schedules index api" />
@@ -718,6 +722,7 @@
     <MESSAGE value="cors remove" />
     <MESSAGE value="kekw" />
     <MESSAGE value="kekw1" />
-    <option name="LAST_COMMIT_MESSAGE" value="kekw1" />
+    <MESSAGE value="kekw12" />
+    <option name="LAST_COMMIT_MESSAGE" value="kekw12" />
   </component>
 </project>
