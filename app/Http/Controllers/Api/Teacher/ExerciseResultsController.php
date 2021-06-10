@@ -7,6 +7,7 @@ namespace App\Http\Controllers\Api\Teacher;
 use App\Events\ExerciseResultScored;
 use App\Http\Controllers\ApiBaseController;
 use App\Http\Requests\Api\Course\ExerciseResultUpdateApiRequest;
+use App\Http\Resources\ExerciseResultResource;
 use App\Models\ExerciseResult;
 use App\Services\Courses\ExerciseResultsService;
 use Carbon\Carbon;
@@ -21,7 +22,11 @@ class ExerciseResultsController extends ApiBaseController
     }
 
     public function edit($id){
-        return $this->successResponse($this->exerciseResultsService->findWith($id, ['user', 'attachments']));
+        return $this->successResponse(
+            ExerciseResultResource::make(
+                $this->exerciseResultsService->findWith($id, ['user', 'attachments'])
+            )
+        );
     }
 
     public function update(ExerciseResultUpdateApiRequest $request){

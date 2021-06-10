@@ -21,6 +21,7 @@ class ExerciseResultResource extends JsonResource
             'value' => $this->value,
             'comment'=> $this->comment,
             'checked_at'=> Carbon::parse($this->checked_at)->diffForHumans(),
+            'submited_at' =>Carbon::parse($this->checked_at)->format('d M H:i '),
             'updated_at'=> Carbon::parse($this->updated_at)->diffForHumans(),
             'attachments' => $this->when(
                 $this->relationLoaded('attachments'),
