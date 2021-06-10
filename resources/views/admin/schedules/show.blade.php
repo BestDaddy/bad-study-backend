@@ -6,8 +6,8 @@
 
 @section('content')
         {{ Breadcrumbs::render('schedules.show', $group, $course, $schedule) }}
-    <h2>Глава : {{$schedule->chapter->name}}</h2>
-    <h4>Урок на : {{$schedule->starts_at}}</h4>
+    <h2>{{__('lang.chapter')}} : {{$schedule->chapter->name}}</h2>
+    <h4>{{__('lang.schedule_on')}} : {{$schedule->starts_at}}</h4>
     <hr>
     <br>
     <div class="table-responsive">
@@ -15,8 +15,8 @@
             <thead>
             <tr>
                 <th width="5%">ID</th>
-                <th width="65%">Студент</th>
-                <th width="15%">Присутствовал</th>
+                <th width="65%">{{__('lang.student')}}</th>
+                <th width="15%">{{__('lang.attendant')}}</th>
                 <th width="15%"></th>
             </tr>
             </thead>

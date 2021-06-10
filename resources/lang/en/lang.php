@@ -68,5 +68,15 @@ return [
     'edit_schedule' =>'Edit schedule',
 
     'student' => 'Student',
+    'schedule_on' =>'Time',
+    'attendant' =>'Attendant',
+
+    'answers_of' => 'Answers of',
+    'exercise_1' =>'Exercise',
+    'score' =>'Score',
+    'comment' => 'Comment',
+
+    'answers' =>'Answers',
+    'make_score' =>'Score',
 ];
 

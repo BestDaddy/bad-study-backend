@@ -68,5 +68,15 @@ return [
     'edit_schedule' =>'Редактировать раписание',
 
     'student' => 'Студент',
+    'schedule_on' =>'Урок на',
+    'attendant' =>'Присутствовал',
+
+    'answers_of' => 'Ответы студента',
+    'exercise_1' =>'Задача',
+    'score' =>'Оценка',
+    'comment' => 'Коммент',
+
+    'answers' =>'Ответы',
+    'make_score' =>'Оценить',
 ];
 

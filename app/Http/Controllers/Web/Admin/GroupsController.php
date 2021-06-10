@@ -13,6 +13,7 @@ use App\Services\Groups\GroupsService;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Lang;
 use Illuminate\Support\Facades\Validator;
 
 class GroupsController extends Controller
@@ -84,10 +85,10 @@ class GroupsController extends Controller
                          class=" btn btn-danger btn-sm btn-block "
                          data-id="'.$data->course_id.'"
                          data-course_id="'.$data->course_id.'"
-                         onclick="removeCourse(event.target)"><i class="fas fa-trash"  data-id="'.$data->course_id.'" data-course_id="'.$data->course_id.'"></i> Удалить</button>';
+                         onclick="removeCourse(event.target)"><i class="fas fa-trash"  data-id="'.$data->course_id.'" data-course_id="'.$data->course_id.'"></i> '.Lang::get('lang.delete').'</button>';
                 })
                 ->addColumn('more', function ($data) use ($group) {
-                    return '<a class="text-decoration-none"  href="/groups/'.$group->id.'/courses/'. $data->course_id.'/schedules"><button class="btn btn-primary btn-sm btn-block">Подробнее</button></a>';
+                    return '<a class="text-decoration-none"  href="/groups/'.$group->id.'/courses/'. $data->course_id.'/schedules"><button class="btn btn-primary btn-sm btn-block">'.Lang::get('lang.more').'</button></a>';
                 })
                 ->rawColumns(['more', 'delete'])
                 ->make(true);
@@ -136,7 +137,7 @@ class GroupsController extends Controller
                 $query->select('course_id')->from('group_course')->where('group_course.group_id', $id);
             })->latest()->get())
             ->addColumn('add', function ($data){
-                return '<button  id="'.$data->id.'" class="btn btn-primary btn-sm btn-block" data-id="'.$data->id.'"  onclick="addCourse(event.target)"><i class="fas fa-plus" data-id="'.$data->id.'"></i> Добавить</button>';
+                return '<button  id="'.$data->id.'" class="btn btn-primary btn-sm btn-block" data-id="'.$data->id.'"  onclick="addCourse(event.target)"><i class="fas fa-plus" data-id="'.$data->id.'"></i> '.Lang::get('lang.edit').'</button>';
             })
             ->rawColumns(['add'])
             ->make(true);
@@ -149,7 +150,7 @@ class GroupsController extends Controller
                     ->get()->pluck('user_id')
             )->latest()->get())
             ->addColumn('add', function ($data){
-                return '<button  id="'.$data->id.'" class="btn btn-primary btn-sm btn-block" data-id="'.$data->id.'"  onclick="addUser(event.target)"><i class="fas fa-plus" data-id="'.$data->id.'"></i> Добавить</button>';
+                return '<button  id="'.$data->id.'" class="btn btn-primary btn-sm btn-block" data-id="'.$data->id.'"  onclick="addUser(event.target)"><i class="fas fa-plus" data-id="'.$data->id.'"></i> '.Lang::get('lang.add').'</button>';
             })
             ->rawColumns(['add'])
             ->make(true);
@@ -158,7 +159,7 @@ class GroupsController extends Controller
     public function getStudents($id){
         return datatables()->of( Group::findOrFail($id)->users()->latest()->get())
             ->addColumn('delete', function ($data){
-                return '<button  id="'.$data->id.'" class="btn btn-danger btn-sm btn-block" data-id="'.$data->id.'"  onclick="removeUser(event.target)"><i class="fas fa-trash" data-id="'.$data->id.'"></i> Удалить</button>';
+                return '<button  id="'.$data->id.'" class="btn btn-danger btn-sm btn-block" data-id="'.$data->id.'"  onclick="removeUser(event.target)"><i class="fas fa-trash" data-id="'.$data->id.'"></i> '.Lang::get('lang.delete').'</button>';
             })
             ->rawColumns(['delete'])
             ->make(true);

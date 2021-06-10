@@ -11,6 +11,7 @@ use App\Models\Schedule;
 use App\Models\User;
 use App\Services\BaseServiceImpl;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Lang;
 
 class SchedulesServiceImpl extends BaseServiceImpl implements SchedulesService
 {
@@ -26,10 +27,10 @@ class SchedulesServiceImpl extends BaseServiceImpl implements SchedulesService
                     return  '<button
                          class=" btn btn-primary btn-sm btn-block "
                           data-id="'.$data->id.'"
-                          onclick="editSchedule(event.target)"><i class="fas fa-edit" data-id="'.$data->id.'"></i> Изменить</button>';
+                          onclick="editSchedule(event.target)"><i class="fas fa-edit" data-id="'.$data->id.'"></i> '.Lang::get('lang.edit').'</button>';
                 })
                 ->addColumn('more', function ($data) use ($group_course) {
-                    return '<a class="text-decoration-none"  href="/groups/'.$group_course->group_id.'/courses/'. $group_course->course_id.'/schedules/'. $data->id.'"><button class="btn btn-primary btn-sm btn-block">Подробнее</button></a>';
+                    return '<a class="text-decoration-none"  href="/groups/'.$group_course->group_id.'/courses/'. $group_course->course_id.'/schedules/'. $data->id.'"><button class="btn btn-primary btn-sm btn-block">'.Lang::get('lang.more').'</button></a>';
                 })
                 ->rawColumns(['more', 'edit'])
                 ->make(true);
@@ -86,7 +87,7 @@ class SchedulesServiceImpl extends BaseServiceImpl implements SchedulesService
                     return $data->user->first_name . ' ' .  $data->user->last_name;
                 })
                 ->addColumn('results', function ($data){
-                    return '<a class="text-decoration-none"  href="/schedules/'. $data->schedule_id .'/users/'. $data->user_id.'"><button class="btn btn-primary btn-sm btn-block">Ответы</button></a>';
+                    return '<a class="text-decoration-none"  href="/schedules/'. $data->schedule_id .'/users/'. $data->user_id.'"><button class="btn btn-primary btn-sm btn-block">'.Lang::get('lang.answers').'</button></a>';
                 })
                 ->rawColumns(['change', 'full_name', 'results'])
                 ->make(true);
@@ -105,7 +106,7 @@ class SchedulesServiceImpl extends BaseServiceImpl implements SchedulesService
                     return  '<button
                          class=" btn btn-primary btn-sm btn-block "
                           data-id="'.$data->id.'"
-                          onclick="editAnswer(event.target)"><i class="fas fa-edit" data-id="'.$data->id.'"></i> Оценить</button>';
+                          onclick="editAnswer(event.target)"><i class="fas fa-edit" data-id="'.$data->id.'"></i> '.Lang::get('lang.make_score').'</button>';
                 })
                 ->rawColumns(['edit'])
                 ->make(true);

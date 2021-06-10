@@ -6,8 +6,8 @@
 
 @section('content')
         {{ Breadcrumbs::render('schedules.user.results', $schedule, $user) }}
-    <h2>Ответы студента : {{$user->fullName()}}</h2>
-    <h4>Глава : {{$schedule->chapter->name}}</h4>
+    <h2>{{__('lang.answers_of')}} : {{$user->fullName()}}</h2>
+    <h4>{{__('lang.chapter')}} : {{$schedule->chapter->name}}</h4>
     <hr>
     <br>
     <br>
@@ -16,9 +16,9 @@
             <thead>
             <tr>
                 <th width="5%">ID</th>
-                <th width="50%">Задача</th>
-                <th width="15%">Порядок</th>
-                <th width="15%">Оценка</th>
+                <th width="50%">{{__('lang.exercise_1')}}</th>
+                <th width="15%">{{__('lang.order')}}</th>
+                <th width="15%">{{__('lang.score')}}</th>
                 <th width="15%"></th>
             </tr>
             </thead>
@@ -30,7 +30,7 @@
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="student_name">Студент: </h5>
+                    <h5 class="modal-title" id="student_name">{{__('lang.student')}}: </h5>
 
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
@@ -44,17 +44,17 @@
                             <textarea class="form-control" id="exercise_content" name="exercise_content" readonly></textarea>
                         </div>
                         <div class="form-group">
-                            <label for="value">Ответ</label>
+                            <label for="value">{{__('lang.student')}}</label>
                             <textarea class="form-control" id="value" name="value" readonly></textarea>
                         </div>
                         <div class="row">
                             <div class="col">
-                                <label for="comment">Коммент</label>
+                                <label for="comment">{{__('lang.comment')}}</label>
                                 <textarea class="form-control" id="comment" rows="1" name="comment"></textarea>
                             </div>
                             <div class="col">
                                 <div class="form-group">
-                                    <label for="score">Оценка</label>
+                                    <label for="score">{{__('lang.score')}}</label>
                                     <input class="form-control" type="number" max="100" min="0" name="score" id="score">
                                 </div>
                             </div>
@@ -72,8 +72,8 @@
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button class="btn btn-primary" onclick="save()">Сохранить</button>
-                    <button class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+                    <button class="btn btn-primary" onclick="save()">{{__('lang.save')}}</button>
+                    <button class="btn btn-secondary" data-dismiss="modal">{{__('lang.close')}}</button>
                 </div>
             </div>
         </div>
@@ -95,13 +95,13 @@
                 success: function(response) {
                     if(response) {
                         console.log(response);
-                        $('#student_name').text('Студент: ' + response.user.first_name +' '+ response.user.last_name);
-                        $('#exercise_name').text('Задача: ' + response.exercise.name);
+                        $('#student_name').text('{{__('lang.student')}} : ' + response.user.first_name +' '+ response.user.last_name);
+                        $('#exercise_name').text('{{__('lang.exercise_1')}}: ' + response.exercise.name);
                         $("#result_id").val(response.id);
                         $("#value").val(response.value);
                         if(response.attachments.length > 0){
                             var files = response.attachments;
-                            fileHtml = '<label>Вложенные файлы</label>';
+                            fileHtml = '<label>{{__('lang.files')}}</label>';
                             fileHtml += '<ul>';
                             $.each( files, function(i) {
                                 fileHtml += '<li><a href="/download/'+ files[i].id + '">'+ files[i].name + '</a></li>';

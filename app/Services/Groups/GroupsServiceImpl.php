@@ -7,6 +7,7 @@ use App\Models\Group;
 use App\Models\UserCourseGroup;
 use App\Services\BaseServiceImpl;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Lang;
 
 class GroupsServiceImpl extends BaseServiceImpl implements GroupsService
 {
@@ -26,10 +27,10 @@ class GroupsServiceImpl extends BaseServiceImpl implements GroupsService
                     return  '<button
                          class=" btn btn-primary btn-sm btn-block "
                           data-id="'.$data->id.'"
-                          onclick="editGroup(event.target)"><i class="fas fa-edit" data-id="'.$data->id.'"></i> Изменить</button>';
+                          onclick="editGroup(event.target)"><i class="fas fa-edit" data-id="'.$data->id.'"></i> '.Lang::get('lang.edit').'</button>';
                 })
                 ->addColumn('more', function ($data){
-                    return '<a class="text-decoration-none"  href="/groups/'.$data->id.'"><button class="btn btn-primary btn-sm btn-block">Подробнее</button></a>';
+                    return '<a class="text-decoration-none"  href="/groups/'.$data->id.'"><button class="btn btn-primary btn-sm btn-block">'.Lang::get('lang.more').'</button></a>';
                 })
                 ->rawColumns(['more', 'edit'])
                 ->make(true);
