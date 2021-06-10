@@ -53,6 +53,20 @@ return [
     'password' => 'Password',
     'show' => 'Show',
 
-    'new_group' => 'Добавить группу',
+    'new_group' => 'Add group',
+    'edit_group' => 'Edit group',
+    'group' => 'Group',
+    'new_student' => 'Add student',
+    'teacher' =>'Teacher',
+    'available_courses' =>'Available courses',
+    'select_teacher' =>'Select teacher',
+    'available_students' =>'Available students',
+
+    'schedule_group' =>'Schedule of group',
+    'new_schedule' =>'Add schedule',
+    'starts_at' =>'Starts_at',
+    'edit_schedule' =>'Edit schedule',
+
+    'student' => 'Student',
 ];
 

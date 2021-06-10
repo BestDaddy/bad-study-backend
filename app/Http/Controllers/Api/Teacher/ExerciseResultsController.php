@@ -24,7 +24,7 @@ class ExerciseResultsController extends ApiBaseController
     public function edit($id){
         return $this->successResponse(
             ExerciseResultResource::make(
-                $this->exerciseResultsService->findWith($id, ['user', 'attachments'])
+                $this->exerciseResultsService->findWith($id, ['user', 'attachments', 'exercise'])
             )
         );
     }

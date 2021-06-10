@@ -6,12 +6,13 @@
 
 @section('content')
         {{ Breadcrumbs::render('schedules.index', $group, $course) }}
-    <h2>Расписание группы : {{$group->name}}</h2>
+    <h2>{{__('lang.schedule_group')}} : {{$group->name}}</h2>
     <hr>
     <br>
     <div class="row" style="clear: both;">
         <div class="col-12 text-right">
-            <a href="javascript:void(0)" class="btn btn-primary" data-toggle="modal"  onclick="add()"><i class="fas fa-plus-square"></i> Добавить расписание</a>
+            <a href="javascript:void(0)" class="btn btn-primary" data-toggle="modal"  onclick="add()"><i class="fas fa-plus-square"></i>
+                {{__('lang.new_schedule')}}</a>
         </div>
     </div>
     <br>
@@ -20,7 +21,7 @@
             <thead>
             <tr>
                 <th width="5%">ID</th>
-                <th width="50%">Название</th>
+                <th width="50%">{{__('lang.table_name')}}</th>
                 <th width="15%"></th>
                 <th width="15%"></th>
                 <th width="15%"></th>
@@ -34,7 +35,7 @@
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel">Новый курс</h5>
+                    <h5 class="modal-title" id="staticBackdropLabel">{{__('lang.new_schedule')}}</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -45,7 +46,7 @@
                         <div class="row">
                             <div class="col">
                                 <div class="form-group">
-                                    <label for="inputName">Начало урока</label>
+                                    <label for="inputName">{{__('lang.starts_at')}}</label>
                                     <input type="datetime-local"
                                            class="form-control"
                                            id="starts_at"
@@ -54,7 +55,7 @@
                             </div>
                             <div class="col">
                                 <div class="form-group">
-                                    <label for="inputName">Глава</label>
+                                    <label for="inputName">{{__('lang.chapter')}}</label>
                                     <select class="form-control" name="chapter_id" id="chapter_id">
                                         @foreach($chapters as $chapter)
                                             <option value="{{$chapter->id}}">{{$chapter->order}}:  {{$chapter->name}}</option>
@@ -62,14 +63,6 @@
                                     </select>
                                 </div>
                             </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="inputName">Ссылка</label>
-                            <input type="text"
-                                   class="form-control"
-                                   id="live_url"
-                                   placeholder="Введите ссылку на чат"
-                                   name="live_url">
                         </div>
                         <div class="form-group" id="form-errors">
                             <div class="alert alert-danger">
@@ -84,11 +77,11 @@
 
                     <div class="col">
                         <div  class="collapse" id="collapseExample">
-                            <button class="btn btn-danger" onclick="deleteSchedule()"><i class="fas fa-trash"></i> Удалить</button>
+                            <button class="btn btn-danger" onclick="deleteSchedule()"><i class="fas fa-trash"></i> {{__('lang.delete')}}</button>
                         </div>
                     </div>
-                    <button class="btn btn-primary" onclick="save()">Сохранить</button>
-                    <button class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+                    <button class="btn btn-primary" onclick="save()">{{__('lang.save')}}</button>
+                    <button class="btn btn-secondary" data-dismiss="modal">{{__('lang.close')}}</button>
                 </div>
             </div>
         </div>
@@ -103,7 +96,7 @@
         };
         function add() {
             $('#collapseExample').hide();
-            $('#staticBackdropLabel').text("Новое раписание");
+            $('#staticBackdropLabel').text("{{__('lang.new_schedule')}}");
             $('#form-errors').html("");
             $('#schedule_id').val('');
             $('#starts_at').val('');
@@ -133,7 +126,7 @@
         function editSchedule (event) {
             $('#collapseExample').show();
             $('#form-errors').html("");
-            $('#staticBackdropLabel').text("Редактировать раписание");
+            $('#staticBackdropLabel').text("{{__('lang.edit_schedule')}}");
 
             var id  = $(event).data("id");
             let _url = `/groups/{{$group->id}}/courses/{{$course->id}}/schedules/${id}/edit`;

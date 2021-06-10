@@ -11,7 +11,7 @@
     <br>
     <div class="row" style="clear: both;">
         <div class="col-12 text-right">
-            <a href="javascript:void(0)" class="btn btn-primary" data-toggle="modal"  onclick="add()"><i class="fas fa-plus-square"></i> Добавить группу</a>
+            <a href="javascript:void(0)" class="btn btn-primary" data-toggle="modal"  onclick="add()"><i class="fas fa-plus-square"></i> {{__('lang.new_group')}}</a>
         </div>
     </div>
     <br>
@@ -20,7 +20,7 @@
             <thead>
             <tr>
                 <th width="5%">ID</th>
-                <th width="50%">Название</th>
+                <th width="50%">{{__('lang.table_name')}}</th>
                 <th width="15%"></th>
                 <th width="15%"></th>
             </tr>
@@ -42,7 +42,7 @@
                     <form name="Form" class="form-horizontal">
                         <input type="hidden" name="group_id" id="group_id">
                         <div class="form-group">
-                            <label for="inputName">Название</label>
+                            <label for="inputName">{{__('lang.table_name')}}</label>
                             <input type="text"
                                    class="form-control"
                                    id="name"
@@ -50,21 +50,13 @@
                                    name="name">
                         </div>
                         <div class="form-group">
-                            <label for="inputPhone">Описание</label>
+                            <label for="inputPhone">{{__('lang.description')}}</label>
                             <textarea class="form-control"
                                       id="description"
                                       name="description"
                                       placeholder="Введите описание"
                                       rows="4">
                             </textarea>
-                        </div>
-                        <div class="form-group">
-                            <label for="inputName">Чат</label>
-                            <input type="text"
-                                   class="form-control"
-                                   id="chat"
-                                   placeholder="Введите ссылку на чат"
-                                   name="chat">
                         </div>
                         <div class="form-group" id="form-errors">
                             <div class="alert alert-danger">
@@ -79,11 +71,11 @@
 
                     <div class="col">
                         <div  class="collapse" id="collapseExample">
-                            <button class="btn btn-danger" onclick="deleteGroup()"><i class="fas fa-trash"></i> Удалить</button>
+                            <button class="btn btn-danger" onclick="deleteGroup()"><i class="fas fa-trash"></i> {{__('lang.delete')}}</button>
                         </div>
                     </div>
-                    <button class="btn btn-primary" onclick="save()">Сохранить</button>
-                    <button class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+                    <button class="btn btn-primary" onclick="save()">{{__('lang.save')}}</button>
+                    <button class="btn btn-secondary" data-dismiss="modal">{{__('lang.close')}}</button>
                 </div>
             </div>
         </div>
@@ -95,7 +87,7 @@
     <script>
         function add() {
             $('#collapseExample').hide();
-            $('#staticBackdropLabel').text("Новая группа");
+            $('#staticBackdropLabel').text("{{__('lang.new_group')}}");
             $('#form-errors').html("");
             $('#group_id').val('');
             $('#name').val('');
@@ -126,7 +118,7 @@
         function editGroup (event) {
             $('#collapseExample').show();
             $('#form-errors').html("");
-            $('#staticBackdropLabel').text("Редактировать группу");
+            $('#staticBackdropLabel').text("{{__('lang.edit_group')}}");
 
             var id  = $(event).data("id");
             let _url = `/groups/${id}/edit`;

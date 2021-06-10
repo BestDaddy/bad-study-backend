@@ -6,12 +6,12 @@
 
 @section('content')
     {{ Breadcrumbs::render('groups.show', $group) }}
-    <h2>Группа : {{ $group->name }}</h2>
+    <h2>{{__('lang.group')}} : {{ $group->name }}</h2>
     <hr>
     <br>
     <div class="row" style="clear: both;">
         <div class="col-12 text-right">
-            <a href="javascript:void(0)" class="btn btn-primary" data-toggle="modal"  onclick="add2()"><i class="fas fa-plus-square"></i> Добавить курс</a>
+            <a href="javascript:void(0)" class="btn btn-primary" data-toggle="modal"  onclick="add2()"><i class="fas fa-plus-square"></i> {{__('lang.new_course')}}</a>
         </div>
     </div>
     <br>
@@ -20,8 +20,8 @@
             <thead>
             <tr>
                 <th width="5%">ID</th>
-                <th width="35%">Название</th>
-                <th width="30%">Преподаватель</th>
+                <th width="35%">{{__('lang.table_name')}}</th>
+                <th width="30%">{{__('lang.teacher')}}</th>
                 <th width="15%"></th>
                 <th width="15%"></th>
             </tr>
@@ -33,7 +33,7 @@
     <br>
     <div class="row" style="clear: both;">
         <div class="col-12 text-right">
-            <a href="javascript:void(0)" class="btn btn-primary" data-toggle="modal"  onclick="add3()"><i class="fas fa-plus-square"></i> Добавить Студента</a>
+            <a href="javascript:void(0)" class="btn btn-primary" data-toggle="modal"  onclick="add3()"><i class="fas fa-plus-square"></i>{{__('lang.new_student')}}</a>
         </div>
     </div>
     <br>
@@ -42,9 +42,9 @@
             <thead>
             <tr>
                 <th width="5%">ID</th>
-                <th width="25%">Имя</th>
-                <th width="25%">Фамилия</th>
-                <th width="30%">Почта</th>
+                <th width="25%">{{__('lang.first_name')}}</th>
+                <th width="25%">{{__('lang.last_name')}}</th>
+                <th width="30%">{{__('lang.email')}}</th>
                 <th width="15%"></th>
             </tr>
             </thead>
@@ -56,7 +56,7 @@
         <div class="modal-dialog modal-lg">
             <div class="modal-content ">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel">Доступные Курсы : </h5>
+                    <h5 class="modal-title" id="staticBackdropLabel">{{__('lang.available_courses')}} : </h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -66,7 +66,7 @@
                         <div class="form-group">
                             <label for="inputPhone">Преподаватель</label>
                             <select class="form-control" id="teacher_id" name="teacher_id">
-                                <option value="" selected disabled> Выбирите преподавателя</option>
+                                <option value="" selected disabled> {{__('lang.select_teacher')}}</option>
                                 @foreach($teachers as $teacher)
                                     <option value="{{$teacher->id}}">{{$teacher->first_name. ' ' . $teacher->last_name}}</option>
                                 @endforeach
@@ -77,7 +77,7 @@
                                 <thead>
                                 <tr>
                                     <th>ID</th>
-                                    <th>Имя</th>
+                                    <th>{{__('lang.table_name')}}</th>
                                     <th></th>
                                 </tr>
                                 </thead>
@@ -93,7 +93,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">{{__('lang.close')}}</button>
                 </div>
             </div>
         </div>
@@ -102,7 +102,7 @@
         <div class="modal-dialog modal-lg">
             <div class="modal-content ">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel">Доступные Студенты : </h5>
+                    <h5 class="modal-title" id="staticBackdropLabel">{{__('lang.available_students')}} : </h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -116,7 +116,7 @@
                                 <thead>
                                 <tr>
                                     <th>ID</th>
-                                    <th>Имя</th>
+                                    <th>{{__('lang.first_name')}}</th>
                                     <th></th>
                                 </tr>
                                 </thead>
@@ -125,7 +125,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">{{__('lang.close')}}</button>
                 </div>
             </div>
         </div>

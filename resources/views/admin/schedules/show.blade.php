@@ -10,12 +10,6 @@
     <h4>Урок на : {{$schedule->starts_at}}</h4>
     <hr>
     <br>
-    <div class="row" style="clear: both;">
-        <div class="col-12 text-right">
-            <a href="javascript:void(0)" class="btn btn-primary" data-toggle="modal"  onclick="add()"><i class="fas fa-plus-square"></i> Добавить группу</a>
-        </div>
-    </div>
-    <br>
     <div class="table-responsive">
         <table class="table table-bordered table-striped" id="attendance_table" width="100%">
             <thead>

@@ -14,7 +14,7 @@ return [
     'courses' =>'Курсы',
     'course' =>'Курс',
     'table_name' => 'Название',
-    'new_course' => 'Новый курс',
+    'new_course' => 'Добавить курс',
     'description' => 'Описание',
     'delete' => 'Удалить',
     'save' => 'Сохранить',
@@ -54,5 +54,19 @@ return [
     'show' => 'Показать',
 
     'new_group' => 'Добавить группу',
+    'edit_group' => 'Редактировать группу',
+    'group' => 'Группа',
+    'new_student' => 'Добавить студента',
+    'teacher' =>'Преподаватель',
+    'available_courses' =>'Доступные Курсы',
+    'select_teacher' =>'Выбирите преподавателя',
+    'available_students' =>'Доступные Студенты',
+
+    'schedule_group' =>'Расписание группы',
+    'new_schedule' =>'Добавить расписание',
+    'starts_at' =>'Начало урока',
+    'edit_schedule' =>'Редактировать раписание',
+
+    'student' => 'Студент',
 ];
 
